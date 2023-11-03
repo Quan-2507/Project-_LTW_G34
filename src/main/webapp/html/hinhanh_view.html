@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"></div>
+<div class="banner_detail" style="background-image: url('../images/banner/original-detail.jpg');">
+    <div class="link_page">
+        <div class="pagewrap">
+            <h2>Thư viện hình ảnh</h2>
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i>trang chủ</a> | <a href="#">Thư viện</a> | <span class="active">Thư viện hình ảnh</span></li>
+            </ul>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+<div class="page_conten_page pagewrap">
+    <div class="tin_left">
+        <div class="title_news">
+            <h2>Album hình ảnh đẹp</h2>
+        </div>
+        <div id="lightgallery" class="album-zoom-gallery flex no_box">
+            <?html for ($i=0; $i < 8; $i++) {  ?>
+            <div data-src="delete/hinhanh/<?=$i+1 ?>.jpg">
+                <a><img src="../images/hinhanh/<?=$i+1 ?>.jpg" alt=""></a>
+            </div>
+            <?html } ?>
+            <?html for ($i=0; $i < 8; $i++) {  ?>
+            <div data-src="delete/hinhanh/<?=$i+1 ?>.jpg">
+                <a><img src="../images/hinhanh/<?=$i+1 ?>.jpg" alt=""></a>
+            </div>
+            <?html } ?>
+        </div>
+        <div class="clr"></div>
+        <div class="fl-post-meta fl-post-meta-bottom">
+            <div class="fl-post-cats-tags">
+                <i class="fa fa-tags"></i>
+                <a href="#" rel="tag">Hình ảnh</a>
+                <a href="#" rel="tag">MilkStores</a>
+                <a href="#" rel="tag">Trà sữa</a>
+            </div>
+        </div>
+        <div id="sharelink">
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_default_style "> <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_google_plusone" g:plusone:size="medium"></a> <a class="addthis_counter addthis_pill_style"></a> </div>
+            <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=xa-502225fb496239a5"></script>
+            <!-- AddThis Button END -->
+        </div>
+        <?html include"comment_face.html";?>
+
+        <div class="box_page">
+            <div class="title_page">
+                <ul><h3 class="h_title">Hình ảnh liên quan</h3>
+                </ul>
+            </div>
+            <div class="tt_page_top owl-carousel owl-theme owl-custome" id="tintuc_slide">
+                <?html for ($i=0; $i < 12; $i++) {  ?>
+                <div class="new_id_bs">
+                    <li>
+                        <a href="index.html?page=hinhanh_view"><img src="../images/hinhanh/<?=$i+1 ?>.jpg">
+                            <i class="fa fa-picture-o" ></i>
+                        </a>
+                    </li>
+                    <ul>
+                        <h3><a href="index.html?page=hinhanh_view">Album hình ảnh đẹp</a></h3>
+                        <p>Juice hiện là chuỗi cửa hàng đồ uống lớn nhất tại Việt Nam...</p>
+                    </ul>
+                    <div class="clr"></div>
+                </div>
+                <?html } ?>
+            </div>
+        </div>
+    </div>
+    <?html include"tin_right.html";?>
+    <div class="clr"></div>
+</div>
+</body>
+<div id="footer"></div>
+<script type="text/javascript" src="../js/script218.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#lightgallery').lightGallery();
+        $('.lightgallery').lightGallery();
+    });
+</script>
+<script src="../js/headerfooter.js"></script>
+</html>

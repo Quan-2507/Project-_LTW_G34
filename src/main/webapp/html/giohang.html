@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"></div>
+<div class="banner_detail" style="background-image: url('../images/banner/original-detail.jpg');">
+    <div class="link_page">
+        <div class="pagewrap">
+            <h2>Giỏ hàng</h2>
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i>trang chủ</a> | <span class="active">Giỏ hàng</span></li>
+            </ul>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+<div class="page_conten_page pagewrap">
+    <div class="block-total-left tb_rps">
+        <p class="heading-counter">
+            Giỏ hàng của bạn: <b class="count_cart">(Đang có 1 sản phẩm)</b>
+        </p>
+        <table class="cart_summary" width="100%" border="0" cellspacing="1" cellpadding="5">
+            <tbody>
+            <tr>
+                <th class="c-th-sp">Sản phẩm</th>
+                <th class="c-th-gia">Giá</th>
+                <th class="c-th-sluong">Số lượng</th>
+                <th class="c-th-ttien">Thành tiền</th>
+            </tr>
+            <tr class="tr_cart_iscart_1202">
+                <td class="c-th-sp" title="Sản phẩm">
+                    <a href="popup_sanpham.html" class="sp">
+                        <img src="..\images\icon\add_id.png" alt="">
+                    </a>
+                    <div class="dv-anh">
+                        <a href="page=sanpham_view">Okinawa Coffee Milk Tea</a>
+                        <a class="del cur" title="Xóa"><i class="fa fa-trash" ></i> Xóa</a>
+                        <!-- <a class="del cur" title="Sửa"><i class="fa fa-pencil" ></i> Sửa</a> -->
+                    </div>
+                </td>
+                <td class="c-th-gia" title="Giá"><b>57.000 <sup>₫</sup></b>
+                </td>
+                <td class="qty c-th-sluong" title="Số lượng">
+                    <div class="so-luong-mua">
+                        <span class="number-down">–</span>
+                        <input type="text" id="number" value="1">
+                        <span class="number-up">+</span>
+                    </div>
+                </td>
+                <td class="c-th-ttien" title="Thành tiền"><b>57.000 <sup>₫</sup></b>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+        <div class="clr"></div>
+    </div>
+    <div class="block-total-cart">
+        <div class="total-cart-page">
+            <div class="title-cart-page-left">Thành tiền</div>
+            <div class="number-cart-page-right"><span class="price">57.000 <sup>₫</sup></span></div>
+        </div>
+        <div class="total-cart-page">
+            <div class="title-cart-page-left">Phí vận chuyển</div>
+            <div class="number-cart-page-right"><span class="price">0&nbsp;đ</span></div>
+        </div>
+        <div class="border-product"></div>
+        <div class="total-cart-page title-final-total">
+            <div class="title-cart-page-left">
+                Tổng Số Tiền (gồm VAT)    </div>
+            <div class="number-cart-page-right"><span class="price">57.000 <sup>₫</sup></span></div>
+        </div>
+        <div class="checkout-type-button-cart" style="text-align: center;">
+            <div class="method-button-cart">
+                <button type="button" title="Thanh toán" class="button btn-proceed-checkout btn-checkout" onclick="window.location = 'tt_khachhang.html';"><span><span>Thanh toán</span></span></button>
+                <div class="retail-note"><a href="#" target="_blank">(Giảm giá trên web chỉ áp dụng cho bán lẻ)</a></div>
+                <div class="fhs-no-checkout" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+<div id="footer"></div>
+</body>
+<script src="../js/headerfooter.js"></script>
+</html>
