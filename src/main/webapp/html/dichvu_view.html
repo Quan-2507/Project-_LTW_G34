@@ -3,121 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div id="header "class="dv-header">
-    <div class="dv-header-center">
-        <div class="pagewrap flex">
-            <div class="logo_top">
-                <a href="index.html"><img src="../delete/logo.png" alt="logo"/></a>
-            </div>
-            <div class="right-top">
-                <!-- <div class="dangnhap_top">
-                  <a href="index.html?page=dangnhap">
-                    <i class="fa fa-user-o" ></i> Tài khoản
-                  </a>
-                </div> -->
-                <div class="wishlist-box">
-                    <a href="#">
-                        <i class="fa fa-heart-o"></i>
-                        <h3>Yêu thích</h3>
-                    </a>
-                </div>
-                <div class="compare-box hidden-sm hidden-xs">
-                    <a href="#">
-                        <i class="fa fa-compress"></i>
-                        <h3>So sánh</h3>
-                    </a>
-                </div>
-                <div class="language">
-                    <i class="fa fa-globe"></i><a href="#">ENG</a> | <a href="#">VN</a>
-                </div>
-                <div class="giohang_top">
-                    <a href="index.html?page=giohang">
-                        <h3>Giỏ hàng<span>1 sản phẩm - 100.000đ</span></h3>
-                        <i class="fa fa-shopping-bag"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dv-header-bt">
-        <div class="pagewrap flex">
-            <div class="box_menu">
-                <!--  -->
-                <?html ob_start(); ?>
-                <!--  -->
-                <ul class="menu">
-                    <li><a href="index.html" title="Trang chủ">Trang chủ</a></li>
-                    <li><a href="index.html?page=gioithieu" title="Giới thiệu">Giới thiệu</a></li>
-                    <li><a href="index.html?page=trasua" title="Menu trà sữa">Menu trà sữa <i
-                            class="fa fa-angle-down"></i></a>
-                        <ul class="menu_child">
-                            <li><span><a href="index.html?page=trasua">Trà truyền thống</a></span>
-                                <ul>
-                                    <li><a href="index.html?page=trasua" title="">Hồng trà</a></li>
-                                    <li><a href="index.html?page=trasua" title="">Trà ô long</a></li>
-                                    <li><a href="index.html?page=trasua" title="">Trà hoa nhài</a></li>
-                                </ul>
-                            </li>
-                            <li><span><a href="index.html?page=trasua">Trà sữa trái cây</a></span>
-                                <ul>
-                                    <li><a href="index.html?page=trasua" title="">Trà xanh vị cam</a></li>
-                                    <li><a href="index.html?page=trasua" title="">Trà ô mai đào</a></li>
-                                    <li><a href="index.html?page=trasua" title="">Trà xanh vị ổi</a></li>
-                                </ul>
-                            </li>
-                            <li><span><a href="index.html?page=trasua">Trà sữa Đài Loan</a></span>
-                                <ul>
-                                    <li><a href="index.html?page=trasua" title="">Hồng trà sữa</a></li>
-                                    <li><a href="index.html?page=trasua" title="">Trà sữa mật ong</a></li>
-                                    <li><a href="index.html?page=trasua" title="">Trà sữa hokaido</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="li_child"><a href="index.html?page=dichvu" title="Dịch vụ">Dịch vụ <i
-                            class="fa fa-angle-down"></i></a>
-                        <ul>
-                            <li><a href="index.html?page=dichvu_view" title="">Hướng dẫn mua hàng</a></li>
-                            <li><a href="index.html?page=dichvu_view" title="">Bảo mật thông tin</a></li>
-
-                            <li><a href="index.html?page=dichvu_view" title="">Miễn phí giao hàng</a></li>
-                            <li><a href="index.html?page=dichvu_view" title="">Hướng dẫn thanh toán</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="index.html?page=tintuc" title="Tin tức">Tin tức</a></li>
-                    <li class="li_child"><a href="#" title="Thư viện">Thư viện <i class="fa fa-angle-down"></i></a>
-                        <ul>
-                            <li><a href="index.html?page=hinhanh" title="Thư viện hình ảnh">Thư viện hình ảnh</a></li>
-                            <li><a href="index.html?page=video" title="Thư viện video">Thư viện video</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html?page=lienhe" title="Liên hệ">Liên hệ</a></li>
-                </ul>
-                <!--  -->
-                <?html
-  $menu_full = ob_get_contents();
-  ob_end_clean();
-  include "../lib/menu.html";
-?>
-                <!--  -->
-            </div>
-            <div class="timkiem_top">
-                <form action="" method="post">
-                    <div class="search">
-                        <a href="#" onclick="" style="cursor:pointer">Nhập từ khóa tìm kiếm</a>
-                        <input class="input_search" type="text" id="search" placeholder="Nhập từ khóa tìm kiếm">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="clr"></div>
-</div>
-<div class="banner_detail" style="background-image: url('../delete/banner/original-detail.jpg');">
+<div id="header"></div>
+<div class="banner_detail" style="background-image: url('../images/banner/original-detail.jpg');">
     <div class="link_page">
         <div class="pagewrap">
             <h2>Dịch vụ</h2>
@@ -131,7 +21,7 @@
 <div class="page_conten_page pagewrap">
     <div class="viewLeft">
         <div id="pro_img_main">
-            <div id="bridal_images"><img src="../delete/dichvu/ser-3.jpg"></div>
+            <div id="bridal_images"><img src="../images/dichvu/ser-3.jpg"></div>
         </div>
     </div>
     <!--end viewLeft-->
@@ -148,7 +38,7 @@
                 <div class="fl-post-cats-tags">
                     <i class="fa fa-tags"></i>
                     <a href="#" rel="tag">Dịch vụ</a>
-                    <a href="index.html?page=gioithieu" rel="tag">MilkStores</a>
+                    <a href="gioithieu.html" rel="tag">MilkStores</a>
                     <a href="#" rel="tag">Sản phẩm</a>
                 </div>
             </div>
@@ -166,7 +56,7 @@
     <div class="detail-sp">
         <h5>Mô tả chi tiết</h5>
         <div id="ftwp-postcontent">
-            <p style="text-align: justify;"><img src="../delete/dichvu/huong-dan-mua-hang.jpg"></p>
+            <p style="text-align: justify;"><img src="../images/dichvu/huong-dan-mua-hang.jpg"></p>
         </div>
     </div>
     <?html include"comment_face.html";?>
@@ -179,12 +69,12 @@
             <div class="col-md-6 col-lg-4">
                 <div class="blog-item">
                     <div class="img-box">
-                        <a href="index.html?page=dichvu_view" class="open-post">
-                            <img class="img-fluid" src="../delete/dichvu/ser-4.jpg" alt="">
+                        <a href="dichvu_view.html" class="open-post">
+                            <img class="img-fluid" src="../images/dichvu/ser-4.jpg" alt="">
                         </a>
                     </div>
                     <div class="text-box">
-                        <a href="index.html?page=dichvu_view" class="title-blog">
+                        <a href="dichvu_view.html" class="title-blog">
                             <h5>Bảo mật thông tin</h5>
                         </a>
                     </div>
@@ -193,12 +83,12 @@
             <div class="col-md-6 col-lg-4">
                 <div class="blog-item">
                     <div class="img-box">
-                        <a href="index.html?page=dichvu_view" class="open-post">
-                            <img class="img-fluid" src="../delete/dichvu/ser-2.jpg" alt="">
+                        <a href="dichvu_view.html" class="open-post">
+                            <img class="img-fluid" src="../images/dichvu/ser-2.jpg" alt="">
                         </a>
                     </div>
                     <div class="text-box">
-                        <a href="index.html?page=dichvu_view" class="title-blog">
+                        <a href="dichvu_view.html" class="title-blog">
                             <h5>Miễn phí giao hàng</h5>
                         </a>
                     </div>
@@ -207,12 +97,12 @@
             <div class="col-md-6 col-lg-4">
                 <div class="blog-item">
                     <div class="img-box">
-                        <a href="index.html?page=dichvu_view" class="open-post">
-                            <img class="img-fluid" src="../delete/dichvu/ser-7.jpg" alt="">
+                        <a href="dichvu_view.html" class="open-post">
+                            <img class="img-fluid" src="../images/dichvu/ser-7.jpg" alt="">
                         </a>
                     </div>
                     <div class="text-box">
-                        <a href="index.html?page=dichvu_view" class="title-blog">
+                        <a href="dichvu_view.html" class="title-blog">
                             <h5>Hướng dẫn thanh toán</h5>
                         </a>
                     </div>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 <div id="header"></div>
-<div class="banner_detail" style="background-image: url('../delete/banner/original-detail.jpg');">
+<div class="banner_detail" style="background-image: url('../images/banner/original-detail.jpg');">
     <div class="link_page">
         <div class="pagewrap">
             <h2>Thư viện hình ảnh</h2>
@@ -26,12 +26,12 @@
         <div id="lightgallery" class="album-zoom-gallery flex no_box">
             <?html for ($i=0; $i < 8; $i++) {  ?>
             <div data-src="delete/hinhanh/<?=$i+1 ?>.jpg">
-                <a><img src="../delete/hinhanh/<?=$i+1 ?>.jpg" alt=""></a>
+                <a><img src="../images/hinhanh/<?=$i+1 ?>.jpg" alt=""></a>
             </div>
             <?html } ?>
             <?html for ($i=0; $i < 8; $i++) {  ?>
             <div data-src="delete/hinhanh/<?=$i+1 ?>.jpg">
-                <a><img src="../delete/hinhanh/<?=$i+1 ?>.jpg" alt=""></a>
+                <a><img src="../images/hinhanh/<?=$i+1 ?>.jpg" alt=""></a>
             </div>
             <?html } ?>
         </div>
@@ -61,7 +61,7 @@
                 <?html for ($i=0; $i < 12; $i++) {  ?>
                 <div class="new_id_bs">
                     <li>
-                        <a href="index.html?page=hinhanh_view"><img src="../delete/hinhanh/<?=$i+1 ?>.jpg">
+                        <a href="index.html?page=hinhanh_view"><img src="../images/hinhanh/<?=$i+1 ?>.jpg">
                             <i class="fa fa-picture-o" ></i>
                         </a>
                     </li>

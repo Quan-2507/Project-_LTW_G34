@@ -1,142 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-  <link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div id="header "class="dv-header">
-  <div class="dv-header-center">
-    <div class="pagewrap flex">
-      <div class="logo_top">
-        <a href="index.html"><img src="../delete/logo.png" alt="logo"/></a>
-      </div>
-      <div class="right-top">
-        <!-- <div class="dangnhap_top">
-          <a href="index.html?page=dangnhap">
-            <i class="fa fa-user-o" ></i> Tài khoản
-          </a>
-        </div> -->
-        <div class="wishlist-box">
-          <a href="#">
-            <i class="fa fa-heart-o"></i>
-            <h3>Yêu thích</h3>
-          </a>
-        </div>
-        <div class="compare-box hidden-sm hidden-xs">
-          <a href="#">
-            <i class="fa fa-compress"></i>
-            <h3>So sánh</h3>
-          </a>
-        </div>
-        <div class="language">
-          <i class="fa fa-globe"></i><a href="#">ENG</a> | <a href="#">VN</a>
-        </div>
-        <div class="giohang_top">
-          <a href="index.html?page=giohang">
-            <h3>Giỏ hàng<span>1 sản phẩm - 100.000đ</span></h3>
-            <i class="fa fa-shopping-bag"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="dv-header-bt">
-    <div class="pagewrap flex">
-      <div class="box_menu">
-        <!--  -->
-        <?html ob_start(); ?>
-        <!--  -->
-        <ul class="menu">
-          <li><a href="index.html" title="Trang chủ">Trang chủ</a></li>
-          <li><a href="index.html?page=gioithieu" title="Giới thiệu">Giới thiệu</a></li>
-          <li><a href="index.html?page=trasua" title="Menu trà sữa">Menu trà sữa <i
-                  class="fa fa-angle-down"></i></a>
-            <ul class="menu_child">
-              <li><span><a href="index.html?page=trasua">Trà truyền thống</a></span>
-                <ul>
-                  <li><a href="index.html?page=trasua" title="">Hồng trà</a></li>
-                  <li><a href="index.html?page=trasua" title="">Trà ô long</a></li>
-                  <li><a href="index.html?page=trasua" title="">Trà hoa nhài</a></li>
-                </ul>
-              </li>
-              <li><span><a href="index.html?page=trasua">Trà sữa trái cây</a></span>
-                <ul>
-                  <li><a href="index.html?page=trasua" title="">Trà xanh vị cam</a></li>
-                  <li><a href="index.html?page=trasua" title="">Trà ô mai đào</a></li>
-                  <li><a href="index.html?page=trasua" title="">Trà xanh vị ổi</a></li>
-                </ul>
-              </li>
-              <li><span><a href="index.html?page=trasua">Trà sữa Đài Loan</a></span>
-                <ul>
-                  <li><a href="index.html?page=trasua" title="">Hồng trà sữa</a></li>
-                  <li><a href="index.html?page=trasua" title="">Trà sữa mật ong</a></li>
-                  <li><a href="index.html?page=trasua" title="">Trà sữa hokaido</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="li_child"><a href="index.html?page=dichvu" title="Dịch vụ">Dịch vụ <i
-                  class="fa fa-angle-down"></i></a>
-            <ul>
-              <li><a href="index.html?page=dichvu_view" title="">Hướng dẫn mua hàng</a></li>
-              <li><a href="index.html?page=dichvu_view" title="">Bảo mật thông tin</a></li>
-
-              <li><a href="index.html?page=dichvu_view" title="">Miễn phí giao hàng</a></li>
-              <li><a href="index.html?page=dichvu_view" title="">Hướng dẫn thanh toán</a></li>
-
-            </ul>
-          </li>
-          <li><a href="index.html?page=tintuc" title="Tin tức">Tin tức</a></li>
-          <li class="li_child"><a href="#" title="Thư viện">Thư viện <i class="fa fa-angle-down"></i></a>
-            <ul>
-              <li><a href="index.html?page=hinhanh" title="Thư viện hình ảnh">Thư viện hình ảnh</a></li>
-              <li><a href="index.html?page=video" title="Thư viện video">Thư viện video</a></li>
-            </ul>
-          </li>
-          <li><a href="index.html?page=lienhe" title="Liên hệ">Liên hệ</a></li>
-        </ul>
-        <!--  -->
-        <?html
-  $menu_full = ob_get_contents();
-  ob_end_clean();
-  include "../lib/menu.html";
-?>
-        <!--  -->
-      </div>
-      <div class="timkiem_top">
-        <form action="" method="post">
-          <div class="search">
-            <a href="#" onclick="" style="cursor:pointer">Nhập từ khóa tìm kiếm</a>
-            <input class="input_search" type="text" id="search" placeholder="Nhập từ khóa tìm kiếm">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="clr"></div>
-</div>
-<div class="bannerMain">
-  <div class="banner owl-carousel owl-theme owl-custome" id="owl-banner">
-    <li>
-      <a href="#"><img src="../delete/banner/slide1.jpg"></a>
-    </li>
-    <li>
-      <a href="#"><img src="../delete/banner/slide2.jpg"></a>
-    </li>
-  </div>
-  <div class="clr"></div>
-</div>
-<div class="icon_sp">
-  <a href="popup_sanpham.html" class="tbay-tooltip quick-view icons preview fancybox.ajax" title="XEM NHANH"><i class="fa fa-eye" ></i></a>
-  <a href="" title="Thêm yêu thích"><i class="fa fa-heart-o" ></i></a>
-  <a href="" title="Thêm so sánh"><i class="fa fa-retweet" ></i></a>
-</div>
-<div class="icon_sp1">
-  <a href="popup_giohang.html" rel="nofollow" class="button a_cart product_type preview fancybox.ajax"><i class="fa fa-shopping-bag"></i>Đặt hàng</a>
-</div>
-<?html include"banner_top.html";?>
+<!-------------------------Header---------------------->
+<div id="header"></div>
+<!-------------------------body---------------------->
 <div class="customer-service ">
   <div class="support clearfix pagewrap">
     <div class="col-lg-12 flex">
@@ -196,7 +68,7 @@
     </div>
     <div class="pro_home_id flex">
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp1.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp1.png"/></a></li>
         <h3><a href="trasua_view.html">Okinawa Coffee Milk Tea</a></h3>
         <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
         <span class="css-1h3p11h">-12%</span>
@@ -207,10 +79,10 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp2.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp2.png"/></a></li>
         <h3><a href="trasua_view.html">Okinawa Oreo Cream Milk Tea</a></h3>
         <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
         <span class="css-1h3p11h">-12%</span>
@@ -221,10 +93,10 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp3.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp3.png"/></a></li>
         <h3><a href="trasua_view.html">Trà Sữa Xoài Trân Châu Đen</a></h3>
         <h4><span>60.000 <sup>₫</sup></span> 51.000 <sup>₫</sup></h4>
         <span class="css-1h3p11h">-9%</span>
@@ -235,10 +107,10 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp4.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp4.png"/></a></li>
         <h3><a href="trasua_view.html">Trà Sữa Okinawa</a></h3>
         <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
         <span class="css-1h3p11h">-7%</span>
@@ -249,10 +121,10 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp5.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp5.png"/></a></li>
         <h3><a href="trasua_view.html">Trà Sữa Matcha Đậu Đỏ</a></h3>
         <h4>65.000 <sup>₫</sup></h4>
         <p class="p-star">
@@ -262,10 +134,10 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp6.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp6.png"/></a></li>
         <h3><a href="trasua_view.html">Trà sữa Oolong 3J</a></h3>
         <h4>55.000 <sup>₫</sup></h4>
         <p class="p-star">
@@ -275,10 +147,10 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp7.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp7.png"/></a></li>
         <h3><a href="trasua_view.html">Trà Sữa Pudding Đậu Đỏ</a></h3>
         <h4>51.000 <sup>₫</sup></h4>
         <p class="p-star">
@@ -288,10 +160,10 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
       <ul>
-        <li><a href="trasua_view.html"><img src="../delete/sanpham/sp8.png"/></a></li>
+        <li><a href="trasua_view.html"><img src="../images/sanpham/sp8.png"/></a></li>
         <h3><a href="trasua_view.html">Trà Sữa Chocolate</a></h3>
         <h4>51.000 <sup>₫</sup></h4>
         <p class="p-star">
@@ -301,7 +173,7 @@
           <span data-sao="0" data="1200" class="fa fa-star"></span>
           <span data-sao="0" data="1200" class="fa fa-star-o"></span>
         </p>
-        <?html include"icon-tooltip.html";?>
+
       </ul>
     </div>
     <div class="clr"></div>
@@ -361,7 +233,7 @@
           <div class="blog-item">
             <div class="img-box">
               <a href="index.html?page=sanpham_view" class="open-post">
-                <img class="img-fluid" src="../delete/sanpham/sp1.png" alt="">
+                <img class="img-fluid" src="../images/sanpham/sp1.png" alt="">
               </a>
             </div>
             <div class="text-box">
@@ -374,7 +246,7 @@
           <div class="blog-item">
             <div class="img-box">
               <a href="index.html?page=sanpham_view" class="open-post">
-                <img class="img-fluid" src="../delete/sanpham/sp2.png" alt="">
+                <img class="img-fluid" src="../images/sanpham/sp2.png" alt="">
               </a>
             </div>
             <div class="text-box">
@@ -387,7 +259,7 @@
           <div class="blog-item">
             <div class="img-box">
               <a href="index.html?page=sanpham_view" class="open-post">
-                <img class="img-fluid" src="../delete/sanpham/sp3.png" alt="">
+                <img class="img-fluid" src="../images/sanpham/sp3.png" alt="">
               </a>
             </div>
             <div class="text-box">
@@ -400,7 +272,7 @@
           <div class="blog-item">
             <div class="img-box">
               <a href="index.html?page=sanpham_view" class="open-post">
-                <img class="img-fluid" src="../delete/sanpham/sp4.png" alt="">
+                <img class="img-fluid" src="../images/sanpham/sp4.png" alt="">
               </a>
             </div>
             <div class="text-box">
@@ -413,7 +285,7 @@
         </div>
       </div>
       <div class="box_right_pro_view">
-        <a href="#"><img src="../delete/trangchu/4.png"></a>
+        <a href="#"><img src="../images/trangchu/4.png"></a>
       </div>
       <div class="box_right_pro_view">
         <div class="title_right_pro_view">Nhận khuyến mãi</div>
@@ -431,15 +303,15 @@
         <div class="wrap_banner">
           <div class="col-sm-6 img-left">
             <a class="img1" href="#" title="Banner 1">
-              <img class="lazyload loaded" src="../delete/trangchu/1.png" data-src="" alt="Banner 1" data-was-processed="true">
+              <img class="lazyload loaded" src="../images/trangchu/1.png" data-src="" alt="Banner 1" data-was-processed="true">
             </a>
             <a class="img1" href="#" title="Banner 1">
-              <img class="lazyload loaded" src="../delete/trangchu/2.png" data-src="" alt="Banner 1" data-was-processed="true">
+              <img class="lazyload loaded" src="../images/trangchu/2.png" data-src="" alt="Banner 1" data-was-processed="true">
             </a>
           </div>
           <div class="col-sm-6 img-right">
             <a class="img1" href="#" title="Banner 2">
-              <img class="lazyload loaded" src="../delete/trangchu/3.png" data-src="" alt="Banner 2" data-was-processed="true">
+              <img class="lazyload loaded" src="../images/trangchu/3.png" data-src="" alt="Banner 2" data-was-processed="true">
             </a>
           </div>
         </div>
@@ -451,7 +323,7 @@
         </div>
         <div class="pro_home_id flex">
           <ul>
-            <li><a href="trasua_view.html"><img src="../delete/sanpham/sp1.png"/></a></li>
+            <li><a href="trasua_view.html"><img src="../images/sanpham/sp1.png"/></a></li>
             <h3><a href="trasua_view.html">Okinawa Coffee Milk Tea</a></h3>
             <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
             <span class="css-1h3p11h">-12%</span>
@@ -462,10 +334,10 @@
               <span data-sao="0" data="1200" class="fa fa-star"></span>
               <span data-sao="0" data="1200" class="fa fa-star-o"></span>
             </p>
-            <?html include"icon-tooltip.html";?>
+
           </ul>
           <ul>
-            <li><a href="trasua_view.html"><img src="../delete/sanpham/sp2.png"/></a></li>
+            <li><a href="trasua_view.html"><img src="../images/sanpham/sp2.png"/></a></li>
             <h3><a href="trasua_view.html">Okinawa Oreo Cream Milk Tea</a></h3>
             <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
             <span class="css-1h3p11h">-12%</span>
@@ -476,10 +348,10 @@
               <span data-sao="0" data="1200" class="fa fa-star"></span>
               <span data-sao="0" data="1200" class="fa fa-star-o"></span>
             </p>
-            <?html include"icon-tooltip.html";?>
+
           </ul>
           <ul>
-            <li><a href="trasua_view.html"><img src="../delete/sanpham/sp3.png"/></a></li>
+            <li><a href="trasua_view.html"><img src="../images/sanpham/sp3.png"/></a></li>
             <h3><a href="trasua_view.html">Trà Sữa Xoài Trân Châu Đen</a></h3>
             <h4><span>60.000 <sup>₫</sup></span> 51.000 <sup>₫</sup></h4>
             <span class="css-1h3p11h">-9%</span>
@@ -490,10 +362,10 @@
               <span data-sao="0" data="1200" class="fa fa-star"></span>
               <span data-sao="0" data="1200" class="fa fa-star-o"></span>
             </p>
-            <?html include"icon-tooltip.html";?>
+
           </ul>
           <ul>
-            <li><a href="trasua_view.html"><img src="../delete/sanpham/sp4.png"/></a></li>
+            <li><a href="trasua_view.html"><img src="../images/sanpham/sp4.png"/></a></li>
             <h3><a href="trasua_view.html">Trà Sữa Okinawa</a></h3>
             <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
             <span class="css-1h3p11h">-7%</span>
@@ -504,10 +376,10 @@
               <span data-sao="0" data="1200" class="fa fa-star"></span>
               <span data-sao="0" data="1200" class="fa fa-star-o"></span>
             </p>
-            <?html include"icon-tooltip.html";?>
+
           </ul>
           <ul>
-            <li><a href="trasua_view.html"><img src="../delete/sanpham/sp5.png"/></a></li>
+            <li><a href="trasua_view.html"><img src="../images/sanpham/sp5.png"/></a></li>
             <h3><a href="trasua_view.html">Trà Sữa Matcha Đậu Đỏ</a></h3>
             <h4>65.000 <sup>₫</sup></h4>
             <p class="p-star">
@@ -517,10 +389,10 @@
               <span data-sao="0" data="1200" class="fa fa-star"></span>
               <span data-sao="0" data="1200" class="fa fa-star-o"></span>
             </p>
-            <?html include"icon-tooltip.html";?>
+
           </ul>
           <ul>
-            <li><a href="trasua_view.html"><img src="../delete/sanpham/sp6.png"/></a></li>
+            <li><a href="trasua_view.html"><img src="../images/sanpham/sp6.png"/></a></li>
             <h3><a href="trasua_view.html">Trà sữa Oolong 3J</a></h3>
             <h4>55.000 <sup>₫</sup></h4>
             <p class="p-star">
@@ -530,7 +402,7 @@
               <span data-sao="0" data="1200" class="fa fa-star"></span>
               <span data-sao="0" data="1200" class="fa fa-star-o"></span>
             </p>
-            <?html include"icon-tooltip.html";?>
+
           </ul>
         </div>
         <div class="clr"></div>
@@ -543,53 +415,8 @@
     <div class="clr"></div>
   </div>
 </section>
-<div id="footer" class="footer">
-  <div class="pagewrap">
-    <div class="center-footer">
-      <ul class="menu-footer">
-        <img src="../delete/trangchu/ft1.png">
-        <h3>Giờ mở cửa</h3>
-        <p>Thứ 2-6: 8h00 am - 22h00 pm</p>
-        <p>Thứ 7-CN: 9h00 am - 21h00 pm</p>
-      </ul>
-      <ul>
-        <img src="../delete/trangchu/ft2.png">
-        <h3>Thông tin liên hệ</h3>
-        <p>Địa chỉ: <?=$full_me_add ?></p>
-        <p>Hotline: <?=$full_me_hotline ?></p>
-      </ul>
-      <ul>
-        <img src="../delete/trangchu/ft3.png">
-        <h3>Kết nối với chúng tôi</h3>
-        <li><a target="_blank" href="#" title=""><i class="fa fa-facebook"></i></a></li>
-        <li><a target="_blank" href="#" title=""><i class="fa fa-google-plus"></i></a></li>
-        <li><a target="_blank" href="#" title=""><i class="fa fa-twitter"></i></a></li>
-        <li><a target="_blank" href="#" title=""><i class="fa fa-youtube"></i></a></li>
-        <li><a target="_blank" href="#" title=""><i class="fa fa-rss"></i></a></li>
-      </ul>
-      <div class="clr"></div>
-    </div>
-    <div class="clr"></div>
-  </div>
-</div>
-<div class="bottom_ft">
-  <div class="pagewrap">
-    <div id="link_footer_menu" class="menu_footer_link">
-      <ul class="ul_main_footer">
-        <li><a href="index.html" title="Trang chủ">Trang chủ</a></li>
-        <li><a href="index.html?page=gioithieu" title="Giới thiệu">Giới thiệu</a></li>
-        <li><a href="index.html?page=trasua" title="Trà sữa">Trà sữa</a></li>
-        <li><a href="index.html?page=trasua" title="Dịch vụ">Dịch vụ</a></li>
-        <li><a href="index.html?page=tintuc" title="Tin tức">Tin tức</a></li>
-        <li><a href="index.html?page=lienhe" title="Liên hệ">Liên hệ</a></li>
-      </ul>
-    </div>
-    <p>
-      Thiết kế và phát triển bởi nhóm 34.ltw
-    </p>
-  </div>
-</div>
-<div id="back-top" style="display: block;"><a href="#top"><i class="fa fa-angle-double-up"></i></a></div>
+<!-------------------------Footer---------------------->
+<div id="footer"></div>
 </body>
 <script src="../js/headerfooter.js"></script>
 <script>
