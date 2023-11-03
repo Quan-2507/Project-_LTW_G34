@@ -7,39 +7,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-
-  <?html
-    include "../../lib/longthinh.html";
-?>
   <link href="../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../js/script218.js"></script>
 
 </head>
 
-<body><div class="dv-content-full">
-  <?html include"header.html";?>
-  <div class="conten">
-    <?html
-		if (isset($_GET["page"]))
-		{
-			$page=$_GET["page"];
-			$page.=".html";
-			if($page=="index.html")
-				$page="trangchu.html";
-			$page = str_replace("http","XXX",$page);
-			$page = str_replace("https","XXX",$page);
-			$page = str_replace("ftp","XXX",$page);
-			$page = str_replace("ftps","XXX",$page);
-			if (is_file($page))
-				include $page;
-			else echo "<div class='no_data'></div> <div class='pagewrap page_conten_page'>Under Contruction</div>";
-  }
-  else
-  include "trangchu.html";
-  ?>
-  <div class="clr"></div>
-</div>
-<?html include"footer.html";?></div>
+<body>
+<!--<div class="dv-content-full">-->
+<!--  <?html include"header.html";?>-->
+<!--  <div class="conten">-->
+<!--    <?html-->
+<!--		if (isset($_GET["page"]))-->
+<!--		{-->
+<!--			$page=$_GET["page"];-->
+<!--			$page.=".html";-->
+<!--			if($page=="index.html")-->
+<!--				$page="trangchu.html";-->
+<!--			$page = str_replace("http","XXX",$page);-->
+<!--			$page = str_replace("https","XXX",$page);-->
+<!--			$page = str_replace("ftp","XXX",$page);-->
+<!--			$page = str_replace("ftps","XXX",$page);-->
+<!--			if (is_file($page))-->
+<!--				include $page;-->
+<!--			else echo "<div class='no_data'></div> <div class='pagewrap page_conten_page'>Under Contruction</div>";-->
+<!--  }-->
+<!--  else-->
+<!--  include "trangchu.html";-->
+<!--  ?>-->
+<!--  <div class="clr"></div>-->
+<!--</div>-->
+<!--<?html include"footer.html";?></div>-->
 </body>
 <script>
   $(function(){
