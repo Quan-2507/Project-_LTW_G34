@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>MilkStores – Thế giới trà sữa</title>
+  <meta name='keywords' content='MilkStores – Thế giới trà sữa'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+  <?html
+    include "../../lib/longthinh.html";
+?>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/script218.js"></script>
+
+</head>
+
+<body><div class="dv-content-full">
+  <?html include"header.html";?>
+  <div class="conten">
+    <?html
+		if (isset($_GET["page"]))
+		{
+			$page=$_GET["page"];
+			$page.=".html";
+			if($page=="index.html")
+				$page="trangchu.html";
+			$page = str_replace("http","XXX",$page);
+			$page = str_replace("https","XXX",$page);
+			$page = str_replace("ftp","XXX",$page);
+			$page = str_replace("ftps","XXX",$page);
+			if (is_file($page))
+				include $page;
+			else echo "<div class='no_data'></div> <div class='pagewrap page_conten_page'>Under Contruction</div>";
+  }
+  else
+  include "trangchu.html";
+  ?>
+  <div class="clr"></div>
+</div>
+<?html include"footer.html";?></div>
+</body>
+<script>
+  $(function(){
+    var hei = $(".dv-ul-menu > ul").height();
+    $(".dv-ul-menu ul ul.sub-2").css("min-height", hei + 2);
+    //end
+  })
+</script>
+<script>
+  $(document).ready(function(){
+    // hide #back-top first
+    $("#back-top").hide();
+
+    // fade in #back-top
+    $(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('#back-top').fadeIn();
+        } else {
+          $('#back-top').fadeOut();
+        }
+      });
+
+      // scroll body to 0px on click
+      $('#back-top a').click(function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    });
+
+  });
+</script>
+</html>
