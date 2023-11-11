@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"></div>
+<div class="banner_detail" style="background-image: url('../images/banner/original-detail.jpg');">
+    <div class="link_page">
+        <div class="pagewrap">
+            <h2>Thanh toán</h2>
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i>trang chủ</a> | <a href="index.html?page=giohang">Giỏ
+                    hàng</a> | <span class="active">Đặt hàng</span></li>
+            </ul>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+<div id="placeSlide_main" class="page_conten_page pagewrap">
+    <div id="chitiet_news">
+        <form action="/index.html/Phuong_Thuc_Thanh_Toan/" method="post" onsubmit="return validateForm()">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td class="top_td">
+                        <input type="text" name="name" id="name" placeholder="Họ & tên *" class="box_input" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top_td">
+                        <input type="text" name="email" id="email" placeholder="Email *" class="box_input" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top_td">
+                        <input type="text" name="sdt" id="sdt" placeholder="Số điện thoại *" class="box_input" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top_td">
+                        <input type="text" name="diachi" id="diachi" placeholder="Địa chỉ *" class="box_input width_100"
+                               value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top_td">
+                        <div style="display: inline" class="info_address">
+                            <select name="City" id="City" class="cityowner">
+                                <option value="">Tỉnh thành</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                                <option value="TP HCM">TP HCM</option>
+                                <option value="An Giang">An Giang</option>
+                                <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                                <option value="Bạc Liêu">Bạc Liêu</option>
+                                <option value="Bắc Giang">Bắc Giang</option>
+                                <option value="Bắc Kạn">Bắc Kạn</option>
+                                <option value="Bắc Ninh">Bắc Ninh</option>
+                                <option value="Bến Tre">Bến Tre</option>
+                                <option value="Bình Dương">Bình Dương</option>
+                                <option value="Bình Định">Bình Định</option>
+                                <option value="Bình Phước">Bình Phước</option>
+                                <option value="Bình Thuận">Bình Thuận</option>
+                                <option value="Cà Mau">Cà Mau</option>
+                                <option value="Cao Bằng">Cao Bằng</option>
+                                <option value="Cần Thơ">Cần Thơ</option>
+                                <option value="Đà Nẵng">Đà Nẵng</option>
+                                <option value="Đắk Lắk">Đắk Lắk</option>
+                                <option value="Đắk Nông">Đắk Nông</option>
+                                <option value="Điện Biên">Điện Biên</option>
+                                <option value="Đồng Nai">Đồng Nai</option>
+                                <option value="Đồng Tháp">Đồng Tháp</option>
+                                <option value="Gia Lai">Gia Lai</option>
+                                <option value="Hà Giang">Hà Giang</option>
+                                <option value="Hà Nam">Hà Nam</option>
+                                <option value="Hà Tĩnh">Hà Tĩnh</option>
+                                <option value="Hải Dương">Hải Dương</option>
+                                <option value="Hải Phòng">Hải Phòng</option>
+                                <option value="Hậu Giang">Hậu Giang</option>
+                                <option value="Hòa Bình">Hòa Bình</option>
+                                <option value="Hưng Yên">Hưng Yên</option>
+                                <option value="Kiên Giang">Kiên Giang</option>
+                                <option value="Kon Tum">Kon Tum</option>
+                                <option value="Khánh Hòa">Khánh Hòa</option>
+                                <option value="Lai Châu">Lai Châu</option>
+                                <option value="Lạng Sơn">Lạng Sơn</option>
+                                <option value="Lào Cai">Lào Cai</option>
+                                <option value="Lâm Đồng">Lâm Đồng</option>
+                                <option value="Long An">Long An</option>
+                                <option value="Nam Định">Nam Định</option>
+                                <option value="Ninh Bình">Ninh Bình</option>
+                                <option value="Ninh Thuận">Ninh Thuận</option>
+                                <option value="Nghệ An">Nghệ An</option>
+                                <option value="Phú Thọ">Phú Thọ</option>
+                                <option value="Phú Yên">Phú Yên</option>
+                                <option value="Quảng Bình">Quảng Bình</option>
+                                <option value="Quảng Nam">Quảng Nam</option>
+                                <option value="Quảng Ninh">Quảng Ninh</option>
+                                <option value="Quảng Ngãi">Quảng Ngãi</option>
+                                <option value="Quảng Trị">Quảng Trị</option>
+                                <option value="Sóc Trăng">Sóc Trăng</option>
+                                <option value="Sơn La">Sơn La</option>
+                                <option value="Tây Ninh">Tây Ninh</option>
+                                <option value="Tiền Giang">Tiền Giang</option>
+                                <option value="Tuyên Quang">Tuyên Quang</option>
+                                <option value="Thái Bình">Thái Bình</option>
+                                <option value="Thái Nguyên">Thái Nguyên</option>
+                                <option value="Thanh Hóa">Thanh Hóa</option>
+                                <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+                                <option value="Trà Vinh">Trà Vinh</option>
+                                <option value="Vĩnh Long">Vĩnh Long</option>
+                                <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                                <option value="Yên Bái">Yên Bái</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top_td">
+                        <div style="display: inline" class="info_address">
+                            <select name="City" id="City" class="cityowner">
+                                <option value="">Quận/Huyện</option>
+                                <option value="Quận 1">Quận 1</option>
+                                <option value="Quận 2">Quận 2</option>
+                                <option value="Quận 3">Quận 3</option>
+                                <option value="Quận 4">Quận 4</option>
+                                <option value="Quận 5">Quận 5</option>
+                                <option value="Quận 6">Quận 6</option>
+                                <option value="Quận 7">Quận 7</option>
+                                <option value="Quận 8">Quận 8</option>
+                                <option value="Quận 9">Quận 9</option>
+                                <option value="Quận 10">Quận 10</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="top_td">
+                        <textarea name="note" id="note" type="text" class="field__input" placeholder="Ghi chú đơn hàng"
+                                  data-bind="note"></textarea>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="thanhtoan-2">
+        <h2>Vận chuyển</h2>
+        <div class="alert alert--info">Vui lòng nhập thông tin giao hàng</div>
+        <h2>Thanh toán</h2>
+        <div class="dv-gr-vanchuyen dv-gr-thanhtoan">
+            <label>
+                <div class="radio__input"><input class="input_style_1 input_style_radio cls_check_show_checkbox"
+                                                 data=".cls_ndtt_26" datagr=".cls_ndtt" type="radio" value="77"
+                                                 name="is_thanhtoan" checked="checked"></div>
+                <span class="radio__label__primary">Thanh toán khi giao hàng (COD)</span>
+                <div class="clr"></div>
+            </label>
+            <label>
+                <div class="radio__input"><input class="input_style_1 input_style_radio cls_check_show_checkbox"
+                                                 data=".cls_ndtt_27" datagr=".cls_ndtt" type="radio" value="78"
+                                                 name="is_thanhtoan"></div>
+                <span class="radio__label__primary">Thanh toán chuyển khoản</span>
+                <div class="clr"></div>
+            </label>
+            <div class="clr"></div>
+            <div class="blank-slate">
+                <div class="cls_ndtt cls_ndtt_26" style="display: block;"><p>Bạn chỉ phải thanh toán khi nhận được
+                    hàng</p>
+                    <div class="clr"></div>
+                </div>
+                <div class="cls_ndtt cls_ndtt_27" style="display: none;"><p>Ngân Hàng TMCP Ngoại Thuong Việt Nam
+                    (VietComBank)</p>
+                    <p>- Tên tài khoản:&nbsp;Công Ty TNHH Công Nghệ Long Thịnh</p>
+                    <div class="clr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar__header">
+            <h2 class="sidebar__title">
+                Đơn hàng (1 sản phẩm)
+            </h2>
+        </div>
+        <div class="sidebar__content">
+            <div id="order-summary" class="order-summary order-summary--is-collapsed">
+                <div class="order-summary__sections">
+                    <div class="discount-code" id="discountCode">
+                        <div class="edit_checkout animate-floating-labels">
+                            <div class="field__input-btn-wrapper">
+                                <div class="field__input-wrapper">
+                                    <input name="reductionCode" id="reductionCode" type="text" class="field__input"
+                                           placeholder="Nhập mã giảm giá" autocomplete="off">
+                                </div>
+                                <button class="field__input-btn btn spinner btn--disabled" disabled=""><span
+                                        class="spinner-label">Áp dụng</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="order-summary__section order-summary__section--total-lines order-summary--collapse-element"
+                             data-define="{subTotalPriceText: '148.000₫'}" data-tg-refresh="refreshOrderTotalPrice"
+                             id="orderSummary">
+                            <table class="total-line-table">
+                                <tbody class="total-line-table__tbody">
+                                <tr class="total-line total-line--subtotal">
+                                    <th class="total-line__name">
+                                        Tạm tính
+                                    </th>
+                                    <td class="total-line__price">57.000 <sup>₫</sup></td>
+                                </tr>
+
+                                <tr class="total-line total-line--shipping-fee">
+                                    <th class="total-line__name">
+                                        Phí vận chuyển
+                                    </th>
+                                    <td class="total-line__price" data-bind="getTextShippingPrice()">0 ₫</td>
+                                </tr>
+
+                                </tbody>
+                                <tfoot class="total-line-table__footer">
+                                <tr class="total-line payment-due">
+                                    <th class="total-line__name">
+                                            <span class="payment-due__label-total">
+                                                Tổng cộng
+                                            </span>
+                                    </th>
+                                    <td class="total-line__price">
+                                        <span class="payment-due__price"
+                                              data-bind="getTextTotalPrice()">57.000 <sup>₫</sup></span>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="order-summary__nav method-button-cart">
+                            <a href="index.html?page=giohang" class="previous-link">
+                                <span class="previous-link__content"><i class="fa fa-chevron-left"></i> Quay về giỏ hàng</span>
+                            </a>
+                            <button type="button" title="Thanh toán" class="button btn-proceed-checkout btn-checkout"
+                                    onclick="window.location = '';"><span><span>Đặt hàng</span></span></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+</body>
+<script src="../js/headerfooter.js"></script>
+</html>
