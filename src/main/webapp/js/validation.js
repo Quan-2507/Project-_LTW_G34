@@ -17,13 +17,8 @@ function ValidateLoginForm() {
         ShowErrorMessage('LoginPassword',PasswordValidationMessage);
         return false;
     }
-    showHomeFile();
-    return false;
+    return true;
 }
-function showHomeFile(){
-    window.location.href = "../html/home.html";
-}
-
 function ValidateRegistrationForm(){
 
     RemoveAllErrorMessage();
@@ -39,6 +34,9 @@ function ValidateRegistrationForm(){
 
     if(RegiName == ""){
         ShowErrorMessage('RegiName',"Hãy điền họ và tên.");
+        return false;
+    }else if(RegiName.length < 4 || RegiName.length > 20){
+        ShowErrorMessage('RegiName',"Tên phải trên 3 ký tự và dưới 20 ký tự.");
         return false;
     }
 
@@ -69,7 +67,6 @@ function ValidateRegistrationForm(){
     return true;
 }
 
-
 function ValidateForgotPasswordForm(){
 
     RemoveAllErrorMessage();
@@ -84,8 +81,6 @@ function ValidateForgotPasswordForm(){
         return false;
     }
 }
-
-
 
 function ValidateResetPasswordForm(){
 
@@ -116,6 +111,7 @@ function ValidateResetPasswordForm(){
 
     return true;
 }
+
 
 function RemoveAllErrorMessage(){
 
@@ -152,7 +148,7 @@ function isValidEmail(email){
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if(email == ""){
-        return "Hãy điền Email";
+        return "Hãy nhập Email";
     }
 
     if(emailRegex.test(email) == false){
@@ -168,10 +164,10 @@ function isValidPassword(password) {
     const letterNumberRegexSpecialChar = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
 
     if(password == ""){
-        return "Hãy điền mật khẩu."
+        return "Hãy nhập mật khẩu."
     }
 
-    if (password.length < minLength || password.length > maxLength) {
+    if (password.length < minLength ) {
         return "Mật khẩu phải trên 8 ký tự.";
     }
 

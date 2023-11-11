@@ -19,7 +19,7 @@
     height: 100vh;
     width: 100%;
     float: left;
-    background: #f8f8f8;
+    background: #f6f5f5;
 }
 #LoginAndRegistrationForm{
     width: 350px;
@@ -29,7 +29,7 @@
     box-sizing: border-box;
     padding: 15px;
     transform: scale(1.2);
-    box-shadow: 0px 0px 6px 0px #cdcdcd;
+    box-shadow: 0px 0px 6px 0px #dedcdc;
 }
 
 #formTitle{
@@ -54,17 +54,17 @@
     cursor: pointer;
     position: relative;
     background: transparent;
-    border: 1px solid #747474;
+    border: 1px solid #947c7c;
     transition: 0.4s;
 }
 #formSwitchBtn .active{
     color: #fff;
-    background: #747474;
+    background: #947c7c;
 }
 .input-text{
     width: 100%;
     height: 38px;
-    border: 1px solid #747474;
+    border: 1px solid #947c7c;
     box-sizing: border-box;
     padding: 5px;
     border-radius: 5px;
@@ -83,12 +83,12 @@
 }
 
 .forgot-pass-remember-me #ForgotPassword{
-    color: #002b27;
+    color: #000000;
     font-weight: bold;
     transition: 0.4s;
 }
 .forgot-pass-remember-me #ForgotPassword:hover{
-    color: #008d7f;
+    color: #947c7c;
 }
 
 .forgot-pass-remember-me input{
@@ -109,31 +109,31 @@
     letter-spacing: 1px;
     font-weight: bolder;
     transition: 0.4s;
-    background-color: #747474;
+    background-color: #947c7c;
     color: #fff;
 }
 .Submit-Btn:hover{
-    background-color: #444444;
-    color: #fff;
+    background-color: #f0deb8;
+    color: #000000;
 
 }
 .dont-have-account,
 .already-have-account{
     letter-spacing: 0.3px;
     font-size: 14px;
-    color: #747474;
+    color: #947c7c;
 }
 .dont-have-account a,
 .already-have-account a{
     font-style: italic !important;
     text-decoration: none;
-    color: #002b27;
+    color: #000000;
     font-weight: bold;
     transition: 0.4s;
 }
 .dont-have-account a:hover,
 .already-have-account a:hover{
-    color: #008d7f;
+    color: #947c7c;
 }
 
 #RegistrationFrom,
@@ -141,12 +141,11 @@
     display: none;
 }
 .error-input{
-    border: 1px solid #ff5b5b;
+    border: 1px solid #ee4f4f;
 }
 .error-message{
-    font-size: 11px;
-    font-weight: bold;
-    color: #ff5b5b;
+    font-size: 12px;
+    color: #ee4f4f;
     text-align: left;
     margin: 0px;
     padding: 0px;
