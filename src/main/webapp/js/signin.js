@@ -1,6 +1,6 @@
 function ShowLoginForm(){
 
-    SetTitle("Login");
+    SetTitle("Đăng nhập");
 
     ShowHideForm("LoginFrom","Show");
     ShowHideForm("RegistrationFrom","Hide");
@@ -14,7 +14,7 @@ function ShowLoginForm(){
 
 function ShowRegistrationForm(){
     debugger;
-    SetTitle("Registration");
+    SetTitle("Đăng ký");
 
     ShowHideForm("RegistrationFrom","Show");
     ShowHideForm("LoginFrom","Hide");
@@ -28,7 +28,7 @@ function ShowRegistrationForm(){
 
 function ShowForgotPasswordForm() {
 
-    SetTitle("Forgot Password");
+    SetTitle("Quên mật khẩu");
 
     ShowHideForm("RegistrationFrom","Hide");
     ShowHideForm("LoginFrom","Hide");
@@ -73,5 +73,3 @@ function ShowHideFromSwitchBtn(ShowOrHide) {
         formSwitchBtn.style.display = 'none';
     }
 }
-
-// end

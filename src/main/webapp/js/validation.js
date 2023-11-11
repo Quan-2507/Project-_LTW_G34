@@ -17,8 +17,11 @@ function ValidateLoginForm() {
         ShowErrorMessage('LoginPassword',PasswordValidationMessage);
         return false;
     }
-
-    return true;
+    showHomeFile();
+    return false;
+}
+function showHomeFile(){
+    window.location.href = "../html/home.html";
 }
 
 function ValidateRegistrationForm(){
@@ -35,10 +38,7 @@ function ValidateRegistrationForm(){
     var	emailValidationMessage;
 
     if(RegiName == ""){
-        ShowErrorMessage('RegiName',"Please fill the filed.");
-        return false;
-    }else if(RegiName.length < 3 || RegiName.length > 20){
-        ShowErrorMessage('RegiName',"Name should be minimum 3 and maximum 20 characters long.");
+        ShowErrorMessage('RegiName',"Hãy điền họ và tên.");
         return false;
     }
 
@@ -62,7 +62,7 @@ function ValidateRegistrationForm(){
     }
 
     if(RegiPassword != RegiConfirmPassword){
-        ShowErrorMessage('RegiConfirmPassword',"Password not match.");
+        ShowErrorMessage('RegiConfirmPassword',"Mật khẩu không khớp.");
         return false;
     }
 
@@ -110,7 +110,7 @@ function ValidateResetPasswordForm(){
     }
 
     if(NewPassword != ConfirmNewPassword){
-        ShowErrorMessage('ConfirmNewPassword',"Password not match.");
+        ShowErrorMessage('ConfirmNewPassword',"Mật khẩu không khớp.");
         return false;
     }
 
@@ -152,11 +152,11 @@ function isValidEmail(email){
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if(email == ""){
-        return "Please fill the field.";
+        return "Hãy điền Email";
     }
 
     if(emailRegex.test(email) == false){
-        return "This is not a valid email.";
+        return "Địa chỉ email không hợp lệ.";
     }
 
     return "valid";
@@ -165,19 +165,18 @@ function isValidEmail(email){
 function isValidPassword(password) {
 
     const minLength = 8;
-    const maxLength = 32;
     const letterNumberRegexSpecialChar = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
 
     if(password == ""){
-        return "Please fill the field."
+        return "Hãy điền mật khẩu."
     }
 
     if (password.length < minLength || password.length > maxLength) {
-        return "Password length should be minimum 8 & maximum 32 characters.";
+        return "Mật khẩu phải trên 8 ký tự.";
     }
 
     if (!letterNumberRegexSpecialChar.test(password)) {
-        return "Password should contain alphabetic, numeric and special characters.";
+        return "Mật khẩu phải bao gồm chữ, số và ký tự.";
     }
     return "valid";
 }

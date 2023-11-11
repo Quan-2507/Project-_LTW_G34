@@ -9,66 +9,66 @@
 <body>
 <div class="container">
     <div id="LoginAndRegistrationForm">
-        <h1 id="formTitle">Login</h1>
+        <h1 id="formTitle">Đăng nhập</h1>
         <div id="formSwitchBtn">
-            <button onclick="ShowLoginForm()"  id="ShowLoginBtn" class="active">Login</button>
-            <button onclick="ShowRegistrationForm()"  id="ShowRegistrationBtn">Registration</button>
+            <button onclick="ShowLoginForm()"  id="ShowLoginBtn" class="active">Đăng nhập</button>
+            <button onclick="ShowRegistrationForm()"  id="ShowRegistrationBtn">Đăng ký</button>
         </div>
         <div id="LoginFrom">
             <form action="#">
                 <div class="center">
-                    <input id="LoginEmail" class="input-text" type="text" placeholder="Email Address">
-                    <input id="LoginPassword" class="mt-10 input-text" type="password" placeholder="Password">
+                    <input id="LoginEmail" class="input-text" type="text" placeholder="Email*">
+                    <input id="LoginPassword" class="mt-10 input-text" type="password" placeholder="Nhập mật khẩu*">
                 </div>
 
                 <div class="forgot-pass-remember-me mt-10">
                     <div class="forgot-pass">
-                        <a id="ForgotPassword" href="JavaScript:void(0);" onclick="ShowForgotPasswordForm()" >Forgot Password?</a>
+                        <a id="ForgotPassword" href="JavaScript:void(0);" onclick="ShowForgotPasswordForm()" >Quên mật khẩu?</a>
                     </div>
                     <div class="remember-me">
                         <input id="rememberMe" type="checkbox">
-                        <label for="rememberMe">Remember Me</label>
+                        <label for="rememberMe">Nhớ mật khẩu</label>
                     </div>
                 </div>
 
                 <div class="center mt-20">
-                    <input onclick="return ValidateLoginForm();"  class="Submit-Btn" type="submit" value="Login" id="LoginBtn">
+                    <input onclick="return ValidateLoginForm()"  class="Submit-Btn" type="submit" value="Đăng nhập" id="LoginBtn">
                 </div>
             </form>
             <p class="center mt-20 dont-have-account">
-                Don't have an account?
-                <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Registration now</a>
+                Bạn chưa có tài khoản?
+                <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Đăng ký ngay</a>
             </p>
         </div>
         <div id="RegistrationFrom">
             <form action="#">
                 <div class="center">
-                    <input id="RegiName" class="input-text" type="text" placeholder="Full Name">
-                    <input id="RegiEmailAddres" class="input-text mt-10" type="email" placeholder="Email Address">
-                    <input id="RegiPassword" class="mt-10 input-text" type="password" placeholder="Password">
-                    <input id="RegiConfirmPassword" class="mt-10 input-text" type="password" placeholder="Confirm Password">
+                    <input id="RegiName" class="input-text" type="text" placeholder="Họ và tên">
+                    <input id="RegiEmailAddres" class="input-text mt-10" type="email" placeholder="Nhập địa chỉ Email">
+                    <input id="RegiPassword" class="mt-10 input-text" type="password" placeholder="Nhập mật khẩu">
+                    <input id="RegiConfirmPassword" class="mt-10 input-text" type="password" placeholder="Nhập lại mật khẩu*">
                 </div>
                 <div class="center mt-20">
-                    <input onclick="return ValidateRegistrationForm();" class="Submit-Btn" type="submit" value="Registration" id="RegistrationitBtn">
+                    <input onclick="return ValidateRegistrationForm();" class="Submit-Btn" type="submit" value="Đăng ký" id="RegistrationitBtn">
                 </div>
             </form>
             <p class="center mt-20 already-have-account">
-                Already have an account?
-                <a href="#" onclick="ShowLoginForm()">Login now</a>
+                Bạn đã tài khoản?
+                <a href="#" onclick="ShowLoginForm()">Đăng nhập ngay</a>
             </p>
         </div>
         <div id="ForgotPasswordForm">
             <form action="">
                 <div class="center mt-20">
-                    <input class="input-text " type="email" id="forgotPassEmail" placeholder="Email Address">
+                    <input class="input-text " type="email" id="forgotPassEmail" placeholder="Địa chỉ Email">
                 </div>
                 <div class="center mt-20">
-                    <input onclick="return ValidateForgotPasswordForm();" class="Submit-Btn" type="submit" value="Reset Password" id="PasswordResetBtn" >
+                    <input onclick="return ValidateForgotPasswordForm();" class="Submit-Btn" type="submit" value="Tiếp tục" id="PasswordResetBtn" >
                 </div>
             </form>
             <p class="center mt-20 already-have-account">
-                Back to the
-                <a href="JavaScript:void(0);" onclick="ShowLoginForm()">Login page</a> | <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Registration page</a>
+                Quay lại
+                <a href="JavaScript:void(0);" onclick="ShowLoginForm()">Trang đăng nhập</a> | <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Trang đăng ký</a>
             </p>
         </div>
     </div>
