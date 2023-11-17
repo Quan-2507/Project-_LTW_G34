@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header "class="dv-header">
+    <div class="dv-header-center">
+        <div class="pagewrap flex">
+            <div class="logo_top">
+                <a href="trangchu.html"><img src="../images/logo.png" alt="logo"/></a>
+            </div>
+            <div class="right-top">
+                <div class="dangnhap_top">
+                    <a href="dangnhap.html">
+                        <i class="fa fa-user-o" ></i> Tài khoản
+                    </a>
+                </div>
+                <div class="wishlist-box">
+                    <a href="#">
+                        <i class="fa fa-heart-o"></i>
+                        <h3>Yêu thích</h3>
+                    </a>
+                </div>
+                <div class="giohang_top">
+                    <a href="giohang.html">
+                        <h3>Giỏ hàng<span>1 sản phẩm - 100.000đ</span></h3>
+                        <i class="fa fa-shopping-bag"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dv-header-bt">
+        <div class="pagewrap flex">
+            <div class="box_menu">
+                <!--  -->
+                <?html ob_start(); ?>
+                <!--  -->
+                <ul class="menu">
+                    <li><a href="trangchu.html" title="Trang chủ">Trang chủ</a></li>
+                    <li><a href="gioithieu.html" title="Giới thiệu">Giới thiệu</a></li>
+                    <li><a href="trasua.html" title="Menu trà sữa">Menu trà sữa <i
+                            class="fa fa-angle-down"></i></a>
+                        <ul class="menu_child">
+                            <li><span><a href="trasua.html">Trà truyền thống</a></span>
+                                <ul>
+                                    <li><a href="trasua.html" title="">Hồng trà</a></li>
+                                    <li><a href="trasua.html" title="">Trà ô long</a></li>
+                                    <li><a href="trasua.html" title="">Trà hoa nhài</a></li>
+                                </ul>
+                            </li>
+                            <li><span><a href="trasua.html">Trà sữa trái cây</a></span>
+                                <ul>
+                                    <li><a href="trasua.html" title="">Trà xanh vị cam</a></li>
+                                    <li><a href="trasua.html" title="">Trà ô mai đào</a></li>
+                                    <li><a href="trasua.html" title="">Trà xanh vị ổi</a></li>
+                                </ul>
+                            </li>
+                            <li><span><a href="trasua.html">Trà sữa Đài Loan</a></span>
+                                <ul>
+                                    <li><a href="trasua.html" title="">Hồng trà sữa</a></li>
+                                    <li><a href="trasua.html" title="">Trà sữa mật ong</a></li>
+                                    <li><a href="trasua.html" title="">Trà sữa hokaido</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="li_child"><a href="dichvu.html" title="Dịch vụ">Dịch vụ <i
+                            class="fa fa-angle-down"></i></a>
+                        <ul>
+                            <li><a href="dichvu.html_view" title="">Hướng dẫn mua hàng</a></li>
+                            <li><a href="dichvu.html_view" title="">Bảo mật thông tin</a></li>
+
+                            <li><a href="dichvu.html_view" title="">Miễn phí giao hàng</a></li>
+                            <li><a href="dichvu.html_view" title="">Hướng dẫn thanh toán</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="tintuc.html" title="Tin tức">Tin tức</a></li>
+                    <li class="li_child"><a href="#" title="Thư viện">Thư viện <i class="fa fa-angle-down"></i></a>
+                        <ul>
+                            <li><a href="hinhanh.html" title="Thư viện hình ảnh">Thư viện hình ảnh</a></li>
+                            <li><a href="video.html" title="Thư viện video">Thư viện video</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="lienhe.html" title="Liên hệ">Liên hệ</a></li>
+                </ul>
+                <!--  -->
+                <?html
+  $menu_full = ob_get_contents();
+  ob_end_clean();
+  include "../../lib/menu.html";
+?>
+                <!--  -->
+            </div>
+            <div class="timkiem_top">
+                <form action="" method="post">
+                    <div class="search">
+                        <a href="#" onclick="" style="cursor:pointer">Nhập từ khóa tìm kiếm</a>
+                        <input class="input_search" type="text" id="search" placeholder="Nhập từ khóa tìm kiếm">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        // this will get the full URL at the address bar
+        var url = window.location.href;
+
+        // passes on every "a" tag
+        $(".menu a").each(function () {
+            // checks if its the same on the address bar
+            if (url == (this.href)) {
+                $(this).closest("li").addClass("active");
+            }
+        });
+    });
+</script>
+</html>

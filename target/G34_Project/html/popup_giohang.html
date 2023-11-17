@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"></div>
+<div class="popup_giohang">
+  <h3>Bạn đã thêm <a>[ Okinawa Coffee Milk Tea ]</a> vào giỏ hàng</h3>
+  <p class="heading-counter">
+    Giỏ hàng của bạn: <b class="count_cart">(Đang có 1 sản phẩm)</b>
+  </p>
+  <table class="cart_summary" width="100%" border="0" cellspacing="1" cellpadding="5">
+    <tbody>
+    <tr>
+      <th class="c-th-sp">Sản phẩm</th>
+      <th class="c-th-gia">Giá</th>
+      <th class="c-th-sluong">Số lượng</th>
+      <th class="c-th-ttien">Thành tiền</th>
+    </tr>
+    <tr class="tr_cart_iscart_1202">
+      <td class="c-th-sp" title="Sản phẩm">
+        <a href="index.html?page=sanpham_view" class="sp">
+          <img src="../images/sanpham/sp1.png" alt="">
+        </a>
+        <div class="dv-anh">
+          <a href="index.html?page=sanpham_view">Okinawa Coffee Milk Tea</a>
+          <a class="del cur" title="Xóa"><i class="fa fa-trash" ></i> Xóa</a>
+          <a class="del cur" title="Sửa"><i class="fa fa-pencil" ></i> Sửa</a>
+        </div>
+      </td>
+      <td class="c-th-gia" title="Giá"><b>57.000 <sup>₫</sup></b>
+      </td>
+      <td class="qty c-th-sluong">
+        <div class="so-luong-mua">
+          <span class="number-down">–</span>
+          <input type="text" id="number" value="1">
+          <span class="number-up">+</span>
+        </div>
+      </td>
+      <td class="c-th-ttien" title="Thành tiền"><b>57.000 <sup>₫</sup></b>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <div class="clr"></div>
+  <div class="button-cart">
+    <a class="close" onclick="close_popup()"><i class="fa fa-angle-left" ></i> Tiếp tục mua hàng</a>
+    <a href="index.html?page=tt_khachhang" class="btn-checkout">Tiến hành thanh toán</a>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+<div id="footer"></div>
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    $('.number-up').click(function () {
+      var val=parseInt($('#number').val());
+      $('#number').val(val+1);
+    });
+    $('.number-down').click(function () {
+      var val=parseInt($('#number').val());
+      if(val>1){
+        $('#number').val(val-1);
+      }
+
+    });
+  });
+</script>
+<script src="../js/headerfooter.js"></script>
+</html>
