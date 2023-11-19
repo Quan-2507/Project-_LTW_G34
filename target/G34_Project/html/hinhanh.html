@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"></div>
+<div class="banner_detail" style="background-image: url('../images/banner/original-detail.jpg');">
+  <div class="link_page">
+    <div class="pagewrap">
+      <h2>Thư viện hình ảnh</h2>
+      <ul>
+        <li><a href="index.html"><i class="fa fa-home"></i>trang chủ</a> | <a href="#">Thư viện</a> | <span class="active">Thư viện hình ảnh</span></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+<div class="page_conten_page pagewrap">
+  <div class="tin_left">
+    <div class="tt_page_top tt_video">
+      <?html for ($i=0; $i < 8; $i++) {  ?>
+      <div class="new_id_bs">
+        <li>
+          <a href="hinhanh_view.html"><img src="../images/hinhanh/2.jpg">
+            <i class="fa fa-picture-o" ></i>
+          </a>
+        </li>
+        <ul>
+          <h3><a href="hinhanh_view.html">Album hình ảnh đẹp</a></h3>
+          <p>MilkStores hiện là chuỗi cửa hàng trà sữa lớn nhất tại Việt Nam</p>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <?html } ?>
+      <?html for ($i=0; $i < 4; $i++) {  ?>
+      <div class="new_id_bs">
+        <li>
+          <a href="hinhanh_view.html"><img src="../images/hinhanh/1.jpg">
+            <i class="fa fa-picture-o" ></i>
+          </a>
+        </li>
+        <ul>
+          <h3><a href="hinhanh_view.html">Album hình ảnh đẹp</a></h3>
+          <p>MilkStores hiện là chuỗi cửa hàng trà sữa lớn nhất tại Việt Nam</p>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <?html } ?>
+      <div class="clr"></div>
+    </div>
+    <div class="nums">
+      <ul>
+        <li><a href="#" class="stay">Prev</a></li>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#" class="stay">Next</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <?html include"tin_right.html";?>
+  <div class="clr"></div>
+</div>
+</body>
+<div id="footer"></div>
+<script src="../js/headerfooter.js"></script>
+</html>
