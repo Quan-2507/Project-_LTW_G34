@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoBa Tea</title>
+    <link rel="icon" href="../img/logo/snapedit_1699446793064.png">
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<section id="header">
+    <a href="home.html" style="max-width: 100px"><img src="../img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="home.html">TRANG CHỦ</a></li>
+            <li><a href="milktea.html">THỨC UỐNG</a></li>
+            <li><a href="blog.html">KHUYẾN MÃI</a></li>
+            <li><a href="about.html">VỀ CHÚNG TÔI</a></li>
+            <li><a href="contact.html">LIÊN HỆ</a></li>
+            <li class="lg-bag">
+                <form class="search">
+                    <input type="text" placeholder="Search" class="search__input">
+                    <button type="button" class="search__btn">
+                        <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </button>
+                </form>
+            </li>
+            <li class="lg-bag"><a class="active" href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li class="lg-bag"><a href="signup-signin.html"><i class="fa-regular fa-user"></i></a></li>
+            <a href="#" id="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </ul>
+    </div>
+    <div id="mobile">
+        <form class="search">
+            <input type="text" placeholder="Search" class="search__input">
+            <button type="button" class="search__btn">
+                <a><i class="fa-solid fa-magnifying-glass"></i></a>
+            </button>
+        </form>
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <i id="bar" class="fa fa-outdent"></i>
+    </div>
+</section>
+
+<section id="page-banner" class="cart-header">
+
+<!--    <h2>#ThankYou</h2>-->
+
+<!--    <p>Thank you for choosing us! </p>-->
+
+</section>
+
+<section id="page-header">
+    <div class="container">
+        <ul class="breadcrumb" aria-label="breadcrumbs">
+            <li><a href="home.html">Trang chủ</a></li>
+            <li class="active"><a href="#">Giỏ hàng</a></li>
+        </ul>
+        <h1>Giỏ hàng</h1>
+    </div>
+</section>
+
+<section class="section-p1 cart-table">
+    <table width="100%">
+        <thead>
+        <tr>
+            <td>XOÁ</td>
+            <td>HÌNH ẢNH</td>
+            <td>SẢN PHẨM</td>
+            <td>SIZE</td>
+            <td>GIÁ</td>
+            <td>SỐ LƯỢNG</td>
+            <td>TỔNG CỘNG</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="#"><i class="fas fa-times-circle"></i></a></td>
+            <td><img src="../img/products/trà%20sữa/matcha.jpeg" alt=""></td>
+            <td>Trà sữa matcha</td>
+            <td><select>
+                <option>M</option>
+                <option>L</option>
+            </select></td>
+            <td>25.000đ</td>
+            <td><input type="number" value="1"></td>
+            <td>25.000đ</td>
+        </tr>
+        <tr>
+            <td><a href="#"><i class="fas fa-times-circle"></i></a></td>
+            <td><img src="../img/products/trà%20sữa/matcha.jpeg" alt=""></td>
+            <td>Trà sữa matcha</td>
+            <td><select>
+                <option>M</option>
+                <option>L</option>
+            </select></td>
+            <td>25.000đ</td>
+            <td><input type="number" value="1"></td>
+            <td>25.000đ</td>
+        </tr>
+        <tr>
+            <td><a href="#"><i class="fas fa-times-circle"></i></a></td>
+            <td><img src="../img/products/trà%20sữa/matcha.jpeg" alt=""></td>
+            <td>Trà sữa matcha</td>
+            <td><select>
+                <option>M</option>
+                <option>L</option>
+            </select></td>
+            <td>25.000đ</td>
+            <td><input type="number" value="1"></td>
+            <td>25.000đ</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="cart-add" class="section-p1">
+    <div id="coupon">
+        <h3>Áp Dụng Mã Giảm Giá</h3>
+        <div>
+            <input type="text" placeholder="Enter Your Coupon">
+            <button class="normal">Áp dụng</button>
+        </div>
+    </div>
+
+    <div id="subtotal">
+        <h3>Tổng cộng giỏ hàng</h3>
+        <table>
+            <tr>
+                <td>Tổng cộng giỏ hàng</td>
+                <td>75.000đ</td>
+            </tr>
+            <tr>
+                <td>Phí vận chuyển</td>
+                <td>Miễn phí</td>
+            </tr>
+            <tr>
+                <td><strong>Tổng cộng</strong></td>
+                <td><strong>75.000đ</strong></td>
+            </tr>
+        </table>
+        <button class="normal" onclick="window.location.href='checkout.html';">Checkout</button>
+    </div>
+</section>
+
+<!--<section>-->
+<!--     <main class="container">-->
+<!--         <h1 class="heading">-->
+<!--            <ion-icon name="cart-outline"></ion-icon> Shopping Cart-->
+<!--         </h1>-->
+
+<!--         <div class="item-flex">-->
+<!--             <section class="checkout">-->
+<!--                 <h2 class="section-heading">Payment Details</h2>-->
+<!--                 <div class="payment-form">-->
+<!--                     <div class="payment-method">-->
+<!--                         <button class="method selected">-->
+<!--                             <ion-icon name="card"></ion-icon>-->
+
+<!--                             <span>Credit Card</span>-->
+
+<!--                             <ion-icon name="checkmark-circle" class="checkmark fill"></ion-icon>-->
+<!--                         </button>-->
+
+<!--                         <button class="method">-->
+<!--                             <ion-icon name="logo-paypal"></ion-icon>-->
+
+<!--                             <span>PayPal</span>-->
+
+<!--                             <ion-icon name="checkmark-circle-outline" class="checkmark fill"></ion-icon>-->
+<!--                         </button>-->
+<!--                     </div>-->
+
+<!--                     <form action="#">-->
+<!--                         <div class="cardholder-name">-->
+<!--                             <label for="cardholder-name" class="label-default">Cardholder name</label>-->
+<!--                             <input type="text" name="cardholder-name" id="cardholder-name" class="input-default">-->
+<!--                         </div>-->
+
+<!--                         <div class="card-number">-->
+<!--                             <label for="card-number" class="label-default">Card numer</label>-->
+<!--                             <input type="number" name="card-number" id="card-number" class="input-default">-->
+<!--                         </div>-->
+
+<!--                         <div class="input-flex">-->
+<!--                            <div class="expire-date">-->
+<!--                                <label for="expire-date" class="label-default">Expiration date</label>-->
+<!--                                <div class="input-flex">-->
+<!--                                    <input type="number" name="day" id="expire-date"-->
+<!--                                           placeholder="31" min="1" max="31"  class="input-default">-->
+
+<!--                                    <input type="number" name="month" id="expire-date"-->
+<!--                                           placeholder="12" min="1" max="12"  class="input-default">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                             <div class="cvv">-->
+<!--                                 <label for="cvv" class="label-default">CVV</label>-->
+<!--                                 <input type="number" name="cvv" id="cvv" class="input-default">-->
+<!--                             </div>-->
+<!--                         </div>-->
+<!--                     </form>-->
+
+<!--                 </div>-->
+
+<!--                 <button class="btn btn-primary">-->
+<!--                     <b>Pay</b>$<span id="payAmount">2.15</span>-->
+<!--                 </button>-->
+<!--             </section>-->
+
+<!--             <section class="cart"></section>-->
+<!--         </div>-->
+<!--     </main>-->
+<!--</section>-->
+
+<footer class="section-p1">
+    <div class="col">
+        <h4>Liên hệ</h4>
+        <p><strong>Địa chỉ: </strong> K3/14C Đường Nguyễn Tri Phương, Thành phố Biên Hoà, Tỉnh Đồng Nai</p>
+        <p><strong>Hotline: </strong> +01 2222 365 /(+91) 01 2345 6789</p>
+        <p><strong>Thời gian hoạt động: </strong> 7:00 - 22:00, Thứ 2 - Thứ 7 / 9:00 - 20:00, Chủ nhật</p>
+        <div class="follow">
+            <h4>Theo dõi chúng tôi</h4>
+            <div class="icon">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4>Thông tin</h4>
+        <a href="about.html">Về chúng tôi</a>
+        <a href="#">Thông tin giao hàng</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản & Điều kiện</a>
+        <a href="contact.html">Thông tin liên hệ</a>
+    </div>
+
+    <div class="col">
+        <h4>Tài khoản của bạn</h4>
+        <a href="signup-signin.html">Đăng nhập</a>
+        <a href="cart.html">Xem giỏ hàng</a>
+        <a href="#">Sản phầm yêu thích</a>
+        <a href="#">Kiểm tra đơn hàng</a>
+        <a href="contact.html">Trợ giúp</a>
+    </div>
+
+
+    <div class="col install">
+        <h4>Cài đặt ứng dụng</h4>
+        <p>Trên App Store hoặc Google Play</p>
+        <div class="row">
+            <img src="../img/pay/app.jpg" alt="">
+            <img src="../img/pay/play.jpg" alt="">
+        </div>
+        <p>Cổng thanh toán an toàn</p>
+        <img src="../img/pay/pay.png" alt="">
+    </div>
+
+    <div class="copyright">
+        <p>copyright © 2023, BoBa Tea</p>
+    </div>
+</footer>
+
+<a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
