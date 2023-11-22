@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milktea Store</title>
+    <link rel="icon" href="../img/logo/snapedit_1699446793064.png">
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<style>
+
+    .nav-tabs {
+        max-width: 720px;
+        display: flex;
+        list-style: none;
+        margin: 0px auto;
+        padding-top: 20px;
+        border-bottom: 3px solid #ddd;
+    }
+
+    .nav-tabs li {
+        margin-right: 10px;
+    }
+
+    .nav-tabs li a {
+        color: black;
+        display: block;
+        padding: 6px 30px;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .nav-tabs li a::after {
+        content: "";
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        bottom: -3px;
+        background: transparent;
+    }
+
+    .nav-tabs li.active a::after, .nav-tabs li:hover a::after {
+        background: #088178;
+
+    }
+</style>
+
+<section id="header">
+    <a href="home.html" style="max-width: 100px"><img src="../img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="home.html">TRANG CHỦ</a></li>
+            <li><a class="active" href="trasua.html">THỨC UỐNG</a></li>
+            <li><a href="blog.html">KHUYẾN MÃI</a></li>
+            <li><a href="about.html">VỀ CHÚNG TÔI</a></li>
+            <li><a href="contact.html">LIÊN HỆ</a></li>
+            <li class="lg-bag">
+                <form class="search">
+                    <input type="text" placeholder="Search" class="search__input">
+                    <button type="button" class="search__btn">
+                        <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </button>
+                </form>
+            </li>
+            <li class="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li class="lg-bag"><a href="account.html"><i class="fa-regular fa-user"></i></a></li>
+            <a href="#" id="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </ul>
+    </div>
+    <div id="mobile">
+        <form class="search">
+            <input type="text" placeholder="Search" class="search__input">
+            <button type="button" class="search__btn">
+                <a><i class="fa-solid fa-magnifying-glass"></i></a>
+            </button>
+        </form>
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <i id="bar" class="fa fa-outdent"></i>
+    </div>
+</section>
+
+<section id="page-banner"></section>
+
+<section id="page-header">
+    <div class="container">
+        <ul class="breadcrumb" aria-label="breadcrumbs">
+            <li><a href="home.html">Trang chủ</a></li>
+            <li class="active"><a href="#">Thức uống</a></li>
+        </ul>
+        <h1>Thức uống</h1>
+        <div class="separator-icon gray"></div>
+        <ul class="menu">
+            <li class="">
+                <a href="milktea.html" class="dish text-uppercase">Trà sữa</a>
+            </li>
+
+            <li class="">
+                <a href="tea.html" class="dish text-uppercase">Trà</a>
+            </li>
+
+            <li class="">
+                <a href="coffee.html" class="dish text-uppercase">Cà phê</a>
+            </li>
+
+            <li class="">
+                <a href="yaourt.html" class="dish text-uppercase">Yaourt</a>
+            </li>
+
+            <li class="">
+                <a href="soda.html" class="dish text-uppercase">Soda</a>
+            </li>
+
+            <li class="">
+                <a href="smoothie.html" class="dish text-uppercase">Sinh tố</a>
+            </li>
+
+            <li class="active">
+                <a href="juice.html" class="dish text-uppercase">Nước ép</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<section id="#section-ca-phe-wrapper">
+    <section id="product1" class="section-p1">
+        <div class="pro-container">
+            <div class="pro" onclick="window.location.href='sproduct.html';">
+                <img src="../img/products/nước%20ép/cacm.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép cam</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro" onclick="window.location.href='sproduct2.html';">
+                <img src="../img/products/nước%20ép/cà%20chua.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép cà chua</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/cà%20rốt.png" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép cà rốt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/cà%20rốt%20chanh%20dây.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép cà rốt chanh dây</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/cà%20rốt%20thơm.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép cà rốt thơm</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/dâu.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép dâu</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/dưa%20hấu_táo.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép dưa hấu táo</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/dưa%20leo.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước éo dưa leo</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/dứa.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép dứa</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/lê.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép lê</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/maanj.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép mận</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/nho.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép nho</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/quýt.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép quýt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/táo.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép táo</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/đào.jpg" alt="">
+                <div class="des">
+                    <span>Nước ép</span>
+                    <h5>Nước ép đào</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="../img/products/nước%20ép/ổi.jpg" alt="">
+                <div class="des">
+                    <span>Nuước ép</span>
+                    <h5>Nước ép ổi</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>25.000đ</h4>
+                </div>
+                <a><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+        <a href="#">1</a>
+
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletter</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span>
+            </p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+</section>
+
+<footer class="section-p1">
+    <div class="col">
+        <h4>Contact</h4>
+        <p><strong>Địa chỉ: </strong> K3/14C Đường Nguyễn Tri Phương, Thành phố Biên Hoà, Tỉnh Đồng Nai</p>
+        <p><strong>Hotline: </strong> +01 2222 365 /(+91) 01 2345 6789</p>
+        <p><strong>Thời gian hoạt động: </strong> 7:00 - 22:00, Thứ 2 - Thứ 7 / 9:00 - 20:00, Chủ nhật</p>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4>About</h4>
+        <a href="about.html">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Term & Conditions</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="col">
+        <h4>My Account</h4>
+        <a href="account.html">Sign In</a>
+        <a href="cart.html">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="contact.html">Help</a>
+    </div>
+
+
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+            <img src="../img/pay/app.jpg" alt="">
+            <img src="../img/pay/play.jpg" alt="">
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="../img/pay/pay.png" alt="">
+    </div>
+
+    <div class="copyright">
+        <p>copyright © 2023, Milktea Store</p>
+    </div>
+</footer>
+
+<a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
+
+<script src="../js/script.js"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.tab-content-item').hide();
+        $('.tab-content-item:first-child').fadeIn();
+        $('.nav-tabs li').click(function () {
+            $('.nav-tabs li').removeClass('active');
+            $(this).addClass('active');
+
+            let id_tabs = $(this).children('a').attr('href');
+            $('.tab-content-item').hide();
+            $(id_tabs).fadeIn();
+            return false;
+        });
+    });
+
+</script>
+</html>
