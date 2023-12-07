@@ -26,7 +26,7 @@
 <section id="feature" class="section-p1">
     <div class="fe-box">
         <img src="img/features/f1.png" alt="">
-        <h6>Miễn phí giao hàng</h6>
+        <h6>Giao hàng có phí</h6>
     </div>
     <div class="fe-box">
         <img src="img/features/f2.png" alt="">
