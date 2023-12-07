@@ -14,7 +14,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 <section id="hero">
-    <h4>CỬA HÀNG TRÀ SỮA 1 VN</h4>
+    <h4>CỬA HÀNG TRÀ SỮA 1 Việt Nam</h4>
     <h2>Trà sữa nhà làm - Giá hạt dẻ</h2>
     <h1>Đến với BoBa Tea!</h1>
     <p>Tiết kiệm hơn với mã giảm giá & giảm đến 50%!</p>
