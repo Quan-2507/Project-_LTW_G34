@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoBa Tea</title>
+    <link rel="icon" href="../img/logo/snapedit_1699446793064.png">
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<section id="header">
+    <a href="home.html" style="max-width: 100px"><img src="../img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="home.html">TRANG CHỦ</a></li>
+            <li><a href="milktea.html">THỨC UỐNG</a></li>
+            <li><a href="blog.html">KHUYẾN MÃI</a></li>
+            <li><a href="about.html">VỀ CHÚNG TÔI</a></li>
+            <li><a class="active" href="contact.html">LIÊN HỆ</a></li>
+            <li class="lg-bag">
+                <form class="search">
+                    <input type="text" placeholder="Search" class="search__input">
+                    <button type="button" class="search__btn">
+                        <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </button>
+                </form>
+            </li>
+            <li class="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li class="lg-bag"><a href="signup-signin.html"><i class="fa-regular fa-user"></i></a></li>
+            <a href="#" id="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </ul>
+    </div>
+    <div id="mobile">
+        <form class="search">
+            <input type="text" placeholder="Search" class="search__input">
+            <button type="button" class="search__btn">
+                <a><i class="fa-solid fa-magnifying-glass"></i></a>
+            </button>
+        </form>
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <i id="bar" class="fa fa-outdent"></i>
+    </div>
+</section>
+
+    <section id="page-banner" class="contact-header">
+        
+<!--        <h2>#let's_talk</h2>-->
+<!--        -->
+<!--        <p>LEAVE A MESSAGE. We love to hear you!</p>-->
+        
+    </section>
+
+<section id="page-header">
+    <div class="container">
+        <ul class="breadcrumb" aria-label="breadcrumbs">
+            <li><a href="home.html">Trang chủ</a></li>
+            <li class="active"><a href="#">Liên hệ</a></li>
+        </ul>
+        <h1>Liên hệ</h1>
+    </div>
+</section>
+
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>LIÊN LẠC</span>
+            <h2>Hãy ghé thăm một trong các địa điểm đại lý của chúng tôi hoặc liên hệ với chúng tôi ngay hôm nay</h2>
+            <h3>Cơ sở chính</h3>
+            <div>
+                <li>
+                    <i class="fa fa-map-marker"></i>
+                    <p>K3/14C Đường Nguyễn Tri Phương, Thành phố Biên Hoà, Tỉnh Đồng Nai</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>contact@example.com</p>
+                </li>
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <p>contact@example.com</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-clock"></i>
+                    <p>7:00 - 22:00, Thứ 2 - Thứ 7 / 9:00 - 20:00, Chủ nhật</p>
+                </li>
+            </div>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d489.68390463774756!2d106.81136783526884!3d10.927731826390907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d97c12925667%3A0xd80087abef3aaaa5!2sMin&#39;%20House%20-%20Tea%20%26%20More!5e0!3m2!1svi!2s!4v1699765045974!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section id="form-details">
+        <form action="" onsubmit="return false">
+            <span>ĐỂ LẠI Ý KIẾN GÓP Ý</span>
+            <h2>Chúng tôi luôn sẵn sàng lắng nghe</h2>
+            <input type="text" placeholder="Tên" id="name">
+            <input type="text" placeholder="E-mail" id="email">
+            <input type="text" placeholder="Tiêu đề">
+            <textarea id="msg" cols="30" rows="10" placeholder="Lời nhắn"></textarea>
+            <button class="normal" onclick="message()">Submit</button>
+            <div class="message">
+                <div class="success" id="success">Your Message Successfully Sent!</div>
+                <div class="danger" id="danger">Fields Can't be Empty!</div>
+            </div>
+        </form>
+
+        <div class="people">
+            <div>
+                <img src="../img/member/a1.jpg" alt="">
+                <p><span>Tran Minh Quan</span> Top bookies from Dong Lao <br> Phone: 0937170300 <br>Email: 21130495@st.hcmuaf.edu.vn</p>
+            </div>
+            <div>
+                <img src="../img/member/a2.jpg" alt="">
+                <p><span>Kieu Thi Ngoc Quy</span> Haters Gon' hate, players Gon' play. <br> Phone: 0102002003 <br>Email: 21130504@st.hcmuaf.edu.vn</p>
+            </div>
+            <div>
+                <img src="../img/member/a4.webp" alt="">
+                <p><span>Tran Thi Thien Nhan</span> The strong one doesn’t win. The one that wins is strong. <br> Phone: 02995594849 <br>Email: 21130461@st.hcmuaf.edu.vn</p>
+            </div>
+        </div>
+    </section>
+
+<section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+        <h4>Đăng Ký Để Nhận Bản Tin</h4>
+        <p>Để lại E-mail để được cập nhật các thông báo mới nhất và <span>các deal "hời".</span>
+        </p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Địa chỉ email của bạn">
+        <button class="normal">Đăng Ký</button>
+    </div>
+</section>
+
+<footer class="section-p1">
+    <div class="col">
+        <h4>Liên hệ</h4>
+        <p><strong>Địa chỉ: </strong> K3/14C Đường Nguyễn Tri Phương, Thành phố Biên Hoà, Tỉnh Đồng Nai</p>
+        <p><strong>Hotline: </strong> +01 2222 365 /(+91) 01 2345 6789</p>
+        <p><strong>Thời gian hoạt động: </strong> 7:00 - 22:00, Thứ 2 - Thứ 7 / 9:00 - 20:00, Chủ nhật</p>
+        <div class="follow">
+            <h4>Theo dõi chúng tôi</h4>
+            <div class="icon">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4>Thông tin</h4>
+        <a href="about.html">Về chúng tôi</a>
+        <a href="#">Thông tin giao hàng</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản & Điều kiện</a>
+        <a href="contact.html">Thông tin liên hệ</a>
+    </div>
+
+    <div class="col">
+        <h4>Tài khoản của bạn</h4>
+        <a href="signup-signin.html">Đăng nhập</a>
+        <a href="cart.html">Xem giỏ hàng</a>
+        <a href="#">Sản phầm yêu thích</a>
+        <a href="#">Kiểm tra đơn hàng</a>
+        <a href="contact.html">Trợ giúp</a>
+    </div>
+
+
+    <div class="col install">
+        <h4>Cài đặt ứng dụng</h4>
+        <p>Trên App Store hoặc Google Play</p>
+        <div class="row">
+            <img src="../img/pay/app.jpg" alt="">
+            <img src="../img/pay/play.jpg" alt="">
+        </div>
+        <p>Cổng thanh toán an toàn</p>
+        <img src="../img/pay/pay.png" alt="">
+    </div>
+
+    <div class="copyright">
+        <p>copyright © 2023, BoBa Tea</p>
+    </div>
+</footer>
+
+    <a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
+
+<script src="../js/script.js"></script>
+<script>
+    function message() {
+        var Name = document.getElementById('name');
+        var email = document.getElementById('email');
+        var msg = document.getElementById('msg');
+        const success = document.getElementById('success');
+        const danger = document.getElementById('danger');
+
+        if (Name.value === '' || email.value === '' || msg.value === ''){
+            danger.style.display = 'block';
+        }
+        else {
+            setTimeout(()=>{
+                Name.value = '';
+                email.value = '';
+                msg.value = '';
+            }, 2000);
+
+            success.style.display = 'block';
+        }
+
+        setTimeout(()=>{
+            danger.style.display = 'none';
+            success.style.display = 'none';
+        }, 4000);
+    }
+</script>
+</body>
+</html>

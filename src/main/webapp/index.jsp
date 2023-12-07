@@ -1,474 +1,316 @@
 <%@ page import="java.io.File" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>MilkStore – Thế giới trà sữa</title>
-    <meta name='keywords' content='MilkStores – Thế giới trà sữa'/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="css/style.css?v=<?=$full_me_time_en ?>" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/script218.js?v=<?=$full_me_time_en ?>"></script>
-
+    <title>BoBa Tea</title>
+    <link rel="icon" href="img/logo/snapedit_1699446793064.png">
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<script>
-    $(function(){
-        var hei = $(".dv-ul-menu > ul").height();
-        $(".dv-ul-menu ul ul.sub-2").css("min-height", hei + 2);
-        //end
-    })
-</script>
-<script>
-    $(document).ready(function(){
-        // hide #back-top first
-        $("#back-top").hide();
-
-        // fade in #back-top
-        $(function () {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 100) {
-                    $('#back-top').fadeIn();
-                } else {
-                    $('#back-top').fadeOut();
-                }
-            });
-
-            // scroll body to 0px on click
-            $('#back-top a').click(function () {
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 800);
-                return false;
-            });
-        });
-
-    });
-</script>
 <body>
-<div class="dv-content-full">
-    <article><section></section></article>
-    <jsp:include page="header/header.jsp"></jsp:include>
-    <jsp:include page="banner_top.jsp"></jsp:include>
-    <div class="customer-service ">
-        <div class="support clearfix pagewrap">
-            <div class="col-lg-12 flex">
-                <div class="col-lg-3">
-                    <div class="media ">
-                        <div class="box-icon pull-left">
-                            <i class="fa fa-truck"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4>MIỄN PHÍ VẬN CHUYỂN</h4>
-                            <p><em>Đặt hàng trên 100.000 đ</em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="media ">
-                        <div class="box-icon pull-left">
-                            <i class="fa fa-gift"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4>GIỎ QUÀ ĐẶC BIỆT</h4>
-                            <p><em>Tặng món quà hoàn hảo</em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="media ">
-                        <div class="box-icon pull-left">
-                            <i class="fa fa-calendar-o"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4>KHUYẾN MÃI ĐẶC BIỆT</h4>
-                            <p><em>Sed ut perspiciatis unde</em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="media ">
-                        <div class="box-icon pull-left">
-                            <i class="fa fa-comments-o"></i>
-                        </div>
-                        <div class="media-body">
-                            <h4>CHĂM SÓC KHÁCH HÀNG 24/7</h4>
-                            <p><em>Gọi ngay: <?=$full_me_hotline ?></em></p>
+<jsp:include page="header.jsp"></jsp:include>
 
-                        </div>
-                    </div>
+<section id="hero">
+    <h4>CỬA HÀNG TRÀ SỮA 1 VN</h4>
+    <h2>Trà sữa nhà làm - Giá hạt dẻ</h2>
+    <h1>Đến với BoBa Tea!</h1>
+    <p>Tiết kiệm hơn với mã giảm giá & giảm đến 50%!</p>
+    <a href="products.html">
+        <button class="normal">Đặt hàng ngay</button>
+    </a>
+</section>
+
+<section id="feature" class="section-p1">
+    <div class="fe-box">
+        <img src="img/features/f1.png" alt="">
+        <h6>Miễn phí giao hàng</h6>
+    </div>
+    <div class="fe-box">
+        <img src="img/features/f2.png" alt="">
+        <h6>Đặt hàng online</h6>
+    </div>
+    <div class="fe-box">
+        <img src="img/features/f3.png" alt="">
+        <h6>Tiết kiệm</h6>
+    </div>
+    <div class="fe-box">
+        <img src="img/features/f4.png" alt="">
+        <h6>Nhiều ưu đãi</h6>
+    </div>
+    <div class="fe-box">
+        <img src="img/features/f5.png" alt="">
+        <h6>Vui vẻ với khách hàng</h6>
+    </div>
+    <div class="fe-box">
+        <img src="img/features/f6.png" alt="">
+        <h6>Hỗ trợ 24/7</h6>
+    </div>
+
+</section>
+
+<section id="product1" class="section-p1">
+    <h2>Best Seller</h2>
+    <p>Những món bán chạy nhất Tháng 11<i class="fa-solid fa-fire" style="color: #f11404;"></i><i class="fa-solid fa-fire" style="color: #f11404;"></i></p>
+    <div class="pro-container">
+        <div class="pro">
+            <img src="img/products/trà%20sữa/matcha.jpg" alt="" onclick="window.location.href='sproduct.html';">
+            <div class="des">
+                <span>Trà sữa</span>
+                <h5>Trà sữa matcha</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
+                <h4>25.000đ</h4>
             </div>
-            <div class="clr"></div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro" >
+            <img src="img/products/cafe/americano.png" alt="" onclick="window.location.href='sproduct.html';">
+            <div class="des">
+                <span>Cà phê</span>
+                <h5>Americano</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro" >
+            <img src="img/products/nước%20ép/cacm.jpg" alt="" onclick="window.location.href='sproduct.html';">
+            <div class="des">
+                <span>Nước ép</span>
+                <h5>Nước ép cam</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro" >
+            <img src="img/products/sinh%20tố/cookie%20đá%20xay.jpg" alt="" onclick="window.location.href='sproduct.html';">
+            <div class="des">
+                <span>Sinh tố</span>
+                <h5>Sinh tố cookie đá xay</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
         </div>
     </div>
-    <section class="dv-home-sanpham" style="margin-top: -50px;">
-        <div class="pagewrap">
-            <div class="title_home wow flipInX">
-                <h2 class="tiltle">Đồ uống khuyến mãi</h2>
-            </div>
-            <div class="pro_home_id flex">
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="delete/sanpham/sp1.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Okinawa Coffee Milk Tea</a></h3>
-                    <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                    <span class="css-1h3p11h">-12%</span>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp2.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Okinawa Oreo Cream Milk Tea</a></h3>
-                    <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                    <span class="css-1h3p11h">-12%</span>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp3.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Trà Sữa Xoài Trân Châu Đen</a></h3>
-                    <h4><span>60.000 <sup>₫</sup></span> 51.000 <sup>₫</sup></h4>
-                    <span class="css-1h3p11h">-9%</span>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp4.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Trà Sữa Okinawa</a></h3>
-                    <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                    <span class="css-1h3p11h">-7%</span>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp5.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Trà Sữa Matcha Đậu Đỏ</a></h3>
-                    <h4>65.000 <sup>₫</sup></h4>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp6.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Trà sữa Oolong 3J</a></h3>
-                    <h4>55.000 <sup>₫</sup></h4>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp7.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Trà Sữa Pudding Đậu Đỏ</a></h3>
-                    <h4>51.000 <sup>₫</sup></h4>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-                <ul>
-                    <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp8.png"/></a></li>
-                    <h3><a href="trasua_view.jsp">Trà Sữa Chocolate</a></h3>
-                    <h4>51.000 <sup>₫</sup></h4>
-                    <p class="p-star">
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star"></span>
-                        <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                    </p>
-                    <?php include"icon-tooltip.jsp";?>
-                </ul>
-            </div>
-            <div class="clr"></div>
-            <div class="qodef-m-button clear align_center">
-                <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual qodef-html--link" href="index.jsp?page=trasua" target="_self"> <span class="qodef-m-text">Xem tất cả sản phẩm</span> <span class="qodef-m-icon"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><circle class="qodef-arc-1" cx="20" cy="20" r="19"></circle><circle class="qodef-arc-2" cx="20" cy="20" r="19"></circle></svg> </span></a>
-            </div>
-            <div class="clr"></div>
-        </div>
-    </section>
-    <section class="dv-home-column">
-        <div class="pagewrap">
-            <div class="home-left tin_right">
-                <div class="box_right_pro_view">
-                    <div class="title_right_pro_view">Danh mục sản phẩm</div>
-                    <ul>
-                        <li class="vertical-menu vertical-menu-1"><a href="index.jsp?page=sanpham" title="">Trà truyền thống</a>
-                            <i class="fa fa-plus-square-o" ></i>
-                            <i class="fa fa-minus-square-o" ></i>
-                            <ul class="vertical-menu-sub sub-3" style="display: none;">
-                                <div class="col-mn-3">
-                                    <li><a href="index.jsp?page=sanpham" title="">Hồng trà</a></li>
-                                    <li><a href="index.jsp?page=sanpham" title="">Trà ô long</a></li>
-                                    <li><a href="index.jsp?page=sanpham" title="">Trà hoa nhài</a></li>
-                                </div>
-                                <div class="clr"></div>
-                            </ul>
-                        </li>
-                        <li class="vertical-menu vertical-menu-2"><a href="index.jsp?page=sanpham" title="">Trà sữa trái cây</a>
-                            <i class="fa fa-plus-square-o" ></i>
-                            <i class="fa fa-minus-square-o" ></i>
-                            <ul class="vertical-menu-sub sub-3" style="display: none;">
-                                <div class="col-mn-3">
-                                    <li><a href="index.jsp?page=sanpham" title="">Trà xanh vị cam</a></li>
-                                    <li><a href="index.jsp?page=sanpham" title="">Trà ô mai đào</a></li>
-                                    <li><a href="index.jsp?page=sanpham" title="">Trà xanh vị ổi</a></li>
-                                </div>
-                                <div class="clr"></div>
-                            </ul>
-                        </li>
-                        <li class="vertical-menu vertical-menu-3"><a href="index.jsp?page=sanpham" title="">Trà sữa Đài Loan</a>
-                            <i class="fa fa-plus-square-o" ></i>
-                            <i class="fa fa-minus-square-o" ></i>
-                            <ul class="vertical-menu-sub sub-3" style="display: none;">
-                                <div class="col-mn-3">
-                                    <li><a href="index.jsp?page=sanpham" title="">Hồng trà sữa</a></li>
-                                    <li><a href="index.jsp?page=sanpham" title="">Trà sữa mật ong</a></li>
-                                    <li><a href="index.jsp?page=sanpham" title="">Trà sữa hokaido</a></li>
-                                </div>
-                                <div class="clr"></div>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="box_right_pro_view">
-                    <div class="title_right_pro_view" style="background: #409f3e;">ƯU ĐÃI ĐẶC BIỆT</div>
-                    <div class="marquee">
-                        <div class="blog-item">
-                            <div class="img-box">
-                                <a href="index.jsp?page=sanpham_view" class="open-post">
-                                    <img class="img-fluid" src="img/delete/sanpham/sp1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="text-box">
-                                <a href="index.jsp?page=sanpham_view" class="">
-                                    <h5>Okinawa Coffee Milk Tea</h5>
-                                </a>
-                                <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                            </div>
-                        </div>
-                        <div class="blog-item">
-                            <div class="img-box">
-                                <a href="index.jsp?page=sanpham_view" class="open-post">
-                                    <img class="img-fluid" src="img/delete/sanpham/sp2.png" alt="">
-                                </a>
-                            </div>
-                            <div class="text-box">
-                                <a href="index.jsp?page=sanpham_view" class="">
-                                    <h5>Okinawa Oreo Cream Milk Tea</h5>
-                                </a>
-                                <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                            </div>
-                        </div>
-                        <div class="blog-item">
-                            <div class="img-box">
-                                <a href="index.jsp?page=sanpham_view" class="open-post">
-                                    <img class="img-fluid" src="img/delete/sanpham/sp3.png" alt="">
-                                </a>
-                            </div>
-                            <div class="text-box">
-                                <a href="index.jsp?page=sanpham_view" class="">
-                                    <h5>Trà Sữa Xoài Trân Châu Đen</h5>
-                                </a>
-                                <h4><span>60.000 <sup>₫</sup></span> 51.000 <sup>₫</sup></h4>
-                            </div>
-                        </div>
-                        <div class="blog-item">
-                            <div class="img-box">
-                                <a href="index.jsp?page=sanpham_view" class="open-post">
-                                    <img class="img-fluid" src="img/delete/sanpham/sp4.png" alt="">
-                                </a>
-                            </div>
-                            <div class="text-box">
-                                <a href="index.jsp?page=sanpham_view" class="">
-                                    <h5>Trà Sữa Okinawa</h5>
-                                </a>
-                                <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="box_right_pro_view">
-                    <a href="#"><img src="img/delete/trangchu/4.png"></a>
-                </div>
-                <div class="box_right_pro_view">
-                    <div class="title_right_pro_view">Nhận khuyến mãi</div>
-                    <div class="box-email">
-                        <h4>Đăng ký để nhận thông tin về sản phẩm và phiếu giảm giá</h4>
-                        <form class="dt-sc-subscribe-frm" name="frmsubscribe" action="#" method="post">
-                            <input type="email" name="dt_mc_emailid" required="required" placeholder="Nhập email của bạn...">
-                            <input type="submit" name="mc_submit" value="Đăng ký">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="home-right">
-                <section class="awe-section-4">
-                    <div class="wrap_banner">
-                        <div class="col-sm-6 img-left">
-                            <a class="img1" href="#" title="Banner 1">
-                                <img class="lazyload loaded" src="img/delete/trangchu/1.png" data-src="" alt="Banner 1" data-was-processed="true">
-                            </a>
-                            <a class="img1" href="#" title="Banner 1">
-                                <img class="lazyload loaded" src="img/delete/trangchu/2.png" data-src="" alt="Banner 1" data-was-processed="true">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 img-right">
-                            <a class="img1" href="#" title="Banner 2">
-                                <img class="lazyload loaded" src="img/delete/trangchu/3.png" data-src="" alt="Banner 2" data-was-processed="true">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="clr"></div>
-                </section>
-                <section class="dv-home-sanpham">
-                    <div class="title_home wow flipInX">
-                        <h2 class="tiltle">Sản phẩm nổi bật</h2>
-                    </div>
-                    <div class="pro_home_id flex">
-                        <ul>
-                            <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp1.png"/></a></li>
-                            <h3><a href="trasua_view.jsp">Okinawa Coffee Milk Tea</a></h3>
-                            <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                            <span class="css-1h3p11h">-12%</span>
-                            <p class="p-star">
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                            </p>
-                            <?php include"icon-tooltip.jsp";?>
-                        </ul>
-                        <ul>
-                            <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp2.png"/></a></li>
-                            <h3><a href="trasua_view.jsp">Okinawa Oreo Cream Milk Tea</a></h3>
-                            <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                            <span class="css-1h3p11h">-12%</span>
-                            <p class="p-star">
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                            </p>
-                            <?php include"icon-tooltip.jsp";?>
-                        </ul>
-                        <ul>
-                            <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp3.png"/></a></li>
-                            <h3><a href="trasua_view.jsp">Trà Sữa Xoài Trân Châu Đen</a></h3>
-                            <h4><span>60.000 <sup>₫</sup></span> 51.000 <sup>₫</sup></h4>
-                            <span class="css-1h3p11h">-9%</span>
-                            <p class="p-star">
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                            </p>
-                            <?php include"icon-tooltip.jsp";?>
-                        </ul>
-                        <ul>
-                            <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp4.png"/></a></li>
-                            <h3><a href="trasua_view.jsp">Trà Sữa Okinawa</a></h3>
-                            <h4><span>65.000 <sup>₫</sup></span> 57.000 <sup>₫</sup></h4>
-                            <span class="css-1h3p11h">-7%</span>
-                            <p class="p-star">
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                            </p>
-                            <?php include"icon-tooltip.jsp";?>
-                        </ul>
-                        <ul>
-                            <li><a href="index.jsp?page=trasua_view"><img src="img/delete/sanpham/sp5.png"/></a></li>
-                            <h3><a href="index.jsp?page=trasua_view">Trà Sữa Matcha Đậu Đỏ</a></h3>
-                            <h4>65.000 <sup>₫</sup></h4>
-                            <p class="p-star">
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                            </p>
-                            <?php include"icon-tooltip.jsp";?>
-                        </ul>
-                        <ul>
-                            <li><a href="trasua_view.jsp"><img src="img/delete/sanpham/sp6.png"/></a></li>
-                            <h3><a href="trasua_view.jsp">Trà sữa Oolong 3J</a></h3>
-                            <h4>55.000 <sup>₫</sup></h4>
-                            <p class="p-star">
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star"></span>
-                                <span data-sao="0" data="1200" class="fa fa-star-o"></span>
-                            </p>
-                            <?php include"icon-tooltip.jsp";?>
-                        </ul>
-                    </div>
-                    <div class="clr"></div>
-                    <div class="qodef-m-button clear align_center">
-                        <a class="qodef-shortcode qodef-m  qodef-button qodef-layout--textual qodef-html--link" href="index.jsp?page=trasua" target="_self"> <span class="qodef-m-text">Xem tất cả sản phẩm</span> <span class="qodef-m-icon"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve"><circle class="qodef-arc-1" cx="20" cy="20" r="19"></circle><circle class="qodef-arc-2" cx="20" cy="20" r="19"></circle></svg> </span></a>
-                    </div>
-                    <div class="clr"></div>
-                </section>
-            </div>
-            <div class="clr"></div>
-        </div>
-    </section>
+</section>
 
-    <script>
-        $('.marquee').marquee({
-            duration: 19000,
-            gap: 0,
-            delayBeforeStart: 0,
-            direction: 'up',
-            duplicated: true,
-            pauseOnHover: true,
-            startVisible: true
-        });
-    </script>
-<?php include"footer.jsp";?></div>
+<section id="banner" class="section-m1">
+    <h4>Buổi sáng tỉnh táo</h4>
+    <h2>Giảm đến <span>50% Off</span> - Áp dụng cho sinh viên</h2>
+    <a href="coffeeSale.html">
+        <button class="normal">Khám phá thêm</button>
+    </a>
+</section>
+
+<section id="product2" class="section-p1">
+    <h2>Món mới</h2>
+    <p>Ra mắt các món soda</p>
+    <div class="pro-container">
+        <div class="pro" >
+            <img src="img/products/soda/blue%20sky.jpg" alt="" onclick="window.location.href='sproduct.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda blue sky</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro" >
+            <img src="img/products/soda/phúc%20bồn%20tử.jpg" alt="" onclick="window.location.href='sproduct2.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda phúc bồn tử</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro">
+            <img src="img/products/soda/soda%20chanh.png" alt="" onclick="window.location.href='sproduct2.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda chanh</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro">
+            <img src="img/products/soda/soda%20chanh%20muối.jpg" alt="" onclick="window.location.href='sproduct2.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda chanh muối</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro">
+            <img src="img/products/soda/soda%20dâu.png" alt="" onclick="window.location.href='sproduct2.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda dâu</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro">
+            <img src="img/products/soda/soda%20dâu%20tằm.jpg" alt="" onclick="window.location.href='sproduct2.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda dâu tằm</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro">
+            <img src="img/products/soda/soda%20dưa%20hấu.jpg" alt="" onclick="window.location.href='sproduct2.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda dưa hấu</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+        <div class="pro">
+            <img src="img/products/soda/soda%20kiwi.png" alt="" onclick="window.location.href='sproduct2.html';">
+            <div class="des">
+                <span>Soda</span>
+                <h5>Soda kiwi</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>25.000đ</h4>
+            </div>
+            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        </div>
+    </div>
+</section>
+
+<section id="sm-banner" class="section-p1">
+    <div class="banner-box">
+        <h4>Sức khoẻ</h4>
+        <h2>Thanh lọc cơ thể mỗi ngày</h2>
+        <span>với 1 ly nước ép Kiwi</span>
+        <button class="white">Xem thêm</button>
+    </div>
+    <div class="banner-box banner-box2">
+        <h4>Mùa hè nóng bức</h4>
+        <h2>Giải nhiệt</h2>
+        <span>bằng soda chanh</span>
+        <button class="white">Xem thêm</button>
+    </div>
+</section>
+
+<section id="banner3">
+    <div class="banner-box">
+        <!--        <h2>SUPER SALE</h2>-->
+        <!--        <h3>-50% OFF</h3>-->
+    </div>
+    <div class="banner-box banner-box2">
+        <!--        <h2>SUPER SALE</h2>-->
+        <!--        <h3>-50% OFF</h3>-->
+    </div>
+    <div class="banner-box banner-box3">
+        <!--        <h2>SUPER SALE</h2>-->
+        <!--        <h3>-50% OFF</h3>-->
+    </div>
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+        <h4>Đăng Ký Để Nhận Bản Tin</h4>
+        <p>Để lại E-mail để được cập nhật các thông báo mới nhất và <span>các deal "hời".</span>
+        </p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Địa chỉ email của bạn">
+        <button class="normal">Đăng Ký</button>
+    </div>
+</section>
+
+<jsp:include page="footer.jsp"></jsp:include>
+
+<a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
+
+<script src="js/script.js"></script>
 </body>
 </html>
