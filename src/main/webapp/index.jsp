@@ -30,7 +30,7 @@
     </div>
     <div class="fe-box">
         <img src="img/features/f2.png" alt="">
-        <h6>Đặt hàng online</h6>
+        <h6>Đặt hàng liền đi</h6>
     </div>
     <div class="fe-box">
         <img src="img/features/f3.png" alt="">
