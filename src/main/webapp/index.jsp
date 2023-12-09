@@ -18,7 +18,7 @@
     <h2>Trà sữa nhà làm - Giá hạt dẻ</h2>
     <h1>Đến với BoBa Tea!</h1>
     <p>Tiết kiệm hơn với mã giảm giá & giảm đến 50%!</p>
-    <a href="products.html">
+    <a href="Html/products.html">
         <button class="normal">Đặt hàng ngay</button>
     </a>
 </section>
@@ -125,7 +125,7 @@
 <section id="banner" class="section-m1">
     <h4>Buổi sáng tỉnh táo</h4>
     <h2>Giảm đến <span>50% Off</span> - Áp dụng cho sinh viên</h2>
-    <a href="coffeeSale.html">
+    <a href="Html/coffeeSale.html">
         <button class="normal">Khám phá thêm</button>
     </a>
 </section>
