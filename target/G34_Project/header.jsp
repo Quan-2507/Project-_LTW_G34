@@ -7,15 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <section id="header">
-    <a href="home.html" style="max-width: 100px"><img src="img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
+    <a href="Html/home.html" style="max-width: 100px"><img src="img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
     <div>
         <ul id="navbar">
-            <li><a class="active" href="home.html">TRANG CHỦ</a></li>
-            <li><a href="milktea.html">THỨC UỐNG</a>
+            <li><a class="active" href="Html/home.html">TRANG CHỦ</a></li>
+            <li><a href="Html/milktea.html">THỨC UỐNG</a>
             </li>
-            <li><a href="blog.html">KHUYẾN MÃI</a></li>
-            <li><a href="about.html">VỀ CHÚNG TÔI</a></li>
-            <li><a href="contact.html">LIÊN HỆ</a></li>
+            <li><a href="Html/blog.html">KHUYẾN MÃI</a></li>
+            <li><a href="Html/about.html">VỀ CHÚNG TÔI</a></li>
+            <li><a href="Html/contact.html">LIÊN HỆ</a></li>
             <li class="lg-bag">
                 <form class="search">
                     <input type="text" placeholder="Search" class="search__input">
@@ -24,8 +24,8 @@
                     </button>
                 </form>
             </li>
-            <li class="lg-bag"><a href="cart.html" onclick="showcart()"><i class="fa-solid fa-bag-shopping"></i></a></li>
-            <li class="lg-bag"><a href="signup-signin.html"><i class="fa-regular fa-user"></i></a></li>
+            <li class="lg-bag"><a href="Html/cart.html" onclick="showcart()"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li class="lg-bag"><a href="Html/signup-signin.html"><i class="fa-regular fa-user"></i></a></li>
             <a href="#" id="close"><i class="fa fa-times" aria-hidden="true"></i></a>
         </ul>
     </div>
@@ -36,7 +36,7 @@
                 <a><i class="fa-solid fa-magnifying-glass"></i></a>
             </button>
         </form>
-        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <a href="Html/cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
         <i id="bar" class="fa fa-outdent"></i>
     </div>
 </section>
