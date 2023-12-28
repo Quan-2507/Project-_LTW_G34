@@ -190,7 +190,7 @@
 
 <a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
 
-<script src="../js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
 <script>
