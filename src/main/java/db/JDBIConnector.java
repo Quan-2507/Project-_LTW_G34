@@ -3,10 +3,12 @@ package db;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
 
+import java.sql.Connection;
+
 public class JDBIConnector {
     private  static Jdbi jdbi;
 
-    private static  void connect(){
+    public static Connection connect(){
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setURL("jdbc:mysql://"+DBProperties.host+":"+DBProperties.port+"/"+DBProperties.dbName);
         System.out.println("jdbc:mysql://"+DBProperties.host+":"+DBProperties.port+"/"+DBProperties.dbName);
@@ -20,8 +22,9 @@ public class JDBIConnector {
             throw  new RuntimeException(e);
         }
         jdbi = Jdbi.create(dataSource);
+        return null;
     }
-    private JDBIConnector(){}
+    public JDBIConnector(){}
 
     public static Jdbi me(){
         if (jdbi==null) connect();

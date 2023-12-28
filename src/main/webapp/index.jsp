@@ -1,6 +1,8 @@
-<%@ page import="java.io.File" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<c:url value="" var="url"></c:url>
 <!DOCTYPE html>
+<html lang="zxx">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
