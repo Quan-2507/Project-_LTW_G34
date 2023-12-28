@@ -5,17 +5,20 @@
   Time: 1:51 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<c:url value="" var="url"></c:url>
+
 <section id="header">
-    <a href="home.html" style="max-width: 100px"><img src="img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
+    <a href="home.jsp" style="max-width: 100px"><img src="img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
     <div>
         <ul id="navbar">
-            <li><a class="active" href="home.html">TRANG CHỦ</a></li>
-            <li><a href="milktea.html">THỨC UỐNG</a>
-            </li>
-            <li><a href="blog.html">KHUYẾN MÃI</a></li>
-            <li><a href="about.html">VỀ CHÚNG TÔI</a></li>
-            <li><a href="contact.html">LIÊN HỆ</a></li>
+            <li><a  href="<%= request.getContextPath() %>/home">TRANG CHỦ</a></li>
+
+            <li><a href="<%= request.getContextPath() %>/milktea">THỨC UỐNG</a></li>
+            <li><a href="<%= request.getContextPath() %>/blog">KHUYẾN MÃI</a></li>
+            <li><a href="<%= request.getContextPath() %>/about">VỀ CHÚNG TÔI</a></li>
+            <li><a href="<%= request.getContextPath() %>/contact">LIÊN HỆ</a></li>
             <li class="lg-bag">
                 <form class="search">
                     <input type="text" placeholder="Search" class="search__input">

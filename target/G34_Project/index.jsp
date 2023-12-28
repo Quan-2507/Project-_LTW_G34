@@ -1,6 +1,8 @@
-<%@ page import="java.io.File" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<c:url value="" var="url"></c:url>
 <!DOCTYPE html>
+<html lang="zxx">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +16,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 <section id="hero">
-    <h4>CỬA HÀNG TRÀ SỮA 1 Việt Nam==</h4>
+    <h4>CỬA HÀNG TRÀ SỮA 1 Việt Nam</h4>
     <h2>Trà sữa nhà làm - Giá hạt dẻ</h2>
     <h1>Đến với BoBa Tea!</h1>
     <p>Tiết kiệm hơn với mã giảm giá & giảm đến 50%!</p>
