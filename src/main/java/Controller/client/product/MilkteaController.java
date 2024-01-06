@@ -28,7 +28,7 @@ public class MilkteaController extends HttpServlet {
             currentPage = Integer.parseInt(
                     request.getParameter("page"));
 //        if (type==null) {
-        productList = productService.getProductByPage(currentPage, productsPerPage);
+        productList = productService.getProductByPage(currentPage, productsPerPage,1);
 /*
         } else if(type.equals("desc")){
             productList = productService.getProductByDESC(currentPage, productsPerPage);

@@ -18,6 +18,8 @@
     // Retrieve the productList attribute from the request
     List<Products> productList = (List<Products>) request.getAttribute("productList");
 %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milktea Store</title>
-    <link rel="icon" href="../img/logo/snapedit_1699446793064.png">
+    <link rel="icon" href="img/logo/snapedit_1699446793064.png">
     <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -68,6 +70,38 @@
         background: #088178;
 
     }
+    /* Style for Pagination */
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .pagination a:hover {
+        background-color: #ddd;
+    }
+
+    .pagination .active a {
+        background-color: #f0deb8;
+        color: white;
+        cursor: default;
+    }
+
 </style>
 <jsp:include page="header.jsp"></jsp:include>
 
@@ -77,38 +111,38 @@
 <section id="page-header">
     <div class="container">
         <ul class="breadcrumb" aria-label="breadcrumbs">
-            <li><a href="home.html">Trang chủ</a></li>
+            <li><a href="<%= request.getContextPath() %>/home">Trang chủ</a></li>
             <li class="active"><a href="#">Thức uống</a></li>
         </ul>
         <h1>Thức uống</h1>
         <div class="separator-icon gray"></div>
         <ul class="menu">
             <li class="active">
-                <a href="milktea.html" class="dish text-uppercase">Trà sữa</a>
+                <a href="<%= request.getContextPath() %>/milktea" class="dish text-uppercase">Trà sữa</a>
             </li>
 
             <li class="">
-                <a href="tea.html" class="dish text-uppercase">Trà</a>
+                <a href="<%= request.getContextPath() %>/tea" class="dish text-uppercase">Trà</a>
             </li>
 
             <li class="">
-                <a href="coffee.html" class="dish text-uppercase">Cà phê</a>
+                <a href="<%= request.getContextPath() %>/coffee" class="dish text-uppercase">Cà phê</a>
             </li>
 
             <li class="">
-                <a href="yaourt.html" class="dish text-uppercase">Yaourt</a>
+                <a href="<%= request.getContextPath() %>/yaourt" class="dish text-uppercase">Yaourt</a>
             </li>
 
             <li class="">
-                <a href="soda.html" class="dish text-uppercase">Soda</a>
+                <a href="<%= request.getContextPath() %>/soda" class="dish text-uppercase">Soda</a>
             </li>
 
             <li class="">
-                <a href="smoothie.html" class="dish text-uppercase">Sinh tố</a>
+                <a href="<%= request.getContextPath() %>/smoothie" class="dish text-uppercase">Sinh tố</a>
             </li>
 
             <li class="">
-                <a href="juice.html" class="dish text-uppercase">Nước ép</a>
+                <a href="<%= request.getContextPath() %>/juice" class="dish text-uppercase">Nước ép</a>
             </li>
 
         </ul>
@@ -144,7 +178,8 @@
         while (iterator.hasNext()) {
             Products p = iterator.next();
     %>
-    <div class="pro" onclick="window.location.href='sproduct.html';">
+    <div class="pro" onclick="window.location.href='spproduct.jsp';" >
+
         <img src="<%=p.getImage() %>" alt="">
         <div class="des">
             <span><%= p.getCategory().getName() %></span>
@@ -158,6 +193,7 @@
             </div>
             <h4><%= p.getPrice() %> VND</h4>
         </div>
+
         <a><i class="fa-solid fa-cart-shopping cart"></i></a>
     </div>
     <%
@@ -167,12 +203,41 @@
 
     </section>
 
-    <section id="pagination" class="section-p1">
-        <a href="#">1</a>
-        <a href="milktea2.html">2</a>
-        <a href="milktea2.html"><i class="fas fa-long-arrow-alt-right"></i></a>
-    </section>
+<%--    <section id="pagination" class="section-p1">--%>
+<%--        <a href="#">1</a>--%>
+<%--        <a href="milktea2.html">2</a>--%>
+<%--        <a href="milktea2.html"><i class="fas fa-long-arrow-alt-right"></i></a>--%>
+<%--    </section>--%>
+    <ul class="pagination">
+        <c:if test="${currentPage != 1}">
+            <li class="page-item"><a class="page-link"  href="?page=${currentPage-1}">&laquo;</a></li>
+        </c:if>
 
+        <c:set var="startPage" value="${currentPage - 5}" />
+        <c:if test="${startPage lt 1}">
+            <c:set var="startPage" value="1" />
+        </c:if>
+
+        <c:set var="endPage" value="${startPage + 9}" />
+        <c:if test="${endPage gt numOfPages}">
+            <c:set var="endPage" value="${numOfPages}" />
+        </c:if>
+
+        <c:forEach begin="${startPage}" end="${endPage}" var="i">
+            <c:choose>
+                <c:when test="${currentPage eq i}">
+                    <li class="page-item active"><a class="page-link">${i}</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="?page=${i}">${i}</a></li>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
+
+        <c:if test="${currentPage lt numOfPages}">
+            <li class="page-item"><a class="page-link" href="?page=${currentPage+1}">&raquo;</a></li>
+        </c:if>
+    </ul>
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
             <h4>Sign Up For Newsletter</h4>

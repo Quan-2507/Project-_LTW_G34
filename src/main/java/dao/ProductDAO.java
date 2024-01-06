@@ -18,17 +18,19 @@ import java.util.Map;
 
 public class ProductDAO {
     CategoryService categoryService = new CategoryService();
-    public List<Products> getProductByPage(int currentPage, int productsPerPage) {
+    public List<Products> getProductByPage(int currentPage, int productsPerPage, int categoryID) {
         List<Products> list = new ArrayList<Products>();
         String sql = "SELECT products.id, products.name, products.images, categories.name as c_name,categories.id as c_id, products.status, products.description, products.size, products.costPrice,products.price " +
-                "FROM products INNER JOIN categories ON products.categoryID = categories.id  LIMIT ?,?";
+                "FROM products INNER JOIN categories ON products.categoryID = categories.id " +
+                "WHERE products.categoryID = ? LIMIT ?, ?";
 //        Connection conn = JDBIConnector.connect();
         Connection conn = JDBCConnection.getJDBCConnection();
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, currentPage * productsPerPage - productsPerPage);
-            ps.setInt(2, productsPerPage);
+            ps.setInt(1, categoryID);
+            ps.setInt(2, currentPage * productsPerPage - productsPerPage);
+            ps.setInt(3, productsPerPage);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -96,4 +98,5 @@ public class ProductDAO {
     public int getNoOfProducts() {
         return getAll().size();
     }
+
 }
