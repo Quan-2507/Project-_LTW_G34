@@ -11,7 +11,7 @@ public class ProductService {
     public int numOfProducts() {
         return productDao.getNoOfProducts();
     }
-    public List<Products> getProductByPage(int currentPage, int productsPerPage) {
-        return productDao.getProductByPage(currentPage, productsPerPage);
+    public List<Products> getProductByPage(int currentPage, int productsPerPage, int categoryID) {
+        return productDao.getProductByPage(currentPage, productsPerPage, categoryID);
     }
 }
