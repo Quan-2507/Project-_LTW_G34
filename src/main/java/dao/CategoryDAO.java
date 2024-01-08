@@ -2,7 +2,6 @@ package dao;
 
 
 
-import db.JDBIConnector;
 import entity.Categories;
 import jdbc.JDBCConnection;
 
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CategoryDAO extends JDBIConnector{
+public class CategoryDAO {
 
     public void insert(Categories category) {
         String sql = "INSERT INTO categories(id,name) VALUES (?,?)";

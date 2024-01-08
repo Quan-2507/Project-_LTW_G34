@@ -46,8 +46,9 @@ public class MilkteaController extends HttpServlet {
 */
 
         request.setAttribute("productList", productList);
-        int numOfProduct = productService.numOfProducts();
+        int numOfProduct = productService.numOfProducts(currentPage, productsPerPage,1);
         int numOfPages = numOfProduct / productsPerPage;
+        System.out.println("hehe"+numOfProduct);
         if (numOfPages % productsPerPage > 0) {
             numOfPages++;
         }

@@ -2,15 +2,21 @@ package entity;
 
 public class Images {
     int id;
-    Products productID;
+    int productID;
     String name;
-    String path;
+    String path1;
+    String path2;
+    String path3;
+    String path4;
 
-    public Images(int id, Products productID, String name, String path) {
+    public Images(int id, int productID, String name, String path1, String path2, String path3, String path4) {
         this.id = id;
         this.productID = productID;
         this.name = name;
-        this.path = path;
+        this.path1 = path1;
+        this.path2 = path2;
+        this.path3 = path3;
+        this.path4 = path4;
     }
 
     public Images() {
@@ -24,11 +30,11 @@ public class Images {
         this.id = id;
     }
 
-    public Products getProductID() {
+    public int getProductID() {
         return productID;
     }
 
-    public void setProductID(Products productID) {
+    public void setProductID(int productID) {
         this.productID = productID;
     }
 
@@ -40,12 +46,36 @@ public class Images {
         this.name = name;
     }
 
-    public String getPath() {
-        return path;
+    public String getPath1() {
+        return path1;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setPath1(String path1) {
+        this.path1 = path1;
+    }
+
+    public String getPath2() {
+        return path2;
+    }
+
+    public void setPath2(String path2) {
+        this.path2 = path2;
+    }
+
+    public String getPath3() {
+        return path3;
+    }
+
+    public void setPath3(String path3) {
+        this.path3 = path3;
+    }
+
+    public String getPath4() {
+        return path4;
+    }
+
+    public void setPath4(String path4) {
+        this.path4 = path4;
     }
 
     @Override
@@ -54,7 +84,10 @@ public class Images {
                 "id=" + id +
                 ", productID=" + productID +
                 ", name='" + name + '\'' +
-                ", path='" + path + '\'' +
+                ", path1='" + path1 + '\'' +
+                ", path2='" + path2 + '\'' +
+                ", path3='" + path3 + '\'' +
+                ", path4='" + path4 + '\'' +
                 '}';
     }
 }

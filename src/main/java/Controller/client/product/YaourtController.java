@@ -46,7 +46,7 @@ public class YaourtController extends HttpServlet {
 */
 
         request.setAttribute("productList", productList);
-        int numOfProduct = productService.numOfProducts();
+        int numOfProduct = productService.numOfProducts(currentPage, productsPerPage,4);
         int numOfPages = numOfProduct / productsPerPage;
         if (numOfPages % productsPerPage > 0) {
             numOfPages++;
