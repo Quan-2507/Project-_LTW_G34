@@ -1,5 +1,6 @@
 package Controller.client.product;
 
+import entity.Images;
 import entity.Products;
 import service.CategoryService;
 import service.ProductService;
@@ -18,52 +19,21 @@ import java.util.Map;
 public class SpProductController extends HttpServlet {
     ProductService productService = new ProductService();
     CategoryService categoryService  = new CategoryService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String type = request.getParameter("type");
-        List<Products> productList;
-        int currentPage = 1;
-        int productsPerPage = 12;
-        if (request.getParameter("page") != null)
-            currentPage = Integer.parseInt(
-                    request.getParameter("page"));
-//        if (type==null) {
-        productList = productService.getProductByPage(currentPage, productsPerPage,7);
-/*
-        } else if(type.equals("desc")){
-            productList = productService.getProductByDESC(currentPage, productsPerPage);
-        }
-        else{
-            productList = productService.getProductByACS(currentPage, productsPerPage);
+        List<String> moreIMG;
+        List<Products> bestSeller;
 
-        }
-        Collections.sort(productList, new Comparator<Product>() {
-            @Override
-            public int compare(Product o1, Product o2) {
-                return o1.getSalePrice()>o2.getSalePrice() ? -1: (o1.getSalePrice()<o2.getSalePrice())?1:0;
-            }
-        });
-*/
+        String id = request.getParameter("id");
+        Products products = productService.getID(Integer.parseInt(id));
+        moreIMG = productService.getMoreImage(Integer.parseInt(id));
+        bestSeller = productService.bestSeller(Integer.parseInt(id));
 
-        request.setAttribute("productList", productList);
-        int numOfProduct = productService.numOfProducts();
-        int numOfPages = numOfProduct / productsPerPage;
-        if (numOfPages % productsPerPage > 0) {
-            numOfPages++;
-        }
-        request.setAttribute("numOfPages", numOfPages);
-        request.setAttribute("currentPage", currentPage);
-        request.setAttribute("productsPerPage", productsPerPage);
-
-        System.out.println(numOfPages);
-        System.out.println(currentPage);
-        System.out.println(productsPerPage);
-
-
-//        List<Product> productList = productService.getAll();
-//        request.setAttribute("productList", productList);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("juice.jsp");
+        request.setAttribute("moreIMG",moreIMG);
+        request.setAttribute("bestSeller",bestSeller);
+        request.setAttribute("products", products);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("spproduct.jsp");
         dispatcher.forward(request, response);
     }
 
