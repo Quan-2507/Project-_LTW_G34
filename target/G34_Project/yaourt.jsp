@@ -18,6 +18,7 @@
     // Retrieve the productList attribute from the request
     List<Products> productList = (List<Products>) request.getAttribute("productList");
 %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,7 +126,7 @@
                 while (iterator.hasNext()) {
                     Products p = iterator.next();
             %>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
+            <div class="pro" onclick="window.location.href='${pageContext.request.contextPath}/spproduct?id=<%=p.getId()%>'">
                 <img src="<%=p.getImage() %>" alt="">
                 <div class="des">
                     <span><%= p.getCategory().getName() %></span>
@@ -149,9 +150,36 @@
         </div>
     </section>
 
-    <section id="pagination" class="section-p1">
-        <a href="#">1</a>
-    </section>
+    <ul class="pagination">
+        <c:if test="${currentPage != 1}">
+            <li class="page-item"><a class="page-link"  href="?page=${currentPage-1}">&laquo;</a></li>
+        </c:if>
+
+        <c:set var="startPage" value="${currentPage - 5}" />
+        <c:if test="${startPage lt 1}">
+            <c:set var="startPage" value="1" />
+        </c:if>
+
+        <c:set var="endPage" value="${startPage + 9}" />
+        <c:if test="${endPage gt numOfPages}">
+            <c:set var="endPage" value="${numOfPages}" />
+        </c:if>
+
+        <c:forEach begin="${startPage}" end="${endPage}" var="i">
+            <c:choose>
+                <c:when test="${currentPage eq i}">
+                    <li class="page-item active"><a class="page-link">${i}</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item"><a class="page-link" href="?page=${i}">${i}</a></li>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
+
+        <c:if test="${currentPage lt numOfPages}">
+            <li class="page-item"><a class="page-link" href="?page=${currentPage+1}">&raquo;</a></li>
+        </c:if>
+    </ul>
 
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">

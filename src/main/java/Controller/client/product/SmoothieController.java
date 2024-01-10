@@ -46,7 +46,7 @@ public class SmoothieController extends HttpServlet {
 */
 
         request.setAttribute("productList", productList);
-        int numOfProduct = productService.numOfProducts();
+        int numOfProduct = productService.numOfProducts(currentPage, productsPerPage,6);
         int numOfPages = numOfProduct / productsPerPage;
         if (numOfPages % productsPerPage > 0) {
             numOfPages++;

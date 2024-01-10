@@ -46,7 +46,7 @@ public class CoffeeController extends HttpServlet {
 */
 
         request.setAttribute("productList", productList);
-        int numOfProduct = productService.numOfProducts();
+        int numOfProduct = productService.numOfProducts(currentPage, productsPerPage,3);
         int numOfPages = numOfProduct / productsPerPage;
         if (numOfPages % productsPerPage > 0) {
             numOfPages++;

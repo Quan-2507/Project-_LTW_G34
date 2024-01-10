@@ -18,6 +18,7 @@
     // Retrieve the productList attribute from the request
     List<Products> productList = (List<Products>) request.getAttribute("productList");
 %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,7 +126,7 @@
                 while (iterator.hasNext()) {
                     Products p = iterator.next();
             %>
-            <div class="pro" onclick="window.location.href='sproduct.html';">
+            <div class="pro" onclick="window.location.href='${pageContext.request.contextPath}/spproduct?id=<%=p.getId()%>'">
                 <img src="<%=p.getImage() %>" alt="">
                 <div class="des">
                     <span><%= p.getCategory().getName() %></span>
