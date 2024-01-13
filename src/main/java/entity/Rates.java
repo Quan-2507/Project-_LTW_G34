@@ -1,23 +1,25 @@
 package entity;
 
+import java.util.Date;
+
 public class Rates {
     int id;
     int star;
     int userID;
-    int productID;
+    Products productID;
     String comment;
-    String createAt;
+    Date createAt;
 
-    public Rates(int id, int star, int userID, int productID, String comment, String createAt) {
+    public Rates() {
+    }
+
+    public Rates(int id, int star, int userID, Products productID, String comment, Date createAt) {
         this.id = id;
         this.star = star;
         this.userID = userID;
         this.productID = productID;
         this.comment = comment;
         this.createAt = createAt;
-    }
-
-    public Rates() {
     }
 
     public int getId() {
@@ -44,11 +46,11 @@ public class Rates {
         this.userID = userID;
     }
 
-    public int getProductID() {
+    public Products getProductID() {
         return productID;
     }
 
-    public void setProductID(int productID) {
+    public void setProductID(Products productID) {
         this.productID = productID;
     }
 
@@ -60,11 +62,11 @@ public class Rates {
         this.comment = comment;
     }
 
-    public String getCreateAt() {
+    public Date getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(String createAt) {
+    public void setCreateAt(Date createAt) {
         this.createAt = createAt;
     }
 
@@ -76,7 +78,7 @@ public class Rates {
                 ", userID=" + userID +
                 ", productID=" + productID +
                 ", comment='" + comment + '\'' +
-                ", createAt='" + createAt + '\'' +
+                ", createAt=" + createAt +
                 '}';
     }
 }
