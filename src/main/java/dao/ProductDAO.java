@@ -2,8 +2,10 @@ package dao;
 
 import entity.Categories;
 import entity.Products;
+import entity.Rates;
 import jdbc.JDBCConnection;
 import service.CategoryService;
+import service.RateService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,11 +16,16 @@ import java.util.List;
 
 public class ProductDAO {
     CategoryService categoryService = new CategoryService();
+    RateService rateService = new RateService();
     public List<Products> getProductByPage(int currentPage, int productsPerPage, int categoryID) {
         List<Products> list = new ArrayList<Products>();
-        String sql = "SELECT products.id, products.name, products.images, categories.name as c_name,categories.id as c_id, products.status, products.description, products.size, products.costPrice,products.price " +
-                "FROM products INNER JOIN categories ON products.categoryID = categories.id " +
-                "WHERE products.categoryID = ? LIMIT ?, ?";
+        String sql = "SELECT products.id, products.name, products.images, categories.name as c_name, categories.id as c_id, products.status, products.description, products.size, products.costPrice, products.price, rates.id as r_id, AVG(rates.star) AS star " +
+                "FROM products " +
+                "INNER JOIN categories ON products.categoryID = categories.id " +
+                "LEFT JOIN rates ON rates.productID = products.id " +
+                "WHERE products.categoryID = ? " +
+                "GROUP BY products.id, products.name, products.images, categories.name, categories.id, products.status, products.description, products.size, products.costPrice, products.price, rates.id " +
+                "LIMIT ?, ?";
 //        Connection conn = JDBIConnector.connect();
         Connection conn = JDBCConnection.getJDBCConnection();
 
@@ -31,6 +38,7 @@ public class ProductDAO {
 
             while (rs.next()) {
                 Categories category = categoryService.get(rs.getInt("c_id"));
+                Rates rate = rateService.get(rs.getInt("r_id"));
                 Products product = new Products();
 
                 product.setId(rs.getInt("id"));
@@ -42,6 +50,7 @@ public class ProductDAO {
                 product.setCostPrice(rs.getInt("costPrice"));
                 product.setPrice(rs.getInt("price"));
                 product.setCategory(category);
+                product.setRates(rate);
                 list.add(product);
             }
             System.out.println("Câu truy vấn SQL: " + sql);
@@ -58,14 +67,16 @@ public class ProductDAO {
     }
 
     public List<Products> getAll(int currentPage, int productsPerPage, int categoryID) {
-
         List<Products> productList = new ArrayList<Products>();
-        String sql = "SELECT products.id, products.name,products.images, categories.name as c_name,categories.id as c_id, products.status," +
-                " products.description, products.size, products.costPrice,products.price " +
-                "FROM products INNER JOIN categories ON products.categoryID = categories.id " +
-                "WHERE products.categoryID = ?";
-//        Connection conn = JDBIConnector.connect();
+        String sql = "SELECT products.id, products.name, products.images, categories.name as c_name, categories.id as c_id, products.status, " +
+                "products.description, products.size, products.costPrice, products.price, rates.id as r_id, AVG(rates.star) AS star " +
+                "FROM products " +
+                "INNER JOIN categories ON products.categoryID = categories.id " +
+                "LEFT JOIN rates ON rates.productID = products.id " +
+                "WHERE products.categoryID = ? " +
+                "GROUP BY products.id, products.name, products.images, categories.name, categories.id, products.status, products.description, products.size, products.costPrice, products.price, rates.id";
         Connection conn = JDBCConnection.getJDBCConnection();
+
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, categoryID);
@@ -73,21 +84,23 @@ public class ProductDAO {
 
             while (rs.next()) {
                 Categories category = categoryService.get(rs.getInt("c_id"));
+                Rates rate = rateService.get(rs.getInt("r_id"));
                 Products product = new Products();
-                product.setImage(rs.getString("images"));
+
                 product.setId(rs.getInt("id"));
                 product.setName(rs.getString("name"));
-                product.setCategory(category);
+                product.setImage(rs.getString("images"));
                 product.setStatus(rs.getInt("status"));
                 product.setDescription(rs.getString("description"));
                 product.setSize(rs.getString("size"));
                 product.setCostPrice(rs.getInt("costPrice"));
                 product.setPrice(rs.getInt("price"));
+                product.setCategory(category);
+                product.setRates(rate);
                 productList.add(product);
             }
             conn.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -123,7 +136,7 @@ public class ProductDAO {
     public Products getID (int id) {
         String sql = "SELECT products.id, products.name, products.images, categories.name as c_name, categories.id as c_id, products.status," +
                 " products.description, products.size, products.costPrice, products.price " +
-                "FROM products INNER JOIN categories ON products.categoryID = categories.id " +
+                "FROM products INNER JOIN categories ON products.categoryID = categories.id INNER JOIN rates ON rates.productID = products.id " +
                 "WHERE products.id = ?";
 //        Connection conn = JDBIConnector.connect();
         Connection conn = JDBCConnection.getJDBCConnection();
@@ -161,7 +174,7 @@ public class ProductDAO {
                 " products.description, products.size, products.costPrice, products.price " +
                 "FROM products INNER JOIN categories ON products.categoryID = categories.id " +
                 "INNER JOIN order_details ON products.id = order_details.productID " +
-                "INNER JOIN orders ON orders.id = order_details.orderID " +
+                "INNER JOIN orders ON orders.id = order_details.orderID INNER JOIN rates ON rates.productID = products.id " +
                 "GROUP BY products.id, products.name, products.images, categories.name, categories.id, products.status, products.description, products.size, products.costPrice, products.price " +
                 "ORDER BY SUM(order_details.quantity) DESC";
 //        Connection conn = JDBIConnector.connect();

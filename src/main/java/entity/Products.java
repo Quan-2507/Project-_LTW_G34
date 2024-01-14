@@ -15,6 +15,7 @@ public class Products {
     String images;
     Date createAt;
     Date lastUpdate;
+    Rates rates;
 
     public Products() {
     }
@@ -23,7 +24,7 @@ public class Products {
         this.id = id;
     }
 
-    public Products(int id, String name, Categories category, int status, String description, String size, int costPrice, int price,String images, Date createAt, Date lastUpdate) {
+    public Products(int id, String name, Categories category, int status, String description, String size, int costPrice, int price, String images, Date createAt, Date lastUpdate, Rates rates) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -32,9 +33,10 @@ public class Products {
         this.size = size;
         this.costPrice = costPrice;
         this.price = price;
-        this.images= images;
+        this.images = images;
         this.createAt = createAt;
         this.lastUpdate = lastUpdate;
+        this.rates = rates;
     }
 
     @Override
@@ -51,6 +53,7 @@ public class Products {
                 ", images='" + images + '\'' +
                 ", createAt=" + createAt +
                 ", lastUpdate=" + lastUpdate +
+                ", rates=" + rates +
                 '}';
     }
 
@@ -144,6 +147,22 @@ public class Products {
 
     public void setLastUpdate(Date lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
+
+    public Rates getRates() {
+        return rates;
+    }
+
+    public void setRates(Rates rates) {
+        this.rates = rates;
     }
 
     @Override
