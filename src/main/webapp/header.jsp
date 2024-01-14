@@ -28,7 +28,7 @@
                 </form>
             </li>
             <li class="lg-bag"><a href="cart.html" onclick="showcart()"><i class="fa-solid fa-bag-shopping"></i></a></li>
-            <li class="lg-bag"><a href="signup-signin.html"><i class="fa-regular fa-user"></i></a></li>
+            <li><a href="<%= request.getContextPath() %>/login">Đăng nhập</a></li>
             <a href="#" id="close"><i class="fa fa-times" aria-hidden="true"></i></a>
         </ul>
     </div>

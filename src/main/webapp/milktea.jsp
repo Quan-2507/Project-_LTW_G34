@@ -1,6 +1,7 @@
 <%@ page import="entity.Products" %>
-<%@ page import="java.util.Iterator" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="entity.Rates" %>
+<%@ page import="service.RateService" %>
+<%@ page import="java.util.*" %><%--
   Created by IntelliJ IDEA.
   User: admin
   Date: 28/12/2023
@@ -174,9 +175,28 @@
 <%--            </c:forEach>--%>
 
     <%
+        RateService rateService = new RateService();
+        Set<Integer> displayedProductIds = new HashSet<>();
+
         Iterator<Products> iterator = productList.iterator();
+
         while (iterator.hasNext()) {
             Products p = iterator.next();
+
+            // Kiểm tra xem sản phẩm đã được hiển thị chưa
+            if (displayedProductIds.contains(p.getId())) {
+                continue; // Đã hiển thị, bỏ qua lần lặp này
+            }
+
+            double averageRating = rateService.getAverageRating(p.getId()); // Trung bình đánh giá
+            if (Double.isNaN(averageRating)) {
+                averageRating = 0.0; // Gán giá trị mặc định khi không có đánh giá
+            }
+            int fullStars = (int) averageRating;
+            boolean hasHalfStar = averageRating - fullStars > 0;
+
+            // Thêm sản phẩm vào danh sách đã hiển thị
+            displayedProductIds.add(p.getId());
     %>
     <div class="pro" onclick="window.location.href='${pageContext.request.contextPath}/spproduct?id=<%=p.getId()%>'" >
 
@@ -185,11 +205,12 @@
             <span><%= p.getCategory().getName() %></span>
             <h5><%= p.getName() %></h5>
             <div class="star">
+                <% for (int i = 0; i < fullStars; i++) { %>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <% } %>
+                <% if (hasHalfStar) { %>
+                <i class="fas fa-star-half-alt"></i>
+                <% } %>
             </div>
             <h4><%= p.getPrice() %> VND</h4>
         </div>
