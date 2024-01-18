@@ -116,12 +116,25 @@
                     <span>${bsler.category.name}</span>
                     <h5>${bsler.name}</h5>
                     <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <c:forEach begin="1" end="5" var="star">
+                            <c:choose>
+                                <c:when test="${star <= productRatings[bsler.id]}">
+                                    <i class="fas fa-star"></i>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:choose>
+                                        <c:when test="${star >= productRatings[bsler.id] and star - productRatings[bsler.id] < 1}">
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <i class="fa-regular fa-star"></i>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </div>
+
                     <h4>${bsler.price} VND</h4>
                 </div>
                 <a>
