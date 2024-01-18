@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: admin
@@ -8,7 +7,12 @@
 --%>
 
 <%@ page import="java.io.File" %>
+<%@ page import="entity.Products" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% List<Products> bestSellers = (List<Products>) request.getAttribute("bestSellers");
+    if (bestSellers==null) bestSellers = new ArrayList<>();%>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -64,12 +68,12 @@
     <h2>Best Seller</h2>
     <p>Những món bán chạy nhất Tháng 11<i class="fa-solid fa-fire" style="color: #f11404;"></i><i class="fa-solid fa-fire" style="color: #f11404;"></i></p>
     <div class="pro-container">
-        <c:forEach items="${bestSellers}" var="products">
+        <% for (Products p : bestSellers){%>
         <div class="pro">
-            <img src="${bestSellers.images}products.images" alt="" onclick="window.location.href='sproduct.html';">
+            <img src="<%=p.getImage()%>" alt="" onclick="window.location.href='sproduct.html';">
             <div class="des">
-                <span>${categories.name}</span>
-                <h5>${bestSellers.name}</h5>
+                <span><%=p.getCategory().getName()%></span>
+                <h5><%=p.getName()%></h5>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -77,11 +81,11 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h4>${bestSellers.price}đ</h4>
+                <h4><%=p.getPrice()%>đ</h4>
             </div>
             <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
         </div>
-        </c:forEach>
+        <%}%>
     </div>
 </section>
 

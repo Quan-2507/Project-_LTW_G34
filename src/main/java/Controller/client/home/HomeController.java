@@ -22,13 +22,9 @@ public class HomeController extends HttpServlet {
     CategoryService categoryService  = new CategoryService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductDAO productDAO = new ProductDAO();
-        List<Products> bestSellers = productDAO.bestSeller(0);
+        List<Products> bestSellers = ProductService.getInstance().bestSeller();
         request.setAttribute("bestSellers", bestSellers);
-
-        // Forward to a JSP or other view for rendering
-        RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp"); // Assuming you have a JSP named "home.jsp"
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     @Override
