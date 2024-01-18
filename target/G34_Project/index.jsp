@@ -1,6 +1,19 @@
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<c:url value="" var="url"></c:url>
+<%@ page import="entity.Products" %>
+<%@ page import="entity.Rates" %>
+<%@ page import="service.RateService" %>
+<%@ page import="java.util.*" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page buffer="64kb" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
+<%
+    // Retrieve the productList attribute from the request
+    List<Products> bestSeller = (List<Products>) request.getAttribute("bestSeller");
+%>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -56,72 +69,54 @@
 <section id="product1" class="section-p1">
     <h2>Best Seller</h2>
     <p>Những món bán chạy nhất Tháng 11<i class="fa-solid fa-fire" style="color: #f11404;"></i><i class="fa-solid fa-fire" style="color: #f11404;"></i></p>
-    <div class="pro-container">
-        <div class="pro">
-            <img src="img/products/trà%20sữa/matcha.jpg" alt="" onclick="window.location.href='sproduct.html';">
-            <div class="des">
-                <span>Trà sữa</span>
-                <h5>Trà sữa matcha</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>25.000đ</h4>
-            </div>
-            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
-        </div>
-        <div class="pro" >
-            <img src="img/products/cafe/americano.png" alt="" onclick="window.location.href='sproduct.html';">
-            <div class="des">
-                <span>Cà phê</span>
-                <h5>Americano</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>25.000đ</h4>
-            </div>
-            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
-        </div>
-        <div class="pro" >
-            <img src="img/products/nước%20ép/cacm.jpg" alt="" onclick="window.location.href='sproduct.html';">
-            <div class="des">
-                <span>Nước ép</span>
-                <h5>Nước ép cam</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>25.000đ</h4>
-            </div>
-            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
-        </div>
-        <div class="pro" >
-            <img src="img/products/sinh%20tố/cookie%20đá%20xay.jpg" alt="" onclick="window.location.href='sproduct.html';">
-            <div class="des">
-                <span>Sinh tố</span>
-                <h5>Sinh tố cookie đá xay</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>25.000đ</h4>
-            </div>
-            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
-        </div>
-    </div>
+<%--    <div class="pro-container">--%>
+<%--        <%--%>
+<%--            RateService rateService = new RateService();--%>
+<%--            Set<Integer> displayedProductIds = new HashSet<>();--%>
+
+<%--            Iterator<Products> iterator = bestSeller.iterator();--%>
+
+<%--            while (iterator.hasNext()) {--%>
+<%--                Products p = iterator.next();--%>
+
+<%--                // Kiểm tra xem sản phẩm đã được hiển thị chưa--%>
+<%--                if (displayedProductIds.contains(p.getId())) {--%>
+<%--                    continue; // Đã hiển thị, bỏ qua lần lặp này--%>
+<%--                }--%>
+
+<%--                double averageRating = rateService.getAverageRating(p.getId()); // Trung bình đánh giá--%>
+<%--                if (Double.isNaN(averageRating)) {--%>
+<%--                    averageRating = 0.0; // Gán giá trị mặc định khi không có đánh giá--%>
+<%--                }--%>
+<%--                int fullStars = (int) averageRating;--%>
+<%--                boolean hasHalfStar = averageRating - fullStars > 0;--%>
+
+<%--                // Thêm sản phẩm vào danh sách đã hiển thị--%>
+<%--                displayedProductIds.add(p.getId());--%>
+<%--        %>--%>
+<%--        <div class="pro" onclick="window.location.href='${pageContext.request.contextPath}/spproduct?id=<%=p.getId()%>'" >--%>
+
+<%--            <img src="<%=p.getImage() %>" alt="">--%>
+<%--            <div class="des">--%>
+<%--                <span><%= p.getCategory().getName() %></span>--%>
+<%--                <h5><%= p.getName() %></h5>--%>
+<%--                <div class="star">--%>
+<%--                    <% for (int i = 0; i < fullStars; i++) { %>--%>
+<%--                    <i class="fas fa-star"></i>--%>
+<%--                    <% } %>--%>
+<%--                    <% if (hasHalfStar) { %>--%>
+<%--                    <i class="fas fa-star-half-alt"></i>--%>
+<%--                    <% } %>--%>
+<%--                </div>--%>
+<%--                <h4><%= p.getPrice() %> VND</h4>--%>
+<%--            </div>--%>
+
+<%--            <a><i class="fa-solid fa-cart-shopping cart"></i></a>--%>
+<%--        </div>--%>
+<%--        <%--%>
+<%--            }--%>
+<%--        %>--%>
+<%--    </div>--%>
 </section>
 
 <section id="banner" class="section-m1">

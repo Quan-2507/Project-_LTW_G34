@@ -6,6 +6,12 @@ import entity.Products;
 import java.util.List;
 
 public class ProductService {
+    private static ProductService instance;
+
+    public static ProductService getInstance() {
+        if(instance ==  null ) instance = new ProductService();
+        return instance;
+    }
 
     ProductDAO productDao = new ProductDAO();
 
@@ -24,7 +30,7 @@ public class ProductService {
     public Products getID(int id) {
         return  productDao.getID(id);
     }
-    public List<Products> bestSeller(int id){
-        return productDao.bestSeller(id);
+    public List<Products> bestSeller(){
+        return productDao.bestSeller();
     }
 }
