@@ -7,7 +7,12 @@
 --%>
 
 <%@ page import="java.io.File" %>
+<%@ page import="entity.Products" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% List<Products> bestSellers = (List<Products>) request.getAttribute("bestSellers");
+    if (bestSellers==null) bestSellers = new ArrayList<>();%>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -63,11 +68,12 @@
     <h2>Best Seller</h2>
     <p>Những món bán chạy nhất Tháng 11<i class="fa-solid fa-fire" style="color: #f11404;"></i><i class="fa-solid fa-fire" style="color: #f11404;"></i></p>
     <div class="pro-container">
+        <% for (Products p : bestSellers){%>
         <div class="pro">
-            <img src="img/products/trà%20sữa/matcha.jpg" alt="" onclick="window.location.href='sproduct.html';">
+            <img src="<%=p.getImage()%>" alt="" onclick="window.location.href='sproduct.html';">
             <div class="des">
-                <span>Trà sữa</span>
-                <h5>Trà sữa matcha</h5>
+                <span><%=p.getCategory().getName()%></span>
+                <h5><%=p.getName()%></h5>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -75,58 +81,11 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h4>25.000đ</h4>
+                <h4><%=p.getPrice()%>đ</h4>
             </div>
             <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
         </div>
-        <div class="pro" >
-            <img src="img/products/cafe/americano.png" alt="" onclick="window.location.href='sproduct.html';">
-            <div class="des">
-                <span>Cà phê</span>
-                <h5>Americano</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>25.000đ</h4>
-            </div>
-            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
-        </div>
-        <div class="pro" >
-            <img src="img/products/nước%20ép/cacm.jpg" alt="" onclick="window.location.href='sproduct.html';">
-            <div class="des">
-                <span>Nước ép</span>
-                <h5>Nước ép cam</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>25.000đ</h4>
-            </div>
-            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
-        </div>
-        <div class="pro" >
-            <img src="img/products/sinh%20tố/cookie%20đá%20xay.jpg" alt="" onclick="window.location.href='sproduct.html';">
-            <div class="des">
-                <span>Sinh tố</span>
-                <h5>Sinh tố cookie đá xay</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>25.000đ</h4>
-            </div>
-            <a><button onclick="themvaogiohang(this)" style="cursor: pointer"><i class="fa-solid fa-cart-shopping cart"></i></button></a>
-        </div>
+        <%}%>
     </div>
 </section>
 

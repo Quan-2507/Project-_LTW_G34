@@ -1,7 +1,5 @@
-package Controller.client.home;
+package Controller.client.product;
 
-
-import dao.ProductDAO;
 import entity.Products;
 import service.CategoryService;
 import service.ProductService;
@@ -16,19 +14,22 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name ="HomeController", value = "/home")
-public class HomeController extends HttpServlet {
-    ProductService productService = new ProductService();
+@WebServlet(name ="SmoothieController", value = "/smoothie")
+public class RateController extends HttpServlet {
+//    ProductService productService = new ProductService();
     CategoryService categoryService  = new CategoryService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Products> bestSellers = ProductService.getInstance().bestSeller();
-        request.setAttribute("bestSellers", bestSellers);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+
+//        List<Product> productList = productService.getAll();
+//        request.setAttribute("productList", productList);
+
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("smoothie.jsp");
+//        dispatcher.forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      doGet(request,response);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req,resp);
     }
 }

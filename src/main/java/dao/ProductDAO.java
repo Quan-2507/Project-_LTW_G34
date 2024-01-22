@@ -168,7 +168,7 @@ public class ProductDAO {
 
         return null;
     }
-    public List<Products> bestSeller(int id){
+    public List<Products> bestSeller(){
         List<Products> productsList = new ArrayList<Products>();
         String sql = "SELECT products.id, products.name, products.images, categories.name as c_name, categories.id as c_id, products.status," +
                 " products.description, products.size, products.costPrice, products.price " +
@@ -176,7 +176,7 @@ public class ProductDAO {
                 "INNER JOIN order_details ON products.id = order_details.productID " +
                 "INNER JOIN orders ON orders.id = order_details.orderID INNER JOIN rates ON rates.productID = products.id " +
                 "GROUP BY products.id, products.name, products.images, categories.name, categories.id, products.status, products.description, products.size, products.costPrice, products.price " +
-                "ORDER BY SUM(order_details.quantity) DESC";
+                "ORDER BY SUM(order_details.quantity) DESC LIMIT 4";
 //        Connection conn = JDBIConnector.connect();
         Connection conn = JDBCConnection.getJDBCConnection();
         try {
