@@ -1,6 +1,8 @@
 package entity;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable {
     int id;
     String name;
     String userName;

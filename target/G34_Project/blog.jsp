@@ -31,7 +31,7 @@
 <section id="page-header">
     <div class="container">
         <ul class="breadcrumb" aria-label="breadcrumbs">
-            <li><a href="home.html">Trang chủ</a></li>
+            <li><a  href="<%= request.getContextPath() %>/home">Trang chủ</a></li>
             <li class="active"><a href="#">Khuyến mãi</a></li>
         </ul>
         <h1>Khuyến mãi #1</h1>
