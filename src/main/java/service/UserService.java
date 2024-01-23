@@ -2,10 +2,13 @@ package service;
 
 import dao.UserDAO;
 import entity.Users;
+
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 
 public class UserService {
-     UserDAO userDao;
+    UserDAO userDao;
 
     public UserService() {
         this.userDao = new UserDAO();
@@ -15,4 +18,7 @@ public class UserService {
         return userDao.checkLogin(username, password);
     }
 
+    public List<Users> getAdmin(int status) {
+        return userDao.getAdmin(status);
+    }
 }

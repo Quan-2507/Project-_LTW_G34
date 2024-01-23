@@ -152,46 +152,7 @@ body {
 
 /* Search button */
 
-#navbar .search,
-#mobile .search {
-    background-color: linear-gradient(to bottom right, #b1227a, #429aee);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-}
 
-#navbar .search :is(input,button),
-#mobile .search :is(input,button) {
-    color: inherit;
-    border: none;
-    background: transparent;
-    outline: none;
-}
-
-#navbar .search__input,
-#mobile .search__input {
-    width: 0;
-    transition: width .5s;
-}
-
-#navbar .search__btn,
-#mobile .search__btn {
-    width: 25px;
-    height: 25px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-}
-
-#navbar .search:focus-within input,
-#mobile .search:focus-within input {
-    width: 200px;
-}
-
-#navbar ::placeholder,
-#mobile ::placeholder {
-    color: #7e5730;
-}
 
 
 /* Home Page */
@@ -1703,9 +1664,9 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
         font-size: 24px;
     }
 
-    .lg-bag {
-        display: none;
-    }
+    /*.lg-bag {*/
+    /*    display: none;*/
+    /*}*/
 
     #hero {
         height: 70vh;
