@@ -11,22 +11,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name ="sanphamController", value = "/sanpham")
-public class sanphamController extends HttpServlet {
-    ProductService productService = new ProductService();
-    CategoryService categoryService = new CategoryService();
+@WebServlet(name ="hoadonController", value = "/hoadon")
+public class hoadonController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Products> productList ;
-//
-        productList = productService.getAll();
-//
-        request.setAttribute("productList", productList);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("sanpham.jsp");
+
+
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("hoadon.jsp");
         dispatcher.forward(request, response);
     }
 

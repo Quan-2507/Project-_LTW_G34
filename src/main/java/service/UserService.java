@@ -21,4 +21,7 @@ public class UserService {
     public List<Users> getAdmin(int status) {
         return userDao.getAdmin(status);
     }
+    public Users get(int id) {
+        return userDao.get(id);
+    }
 }
