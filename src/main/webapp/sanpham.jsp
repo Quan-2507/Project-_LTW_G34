@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: admin
@@ -6,25 +7,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRUD Operations</title>
-    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <link rel="stylesheet" href="Admin/css/style.css">
-
-    <title>CRUD Operations</title>
-
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
     <nav>
         <ul>
             <li><a href="<%= request.getContextPath() %>" class="logo">
-                <img src="../images/snapedit_1699446793064.png">
+                <img src="img/snapedit_1699446793064.png">
                 <span class="nav-item">Trang chủ</span>
             </a></li>
             <li><a href="<%= request.getContextPath() %>/taikhoan">
@@ -38,6 +35,10 @@
             <li><a href="<%= request.getContextPath() %>/sanpham">
                 <i class="fa-solid fa-mug-saucer"></i>
                 <span class="nav-item">Sản phẩm</span>
+            </a></li>
+            <li><a href="<%= request.getContextPath() %>/hoadon">
+                <i class="fa-solid fa-receipt"></i>
+                <span class="nav-item">Hóa đơn</span>
             </a></li>
             <li><a href="../../html/signup-signin.html" class="logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
@@ -56,7 +57,6 @@
                     <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Product ID</td>
                         <td>Mô tả</td>
                         <td>Size</td>
                         <td>Giá</td>
@@ -64,78 +64,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>21122</td>
-                        <td>..</td>
-                        <td>M</td>
-                        <td>25.000đ</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>21122</td>
-                        <td>..</td>
-                        <td>M</td>
-                        <td>25.000đ</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>21122</td>
-                        <td>..</td>
-                        <td>M</td>
-                        <td>25.000đ</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>21122</td>
-                        <td>..</td>
-                        <td>M</td>
-                        <td>25.000đ</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>21122</td>
-                        <td>..</td>
-                        <td>M</td>
-                        <td>25.000đ</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>21122</td>
-                        <td>..</td>
-                        <td>M</td>
-                        <td>25.000đ</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
+                    <c:forEach var="product" items="${productList}">
+                        <tr>
+
+                            <td>${product.id}</td>
+                            <td>${product.description}</td>
+                            <td>${product.size}</td>
+                            <td>${product.price}đ</td>
+                            <td>
+                                <i class="fa-solid fa-plus"></i>
+                                <i class="fa-solid fa-trash-can"></i>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </td>
+                        </tr>
+                    </c:forEach>
+
+
                     </tbody>
                 </table>
             </div>

@@ -106,8 +106,49 @@ public class ProductDAO {
 
         return productList;
     }
+    public List<Products> getAll() {
+        List<Products> productList = new ArrayList<>();
+        String sql = "SELECT products.id, products.name, products.images, categories.name as c_name, categories.id as c_id, products.status, " +
+                "products.description, products.size, products.costPrice, products.price " +
+                "FROM products " +
+                "INNER JOIN categories ON products.categoryID = categories.id " +
+                "GROUP BY products.id, products.name, products.images, categories.name, categories.id, products.status, products.description, products.size, products.costPrice, products.price ";
+        try (Connection conn = JDBCConnection.getJDBCConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Categories category = categoryService.get(rs.getInt("c_id"));
+
+
+                Products product = new Products();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setImage(rs.getString("images"));
+                product.setStatus(rs.getInt("status"));
+                product.setDescription(rs.getString("description"));
+                product.setSize(rs.getString("size"));
+                product.setCostPrice(rs.getInt("costPrice"));
+                product.setPrice(rs.getInt("price"));
+                product.setCategory(category);
+
+                // Sử dụng đối tượng rate nếu cần
+                // product.setRate(rate);
+
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return productList;
+    }
+
     public int getNoOfProducts(int currentPage, int productsPerPage, int categoryID) {
         return getAll( currentPage,  productsPerPage, categoryID).size();
+    }
+    public int getNoOfProducts() {
+        return getAll().size();
     }
     public List<String> getMoreImage(int id) {
         ArrayList<String> listImg = new ArrayList<String>();
@@ -250,6 +291,5 @@ public class ProductDAO {
     }
         return list;
     }
-
 
 }

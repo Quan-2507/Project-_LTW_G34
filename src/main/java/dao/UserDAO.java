@@ -1,5 +1,6 @@
 package dao;
 
+import entity.Categories;
 import entity.Users;
 import jdbc.JDBCConnection;
 
@@ -80,6 +81,29 @@ return list;
             e.printStackTrace();
         }
         return list;
+    }
+    public Users get(int id) {
+        String sql = "SELECT * FROM users WHERE id = ? ";
+        Connection conn = JDBCConnection.getJDBCConnection()    ;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Users user = new Users();
+
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+
+                return user;
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

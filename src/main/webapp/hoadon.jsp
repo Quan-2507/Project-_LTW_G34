@@ -3,12 +3,12 @@
   Created by IntelliJ IDEA.
   User: admin
   Date: 22/1/2024
-  Time: 5:20 PM
+  Time: 5:21 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -73,11 +73,15 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Họ và tên</td>
-                        <td>Năm sinh</td>
-                        <td>Chức vụ</td>
-                        <td>Chi tiết</td>
+                        <td>ID hóa đơn</td>
+                        <td>Tên người mua</td>
+                        <td>Ngày mua</td>
+                        <td>Các sản phẩm</td>
+                        <td>Số lượng</td>
+                        <td>Size</td>
+                        <td>Giá</td>
+                        <td>Tiền giao hàng</td>
+                        <td>Tổng tiền</td>
                     </tr>
                     </thead>
                     <tbody>
