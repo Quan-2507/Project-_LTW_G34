@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Users implements Serializable {
     int id;
@@ -12,10 +13,15 @@ public class Users implements Serializable {
     int role;
     String createAt;
     String lastUpdate;
-    int addressID;
+    Address addressID;
     int status;
+    String position;
+    Date dateOfBirth;
 
-    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, int addressID, int status) {
+    public Users() {
+    }
+
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, Address addressID, int status, String position, Date dateOfBirth) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -27,9 +33,8 @@ public class Users implements Serializable {
         this.lastUpdate = lastUpdate;
         this.addressID = addressID;
         this.status = status;
-    }
-
-    public Users() {
+        this.position = position;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public int getId() {
@@ -104,11 +109,11 @@ public class Users implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public int getAddressID() {
+    public Address getAddressID() {
         return addressID;
     }
 
-    public void setAddressID(int addressID) {
+    public void setAddressID(Address addressID) {
         this.addressID = addressID;
     }
 
@@ -118,6 +123,22 @@ public class Users implements Serializable {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override
@@ -134,6 +155,8 @@ public class Users implements Serializable {
                 ", lastUpdate='" + lastUpdate + '\'' +
                 ", addressID=" + addressID +
                 ", status=" + status +
+                ", position='" + position + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
 }

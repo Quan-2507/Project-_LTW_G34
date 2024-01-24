@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
     public boolean checkLogin(String username, String password) {
@@ -30,6 +32,54 @@ public class UserDAO {
             }
         }
         return false;
+    }
+    public List<Users> getAdmin(int status){
+        List<Users> list = new ArrayList<Users>();
+        String sql = "Select id, name, dateOfBirth, position " +
+                "From users WHERE status =?";
+        Connection conn = JDBCConnection.getJDBCConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,status);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Users users = new Users();
+                users.setId(rs.getInt("id"));
+                users.setName(rs.getString("name"));
+                users.setDateOfBirth(rs.getDate("dateOfBirth"));
+                users.setPosition(rs.getString("position"));
+                list.add(users);
+            }
+            conn.close();
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+return list;
+    }
+    public List<Users> getUser(int status){
+        List<Users> list = new ArrayList<Users>();
+        String sql = "Select users.id, users.name, user.email, address position " +
+                "From users inner join address on users.addressID = address.id WHERE status =?";
+        Connection conn = JDBCConnection.getJDBCConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,status);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Users users = new Users();
+                users.setId(rs.getInt("id"));
+                users.setName(rs.getString("name"));
+                users.setDateOfBirth(rs.getDate("dateOfBirth"));
+                users.setPosition(rs.getString("position"));
+                list.add(users);
+            }
+            conn.close();
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return list;
     }
 
 }

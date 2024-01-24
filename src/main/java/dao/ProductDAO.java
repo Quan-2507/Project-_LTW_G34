@@ -207,5 +207,49 @@ public class ProductDAO {
 
         return productsList;
     }
+    public List<Products> searchByName(String txtSearch) {
+        List<Products> list = new ArrayList<>();
+        if(txtSearch != null && !txtSearch.trim().isEmpty()){
+        String sql = "SELECT products.id, products.name, products.images, categories.name as c_name, categories.id as c_id, products.status, " +
+                "products.description, products.size, products.costPrice, products.price, rates.id as r_id, AVG(rates.star) AS star " +
+                "FROM products " +
+                "INNER JOIN categories ON products.categoryID = categories.id " +
+                "LEFT JOIN rates ON rates.productID = products.id " +
+                "WHERE products.name LIKE ? " +
+                "GROUP BY products.id, products.name, products.images, categories.name, categories.id, products.status, products.description, products.size, products.costPrice, products.price ";  // Thêm GROUP BY để tránh lỗi khi sử dụng AVG
+
+        Connection conn = JDBCConnection.getJDBCConnection();
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, "%" + txtSearch + "%");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Categories category = categoryService.get(rs.getInt("c_id"));
+                Rates rate = rateService.get(rs.getInt("r_id"));
+                Products product = new Products();
+
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setImage(rs.getString("images"));
+                product.setStatus(rs.getInt("status"));
+                product.setDescription(rs.getString("description"));
+                product.setSize(rs.getString("size"));
+                product.setCostPrice(rs.getInt("costPrice"));
+                product.setPrice(rs.getInt("price"));
+                product.setCategory(category);
+                product.setRates(rate);
+                list.add(product);
+            }
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+        return list;
+    }
+
 
 }

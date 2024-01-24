@@ -1,6 +1,5 @@
 package Controller.client.product;
 
-import entity.Images;
 import entity.Products;
 import service.CategoryService;
 import service.ProductService;
@@ -15,28 +14,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet(name ="SpProductController", value = "/spproduct")
-public class SpProductController extends HttpServlet {
+@WebServlet(name = "SearchController", value = "/loadProductByName")
+public class SearchController extends HttpServlet {
     ProductService productService = new ProductService();
     CategoryService categoryService  = new CategoryService();
 
     RateService rateService = new RateService();
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<String> moreIMG;
-        List<Products> bestSeller;
-
-        String id = request.getParameter("id");
-        Products products = productService.getID(Integer.parseInt(id));
-        moreIMG = productService.getMoreImage(Integer.parseInt(id));
-        bestSeller = productService.bestSeller();
-        double getAVGRate = rateService.getAverageRating(Integer.parseInt(id));
+        String name =request.getParameter("name");
+        List<Products> products =  productService.searchByName(name);
+        System.out.println(products);
         Set<Integer> displayedProductIds = new HashSet<>();
         // Thêm một thuộc tính mới để lấy danh sách đánh giá cho mỗi sản phẩm trong danh sách bestSeller
         Map<Integer, Double> productRatings = new HashMap<>();
 
-        Iterator<Products> iterator = bestSeller.iterator();
+        Iterator<Products> iterator = products.iterator();
 
         int fullStars = 0;
         boolean hasHalfStar = false;
@@ -61,15 +54,13 @@ public class SpProductController extends HttpServlet {
         request.setAttribute("productRatings", productRatings);
         request.setAttribute("fullStars", fullStars);
         request.setAttribute("hasHalfStar", hasHalfStar);
-        request.setAttribute("moreIMG", moreIMG);
-        request.setAttribute("bestSeller", bestSeller);
         request.setAttribute("products", products);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("spproduct.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("loadProductByName.jsp");
         dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req,resp);
+        super.doPost(req, resp);
     }
 }
