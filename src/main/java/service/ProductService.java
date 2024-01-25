@@ -33,4 +33,14 @@ public class ProductService {
     public List<Products> bestSeller(){
         return productDao.bestSeller();
     }
+    public List<Products> searchByName(String txtSearch) {
+        // Implement logic to search products by name in the database
+        return productDao.searchByName(txtSearch);
+    }
+    public List<Products> getAll() {
+        return productDao.getAll();
+    }
+    public int numOfProducts() {
+        return productDao.getNoOfProducts();
+    }
 }

@@ -27,7 +27,12 @@ public class UserService {
     public static boolean checkLogin(String username, String password) {
         return userDao.checkLogin(username, password);
     }
-
+    public List<Users> getAdmin(int status) {
+        return userDao.getAdmin(status);
+    }
+    public Users get(int id) {
+        return userDao.get(id);
+    }
     public boolean checkExistUserName(String userName) {
         return userDao.checkExistUserName(userName);
     }

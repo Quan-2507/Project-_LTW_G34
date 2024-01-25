@@ -1,12 +1,14 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: admin
   Date: 22/1/2024
-  Time: 5:20 PM
+  Time: 5:21 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<%@ page isELIgnored="false" %>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +21,7 @@
     <nav>
         <ul>
             <li><a href="<%= request.getContextPath() %>" class="logo">
-                <img src="images/snapedit_1699446793064.png">
+                <img src="img/snapedit_1699446793064.png">
                 <span class="nav-item">Trang chủ</span>
             </a></li>
             <li><a href="<%= request.getContextPath() %>/taikhoan">
@@ -34,7 +36,11 @@
                 <i class="fa-solid fa-mug-saucer"></i>
                 <span class="nav-item">Sản phẩm</span>
             </a></li>
-            <li><a href="logout">
+            <li><a href="<%= request.getContextPath() %>/hoadon">
+                <i class="fa-solid fa-receipt"></i>
+                <span class="nav-item">Hóa đơn</span>
+            </a></li>
+            <li><a href="../../html/signup-signin.html" class="logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="nav-item">Đăng xuất</span>
             </a></li>
@@ -46,17 +52,17 @@
         </div>
         <div class="users">
             <div class="card">
-                <img src="images/snapedit_1699446793064.png">
+                <img src="../images/snapedit_1699446793064.png">
                 <h4>Doanh thu</h4>
                 <p>122.234.000.000</p>
             </div>
             <div class="card">
-                <img src="images/snapedit_1699446793064.png">
+                <img src="../images/snapedit_1699446793064.png">
                 <h4>Vốn</h4>
                 <p>78.120.000.000</p>
             </div>
             <div class="card">
-                <img src="images/snapedit_1699446793064.png">
+                <img src="../images/snapedit_1699446793064.png">
                 <h4>Lợi nhuận</h4>
                 <p>44.114.000.000</p>
             </div>
@@ -67,47 +73,33 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Họ và tên</td>
-                        <td>Tuổi</td>
-                        <td>Chức vụ</td>
-                        <td>Chi tiết</td>
+                        <td>ID hóa đơn</td>
+                        <td>Tên người mua</td>
+                        <td>Ngày mua</td>
+                        <td>Các sản phẩm</td>
+                        <td>Số lượng</td>
+                        <td>Size</td>
+                        <td>Giá</td>
+                        <td>Tiền giao hàng</td>
+                        <td>Tổng tiền</td>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>21130495</td>
-                        <td>Trần Minh Quân</td>
-                        <td>22</td>
-                        <td>Quản lý</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr class="active">
-                        <td>21130504</td>
-                        <td>Kiều Thị Ngọc Qúy </td>
-                        <td>20</td>
-                        <td>Thu ngân</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>21130461</td>
-                        <td>Trần Thị Thiện Nhân</td>
-                        <td>20</td>
-                        <td>Phục vụ</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
+                    <c:forEach var="admin" items="${adminList}">
+                        <tr>
+                            <td>${admin.id}</td>
+                            <td>${admin.name}</td>
+                            <td>${admin.dateOfBirth}</td>
+                            <td>${admin.position}</td>
+                            <td>
+                                <i class="fa-solid fa-plus"></i>
+                                <i class="fa-solid fa-trash-can"></i>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </td>
+                        </tr>
+                    </c:forEach>
+
+
                     </tbody>
                 </table>
             </div>

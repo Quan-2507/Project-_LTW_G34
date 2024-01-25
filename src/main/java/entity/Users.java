@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Users implements Serializable {
     int id;
@@ -12,9 +13,20 @@ public class Users implements Serializable {
     int role;
     String createAt;
     String lastUpdate;
-    int addressID;
+    String addressID;
     int status;
+    String position;
+    Date dateOfBirth;
+
     private VerifyAccount verifyAccount;
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
     public Users(Users u ){
         this.id = u.id;
@@ -30,7 +42,23 @@ public class Users implements Serializable {
         this.status = u.status;
         this.verifyAccount = u.verifyAccount;
     }
-    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, int addressID, int status) {
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String addressID, int status, String position, Date dateOfBirth) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.role = role;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.addressID = addressID;
+        this.status = status;
+        this.position = position;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String addressID, int status) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -43,7 +71,7 @@ public class Users implements Serializable {
         this.addressID = addressID;
         this.status = status;
     }
-    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, int addressID) {
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String addressID) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -55,7 +83,7 @@ public class Users implements Serializable {
         this.lastUpdate = lastUpdate;
         this.addressID = addressID;
     }
-    public Users(int id, String name, String userName, String email, int phoneNumber, String password,  String createAt, String lastUpdate, int addressID) {
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password,  String createAt, String lastUpdate, String addressID) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -66,7 +94,7 @@ public class Users implements Serializable {
         this.lastUpdate = lastUpdate;
         this.addressID = addressID;
     }
-    public Users( String name, String userName, String email, int phoneNumber, String password,  String createAt, String lastUpdate, int addressID) {
+    public Users( String name, String userName, String email, int phoneNumber, String password,  String createAt, String lastUpdate, String addressID) {
         this.name = name;
         this.userName = userName;
         this.email = email;
@@ -105,6 +133,14 @@ public class Users implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getUserName() {
@@ -163,11 +199,11 @@ public class Users implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public int getAddressID() {
+    public String getAddressID() {
         return addressID;
     }
 
-    public void setAddressID(int addressID) {
+    public void setAddressID(String addressID) {
         this.addressID = addressID;
     }
 
@@ -199,8 +235,11 @@ public class Users implements Serializable {
                 ", role=" + role +
                 ", createAt='" + createAt + '\'' +
                 ", lastUpdate='" + lastUpdate + '\'' +
-                ", addressID=" + addressID +
+                ", addressID='" + addressID + '\'' +
                 ", status=" + status +
+                ", verifyAccount=" + verifyAccount +
+                ", position='" + position + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
 }

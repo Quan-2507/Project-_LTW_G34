@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
     Connection connection = JDBCConnection.getJDBCConnection();
@@ -32,6 +33,78 @@ public class UserDAO {
             }
         }
         return false;
+    }
+    public List<Users> getAdmin(int status){
+        List<Users> list = new ArrayList<Users>();
+        String sql = "Select id, name, dateOfBirth, position " +
+                "From users WHERE status =?";
+        Connection conn = JDBCConnection.getJDBCConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,status);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Users users = new Users();
+                users.setId(rs.getInt("id"));
+                users.setName(rs.getString("name"));
+                users.setDateOfBirth(rs.getDate("dateOfBirth"));
+                users.setPosition(rs.getString("position"));
+                list.add(users);
+            }
+            conn.close();
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public List<Users> getUser(int status){
+        List<Users> list = new ArrayList<Users>();
+        String sql = "Select users.id, users.name, user.email, address, position " +
+                "From users WHERE status =?";
+        Connection conn = JDBCConnection.getJDBCConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,status);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Users users = new Users();
+                users.setId(rs.getInt("id"));
+                users.setName(rs.getString("name"));
+                users.setDateOfBirth(rs.getDate("dateOfBirth"));
+                users.setPosition(rs.getString("position"));
+                list.add(users);
+            }
+            conn.close();
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public Users get(int id) {
+        String sql = "SELECT a.id,a.name, a.userName, a.password,  a.phoneNumber, a.dateOfBirth, a.address, a.email, a.role, a.status "
+        +"FROM users a WHERE a.id = ? ";
+        Connection conn = JDBCConnection.getJDBCConnection()    ;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Users user = new Users();
+
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+
+                return user;
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
     public static boolean checkExistUserName(String userName) {
         boolean re = false;
@@ -74,7 +147,7 @@ public class UserDAO {
             // Tạo kết nối đến database
             Connection connection = JDBCConnection.getJDBCConnection();
             // Tạo đối tượng statement
-            String sql = "select a.id,a.name, a.userName, a.email, a.phoneNumber, a.password, a.role, a.creatAt, a.lastUpdate, a.addressID, a.status " +
+            String sql = "select a.id,a.name, a.userName, a.email, a.phoneNumber, a.password, a.role, a.creatAt, a.lastUpdate, a.address, a.status " +
                     "from users as a " +
                     "where a.id =? ";
             PreparedStatement pr = connection.prepareStatement(sql);
@@ -91,7 +164,7 @@ public class UserDAO {
                 int role = resultSet.getInt("role");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                int addressID = resultSet.getInt("addressID");
+                String addressID = resultSet.getString("addressID");
                 int status = resultSet.getInt("status");
                 re = new Users(id, name,userName,email, phoneNumber, password, role, createAt, lastUpdate, addressID, status);
             }
@@ -200,7 +273,7 @@ public class UserDAO {
                 String password = resultSet.getString("password");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                int addressID = resultSet.getInt("addressID");
+                String addressID = resultSet.getString("addressID");
                 users = new Users(id, name,userName,email, phoneNumber, password, createAt, lastUpdate, addressID);
             }
             JDBCConnection.close(connection);
@@ -254,7 +327,7 @@ public class UserDAO {
         int re = 0;
         Connection connection = JDBCConnection.getJDBCConnection();
         String sql = "UPDATE users " +
-                "SET name=?, userName=?, email=?, phoneNumber=?, password=?,  creatAt=?, lastUpdate=?, addressID=? " +
+                "SET name=?, userName=?, email=?, phoneNumber=?, password=?,  creatAt=?, lastUpdate=?, address=? " +
                 "WHERE id=?";
         try (PreparedStatement pr = connection.prepareStatement(sql)) {
             pr.setString(1, users.getName());
@@ -264,7 +337,7 @@ public class UserDAO {
             pr.setString(5, users.getPassword());
             pr.setString(6, users.getCreateAt());
             pr.setString(7, users.getLastUpdate());
-            pr.setInt(8, users.getAddressID());
+            pr.setString(8, users.getAddressID());
             pr.setInt(9, users.getId());
             re = pr.executeUpdate();
             JDBCConnection.close(connection);
@@ -296,7 +369,7 @@ public class UserDAO {
     public static ArrayList<Users> listAllAccount() {
         ArrayList<Users> list = new ArrayList<>();
         Connection connection = JDBCConnection.getJDBCConnection();
-        String sql = "select name, userName, email, phoneNumber, password, role, creatAt, lastUpdate, addressID, status from users ";
+        String sql = "select name, userName, email, phoneNumber, password, role, creatAt, lastUpdate, address, status from users ";
         try {
             PreparedStatement pr = connection.prepareStatement(sql);
             ResultSet resultSet = pr.executeQuery();
@@ -310,7 +383,7 @@ public class UserDAO {
                 int role = resultSet.getInt("role");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                int addressID = resultSet.getInt("addressID");
+                String addressID = resultSet.getString("addressID");
                 int status = resultSet.getInt("status");
                 Users user = new Users(id, name,userName,email, phoneNumber, password, role, createAt, lastUpdate, addressID, status);
                 list.add(user);
@@ -365,7 +438,7 @@ public class UserDAO {
             if (resultSet.next()) {
                 String sql = "";
                 if(!users.getPassword().equals("")) {
-                    sql = "UPDATE users SET name=?, userName=?, email=?, phoneNumber=?, password=?,  creatAt=?, lastUpdate=?, addressID=?, role =? where id =?";
+                    sql = "UPDATE users SET name=?, userName=?, email=?, phoneNumber=?, password=?,  creatAt=?, lastUpdate=?, address=?, role =? where id =?";
                     s = connection.prepareStatement(sql);
                     s.setString(1, users.getName());
                     s.setString(2, users.getUserName());
@@ -374,10 +447,10 @@ public class UserDAO {
                     s.setString(5, users.getPassword());
                     s.setString(6, users.getCreateAt());
                     s.setString(7, users.getLastUpdate());
-                    s.setInt(8, users.getAddressID());
+                    s.setString(8, users.getAddressID());
                     s.setInt(9, users.getRole());
                 }else {
-                    sql = "UPDATE users SET name=?, userName=?, email=?, phoneNumber=?, creatAt=?, lastUpdate=?, addressID=?, role =?  where id =?";
+                    sql = "UPDATE users SET name=?, userName=?, email=?, phoneNumber=?, creatAt=?, lastUpdate=?, address=?, role =?  where id =?";
                     s = connection.prepareStatement(sql);
                     s.setString(1, users.getName());
                     s.setString(2, users.getUserName());
@@ -385,7 +458,7 @@ public class UserDAO {
                     s.setInt(4, users.getPhoneNumber());
                     s.setString(5, users.getCreateAt());
                     s.setString(6, users.getLastUpdate());
-                    s.setInt(7, users.getAddressID());
+                    s.setString(7, users.getAddressID());
                     s.setInt(8, users.getRole());
                 }
                 re = s.executeUpdate();

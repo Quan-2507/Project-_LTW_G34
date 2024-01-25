@@ -23,7 +23,7 @@
 <div class="container">
     <nav>
         <ul>
-            <li><a href="<%= request.getContextPath() %>" class="logo">
+            <li><a href="<%= request.getContextPath() %>/home" class="logo">
                 <img src="../images/snapedit_1699446793064.png">
                 <span class="nav-item">Trang chủ</span>
             </a></li>
@@ -39,7 +39,11 @@
                 <i class="fa-solid fa-mug-saucer"></i>
                 <span class="nav-item">Sản phẩm</span>
             </a></li>
-            <li><a href="logout">
+            <li><a href="<%= request.getContextPath() %>/hoadon">
+                <i class="fa-solid fa-receipt"></i>
+                <span class="nav-item">Hóa đơn</span>
+            </a></li>
+            <li><a href="../../html/signup-signin.html" class="logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="nav-item">Đăng xuất</span>
             </a></li>
@@ -47,7 +51,7 @@
     </nav>
     <section class="main">
         <div class="main-top">
-            <h1>Admin</h1>
+            <a href="<%= request.getContextPath() %>/admin"><h1 >Admin</h1></a>
         </div>
         <section class="attendance">
             <div class="attendance-list">

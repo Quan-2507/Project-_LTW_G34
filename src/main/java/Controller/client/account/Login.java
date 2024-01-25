@@ -33,7 +33,7 @@ public class Login extends HttpServlet {
             response.addCookie(cookie);
             // Check if the username is the admin's email
             if ("admin@gmail.com".equals(username)) {
-                response.sendRedirect("AdminHome.jsp");
+                response.sendRedirect("trangchuAdmin.jsp");
             } else {
                 response.sendRedirect("home.jsp"); // Redirect to the welcome page
                 }
