@@ -69,28 +69,26 @@
         </div>
         <section class="attendance">
             <div class="attendance-list">
-                <h1>Danh sách Admin</h1>
+                <h1>Danh sách hóa đơn</h1>
                 <table class="table">
                     <thead>
                     <tr>
                         <td>ID hóa đơn</td>
-                        <td>Tên người mua</td>
                         <td>Ngày mua</td>
-                        <td>Các sản phẩm</td>
-                        <td>Số lượng</td>
-                        <td>Size</td>
-                        <td>Giá</td>
                         <td>Tiền giao hàng</td>
+                        <td>Trạng thái đơn hàng</td>
                         <td>Tổng tiền</td>
+                        <td>Chi tiết</td>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="admin" items="${adminList}">
+                    <c:forEach var="order" items="${ordersList}">
                         <tr>
-                            <td>${admin.id}</td>
-                            <td>${admin.name}</td>
-                            <td>${admin.dateOfBirth}</td>
-                            <td>${admin.position}</td>
+                            <td>${order.id}</td>
+                            <td>${order.buyDate}</td>
+                            <td>${order.shippingFee}</td>
+                            <td>${order.status}</td>
+                            <td>${order.totalPrice}</td>
                             <td>
                                 <i class="fa-solid fa-plus"></i>
                                 <i class="fa-solid fa-trash-can"></i>

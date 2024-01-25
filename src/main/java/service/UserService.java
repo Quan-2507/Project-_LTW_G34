@@ -18,8 +18,11 @@ public class UserService {
         return userDao.checkLogin(username, password);
     }
 
-    public List<Users> getAdmin(int status) {
-        return userDao.getAdmin(status);
+    public List<Users> getAdmin(int role) {
+        return userDao.getAdmin(role);
+    }
+    public List<Users> getUser(int role){
+        return  userDao.getUser(role);
     }
     public Users get(int id) {
         return userDao.get(id);
