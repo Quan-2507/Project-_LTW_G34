@@ -13,7 +13,7 @@ public class Users implements Serializable {
     int role;
     String createAt;
     String lastUpdate;
-    Address addressID;
+    String address;
     int status;
     String position;
     Date dateOfBirth;
@@ -21,7 +21,7 @@ public class Users implements Serializable {
     public Users() {
     }
 
-    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, Address addressID, int status, String position, Date dateOfBirth) {
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String address, int status, String position, Date dateOfBirth) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -31,7 +31,7 @@ public class Users implements Serializable {
         this.role = role;
         this.createAt = createAt;
         this.lastUpdate = lastUpdate;
-        this.addressID = addressID;
+        this.address = address;
         this.status = status;
         this.position = position;
         this.dateOfBirth = dateOfBirth;
@@ -109,12 +109,12 @@ public class Users implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public Address getAddressID() {
-        return addressID;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddressID(Address addressID) {
-        this.addressID = addressID;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getStatus() {
@@ -153,10 +153,11 @@ public class Users implements Serializable {
                 ", role=" + role +
                 ", createAt='" + createAt + '\'' +
                 ", lastUpdate='" + lastUpdate + '\'' +
-                ", addressID=" + addressID +
+                ", address='" + address + '\'' +
                 ", status=" + status +
                 ", position='" + position + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
 }
+
