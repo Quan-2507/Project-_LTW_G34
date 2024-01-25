@@ -3,6 +3,7 @@ package Controller.client.account;
 import dao.UserDAO;
 import entity.Users;
 import service.UserService;
+import utils.Encrypt;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -19,9 +20,9 @@ public class Login extends HttpServlet {
         String password = request.getParameter("password");
 
         UserService userService = new UserService();
-
+        String encryptPass = Encrypt.toSHA1(password);
         // Validate login credentials
-        if (userService.checkLogin(username, password)) {
+        if (userService.checkLogin(username, encryptPass)) {
             // Create a session
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
@@ -30,11 +31,16 @@ public class Login extends HttpServlet {
             Cookie cookie = new Cookie("user", username);
             cookie.setMaxAge(30 * 60); // Set the cookie's max age to 30 minutes
             response.addCookie(cookie);
-
-            response.sendRedirect("home.jsp"); // Redirect to the welcome page
-        } else {
-            response.sendRedirect("login-signUp-ForgotPass.jsp?error=1"); // Redirect to the login page with an error parameter
-        }
+            // Check if the username is the admin's email
+            if ("admin@gmail.com".equals(username)) {
+                response.sendRedirect("AdminHome.jsp");
+            } else {
+                response.sendRedirect("home.jsp"); // Redirect to the welcome page
+                }
+            }
+            else {
+                response.sendRedirect("login-signUp-ForgotPass.jsp?error=1"); // Redirect to the login page with an error parameter
+            }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
