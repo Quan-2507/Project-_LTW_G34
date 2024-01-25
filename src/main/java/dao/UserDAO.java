@@ -246,7 +246,7 @@ public class UserDAO {
                 String password = resultSet.getString("password");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                int addressID = resultSet.getInt("addressID");
+                String addressID = resultSet.getString("addressID");
                 users = new Users(id, name,userName,email, phoneNumber, password, createAt, lastUpdate, addressID);
             }
             JDBCConnection.close(connection);
