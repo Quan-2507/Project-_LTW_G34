@@ -1,4 +1,4 @@
-<%--
+<%@ page import="entity.Users" %><%--
   Created by IntelliJ IDEA.
   User: Lenovo
   Date: 25/01/2024
@@ -8,46 +8,31 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoBa Tea</title>
+    <link rel="icon" href="img/logo/snapedit_1699446793064.png">
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <%
     String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
 %>
-<header>
-    <div class="container-fluid bgcolor-orange" >
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-9 col-sm-9 col-8 col-4 d-flex align-items-center  ">
-                    <a class ="nav-link" href="<%=url%>/homePage"> <img style="width: 150px" src="image/logoWeb.png">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-4 py-3 px-0 d-flex align-items-center justify-content-end">
-                    <ul class="d-flex m-0 list-unstyled justify-content-end">
-                        <li class="px-3 pt-1"><a class="nav-link active" aria-current="page" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-                        <li class="px-3 pt-1"><a class="nav-link" href="#"><i
-                                class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                        <li class="px-3 pt-1"><a class="nav-link" href="#"><i
-                                class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li class="px-3 pt-1"><a class="nav-link" href="#"><i
-                                class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<jsp:include page="header.jsp"></jsp:include>
 <%
-    Object obj = session.getAttribute("account");
+    Object obj = session.getAttribute("username");
     Object flag = request.getAttribute("flag");
-    Users account = (Users) obj;
+    String account = (String) obj;
     if (account != null && flag==null) {
 %>
 <section class="signup mt-5">
     <!-- <img src="images/signup-bg.jpg" alt=""> -->
     <div class="contain">
         <div class="signup-content">
-            <form id="signup-form" class="signup-form" action="changePassword" method="post" >
+            <form id="signup-form" class="signup-form" action="changepassword" method="post" >
                 <h5>ĐỔI MẬT KHẨU</h5>
                 <%String success  = (String)request.getAttribute("success");
                     success =(success == null)?"":success;
@@ -89,7 +74,7 @@
     } else {
         if (account == null) {
     %>
-    <div class="container p-0 mgt text-center fw-bold">Bạn chưa đăng nhập! <a href = <%=url%>/SignIn.jsp>Đăng nhập</a></div>
+    <div class="container p-0 mgt text-center fw-bold">Bạn chưa đăng nhập! <a href = <%=url%>/login>Đăng nhập</a></div>
     <%
             }
         }
@@ -104,4 +89,9 @@
     }
 </script>
 </body>
+<script src="js/script.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript"></script>
 </html>
