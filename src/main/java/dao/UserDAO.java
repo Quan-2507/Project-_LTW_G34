@@ -60,8 +60,8 @@ public class UserDAO {
     }
     public List<Users> getUser(int status){
         List<Users> list = new ArrayList<Users>();
-        String sql = "Select users.id, users.name, user.email, address, position " +
-                "From users WHERE status =?";
+        String sql = "Select id,name, email, address " +
+                "From users WHERE role =?";
         Connection conn = JDBCConnection.getJDBCConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
