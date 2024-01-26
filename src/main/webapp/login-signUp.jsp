@@ -43,7 +43,7 @@
                 </div>
                 <div class="forgot-pass-remember-me mt-10">
                     <div class="forgot-pass">
-                        <a id="ForgotPassword" href="JavaScript:void(0);" onclick="ShowForgotPasswordForm()" >Quên mật khẩu?</a>
+                        <a id="ForgotPassword" href="ForgetPW.jsp" >Quên mật khẩu?</a>
                     </div>
                     <div class="remember-me">
                         <input id="rememberMe" type="checkbox">
@@ -113,27 +113,10 @@
                 <a href="#" onclick="ShowLoginForm()">Đăng nhập ngay</a>
             </p>
         </div>
-        <div id="ForgotPasswordForm">
-            <form method="post" action="${pageContext.request.contextPath}/FogotPassword">
-                <div class="center mt-20">
-                    <input class="input-text " type="email" id="forgotPassEmail" placeholder="Địa chỉ Email">
-                </div>
-                <div class="center mt-20">
-                    <input onclick="return ValidateForgotPasswordForm();" class="Submit-Btn" type="submit" value="Tiếp tục" id="PasswordResetBtn" >
-                </div>
-            </form>
-            <p class="center mt-20 already-have-account">
-                Quay lại
-                <a href="JavaScript:void(0);" onclick="ShowLoginForm()">Trang đăng nhập</a> | <a href="JavaScript:void(0);" onclick="ShowRegistrationForm()">Trang đăng ký</a>
-            </p>
-        </div>
     </div>
 </div>
 
-
-
 <jsp:include page="footer.jsp"></jsp:include>
-
 
 </body>
 <script src="js/signin.js" type="text/javascript"></script>

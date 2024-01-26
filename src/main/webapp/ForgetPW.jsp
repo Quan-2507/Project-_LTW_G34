@@ -8,83 +8,70 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BoBa Tea</title>
+    <link rel="icon" href="img/logo/snapedit_1699446793064.png">
+    <link rel="stylesheet" href="css/sigin-signup.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<jsp:include page="header.jsp"></jsp:include>
+
 <%
     String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
 %>
-<header>
-    <div class="container-fluid bgcolor-orange" >
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-9 col-sm-9 col-8 col-4 d-flex align-items-center  ">
-                    <a class ="nav-link" href="<%=url%>/homePage"> <img style="width: 150px" src="image/logoWeb.png">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-4 py-3 px-0 d-flex align-items-center justify-content-end">
-                    <ul class="d-flex m-0 list-unstyled justify-content-end">
-                        <li class="px-3 pt-1"><a class="nav-link active" aria-current="page" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-                        <li class="px-3 pt-1"><a class="nav-link" href="#"><i
-                                class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                        <li class="px-3 pt-1"><a class="nav-link" href="#"><i
-                                class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li class="px-3 pt-1"><a class="nav-link" href="#"><i
-                                class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+
 <%
     String done = (String)request.getAttribute("done");
     if(done!=null){
 %>
-<div class="container p-0 mgt text-center fw-bold">Mật khẩu mới của bạn đã được gửi về Mail!<a href = <%=url%>/SignIn.jsp>Đăng nhập</a></div>
-
+<div class="container">
+    <div id="LoginAndRegistrationForm">
+        <div class="center" >Mật khẩu mới của bạn đã được gửi về Mail! <a href = <%=url%>/login-signUp.jsp>Đăng nhập</a>
+    </div>
+</div>
 <%
 }else{
 %>
-<section class="signup mt-5">
-    <!-- <img src="images/signup-bg.jpg" alt=""> -->
-    <div class="contain">
-        <div class="signup-content">
-            <form  id="signup-form" class="signup-form" method="post" action="forgetPassword">
+<div class="container">
+    <div id="LoginAndRegistrationForm">
+        <h1 id="formTitle">QUÊN MẬT KHẨU</h1>
+            <form  method="post" action="fogotPassword">
                 <%
-                    String username = (String)request.getAttribute("user_name");
-                    username =(username == null)?"":username;
                     String email = (String)request.getAttribute("email");
                     email =(email == null)?"":email;
-                    String errUserName = (String)request.getAttribute("errUserName");
-                    errUserName =(errUserName == null)?"":errUserName;
                     String errEmail = (String)request.getAttribute("errEmail");
                     errEmail =(errEmail == null)?"":errEmail;
                 %>
-                <h5>QUÊN MẬT KHẨU</h5>
-                <div class="form-SignUp">
-                    <div class="form-group">
-                        <label>Tên đăng nhập<span class="text-danger">*</span></label><span class="text-danger" id="errUser"><%=errUserName%></span>
-                        <input type="text" class="form-input" placeholder="Nhập tên đăng nhập" name="user_name"
-                               id="user_name" value="<%=username%>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Email<span class="text-danger">*</span></label><span class="text-danger" id="errEmail"><%=errEmail%></span>
-                        <input type="text" class="form-input" placeholder="Nhập Email" name="email" id="email" value="<%=email%>"/>
-                    </div>
+                <div class="center">
+                    <span style="color: red"id="errEmail"><%=errEmail%></span>
+                    <input type="text" class="mt-10 input-text" placeholder="Nhập Email" name="email" id="email" value="<%=email%>"/>
                 </div>
-                <div class="form-group">
-                    <button type="submit">
-                        XÁC NHẬN
-                    </button>
+<%--                <div class="form-group">--%>
+<%--                    <button type="submit">--%>
+<%--                        XÁC NHẬN--%>
+<%--                    </button>--%>
+<%--                </div>--%>
+                <div class="center mt-20">
+                    <input class="Submit-Btn" type="submit" value="XÁC NHẬN" >
                 </div>
             </form>
         </div>
     </div>
-</section>
+</div>
 <%
     }
 %>
-<script src="js/ForgetPW.js"></script>
+
 </body>
+<script src="js/signin.js" type="text/javascript"></script>
+<script src="js/validation.js" type="text/javascript"></script>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script src="js/ForgetPW.js"></script>
 </html>

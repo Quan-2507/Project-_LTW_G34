@@ -29,25 +29,22 @@
             <div id="LoginAndRegistrationForm">
                 <h1 id="formTitle">Xác thực tài khoản của bạn</h1>
                 <div id="ResetPasswordForm">
-                    <form action="<%=url%>/verify" method ="post" onsubmit="return verifyAccount()">
+                    <form action="<%=url%>/verify?email=<%=email%>" method ="post" onsubmit="return verifyAccount()">
                         <p class="text-group" style="margin-bottom: 0">Chúng tôi đã gửi mã xác thực đến <span class="text-primary" id="email"><%=email%></span></p>
                         <p class="">Vui lòng nhập mã để xác thực tài khoản của bạn</p>
                         <p class="mb-0">Mã xác thực chỉ có hiệu lực trong vòng 10 phút</p>
                         <div class="center">
-                            <span class="text-danger" id="errVerify"><%=err%></span>
-                            <input id="NewPassword" class="mt-10 input-text" type="text" placeholder="Nhập mã xác thực ở đây">
+                            <span style="color: red"id="errVerify"><%=err%></span>
+                            <input id="NewPassword" class="mt-10 input-text" type="text" name="verify" placeholder="Nhập mã xác thực ở đây">
                         </div>
                         <p class="text-group"><a href="<%=url%>/reVerify?email=<%=email%>">Nhấn vào đây</a> để nhận lại mã xác thực</p>
-<%--                        <div class="center mt-20">--%>
-<%--                            <input onclick="return ValidateResetPasswordForm();" class="Submit-Btn" type="submit" value="Thay đổi" id="PasswordChangeBtn">--%>
-<%--                        </div>--%>
                         <div class="center mt-20">
-                            <button type="submit" id="confirm" >XÁC NHẬN</button>
+                            <input type="submit" class="Submit-Btn" id="confirm" placeholder="XÁC NHẬN">
                         </div>
                     </form>
                     <p class="center mt-20 already-have-account">
                         <%Object obj = session.getAttribute("account");%>
-                        <a class="text-decoration-none" href="<%=url%>/<%=(obj==null)? "login-signUp-ForgotPass.jsp" : "home" %>">Quay lại</a>
+                        <a class="text-decoration-none" href="<%=url%>/<%=(obj==null)? "login-signUp.jsp" : "home" %>">Quay lại</a>
                     </p>
                 </div>
 
@@ -57,7 +54,7 @@
 <%--            <form id="verify-form" class="signup-form" action="<%=url%>/verify" method ="post" onsubmit="return verifyAccount()">--%>
 <%--                <div class="text-end pe-4">--%>
 <%--                    <%Object obj = session.getAttribute("account");%>--%>
-<%--                    <a class="text-decoration-none" href="<%=url%>/<%=(obj==null)? "login-signUp-ForgotPass.jsp" : "home" %>">Bỏ qua</a>--%>
+<%--                    <a class="text-decoration-none" href="<%=url%>/<%=(obj==null)? "login-signUp.jsp" : "home" %>">Bỏ qua</a>--%>
 <%--                </div>--%>
 <%--                <img src="img/logo/snapedit_1699446793064.png" alt="" width="400px">--%>
 <%--                <h5>Xác thực tài khoản của bạn</h5>--%>

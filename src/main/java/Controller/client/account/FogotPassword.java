@@ -33,7 +33,7 @@ public class FogotPassword extends HttpServlet {
         randomString.append(special.charAt(random.nextInt(special.length())));
 
         // Thêm các ký tự còn lại
-        int length = 6 + random.nextInt(15); // Chiều dài ngẫu nhiên từ 6 đến 20
+        int length = 6 + random.nextInt(8); // Chiều dài ngẫu nhiên từ 6 đến 20
         for (int i = 4; i < length; i++) {
             String allChars = lowerCase + upperCase + number + special;
             randomString.append(allChars.charAt(random.nextInt(allChars.length())));
@@ -52,41 +52,27 @@ public class FogotPassword extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("html/text; charset= UTF-8");
-        String username = request.getParameter("user_name");
         String email = request.getParameter("email");
-        request.setAttribute("user_name", username);
         request.setAttribute("email", email);
         String err = "";
         String url = "";
-        if(username==null){
-            err = "Vui lòng nhập tên tài khoản!";
-            request.setAttribute("errUserName", err);
-            url = "/ForgetPW.jsp";
-            request.getRequestDispatcher(url).forward(request, response);
-        }
         if(email==null){
             err = "Vui lòng nhập Email!";
             request.setAttribute("errEmail", err);
             url = "/ForgetPW.jsp";
             request.getRequestDispatcher(url).forward(request, response);
         }
-        if (!UserService.getInstance().checkExistUserName(username)) {
-            err = "Tên tài khoản không tồn tại!";
-            request.setAttribute("errUserName", err);
-            url = "/ForgetPW.jsp";
-            request.getRequestDispatcher(url).forward(request, response);
-        }
-        else if (!UserService.getInstance().selectAccountByUserName(username).getEmail().equals(email)) {
+        else if (UserService.getInstance().selectAccountByEmail(email)==null) {
             err = "Email không chính xác!";
             request.setAttribute("errEmail", err);
             url = "/ForgetPW.jsp";
             request.getRequestDispatcher(url).forward(request, response);
         } else {
-            Users account = UserService.getInstance().selectAccountByUserName(username);
+            Users account = UserService.getInstance().selectAccountByEmail(email);
             String newpassword = generateRandomString();
             String pwEncrypt = Encrypt.toSHA1(newpassword);
             if (UserService.updatePassword(pwEncrypt, account.getId()) > 0) {
-                Email.sendEmail(account.getEmail(), "Mật khẩu mới của bạn", "Thông tin đăng nhập HomeDecor:"+"<br>" + "-Tên đăng nhập: " + username + "<br>" + "-Mật khẩu mới: " + newpassword);
+                Email.sendEmail(account.getEmail(), "Mật khẩu mới của bạn", "Thông tin đăng nhập HomeDecor:"+"<br>" + "- Email: " + email + "<br>" + "-Mật khẩu mới: " + newpassword);
                 request.setAttribute("done","oke");
                 url = "/ForgetPW.jsp";
                 request.getRequestDispatcher(url).forward(request, response);

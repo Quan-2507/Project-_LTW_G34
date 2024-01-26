@@ -59,7 +59,7 @@ public class SignUp extends HttpServlet {
             if(err.length() == 0) {
                 url = "ConfirmEmail.jsp";
             }else {
-                url = "login-signUp-ForgotPass.jsp";
+                url = "login-signUp.jsp";
             }
             request.getRequestDispatcher(url).forward(request, response);
          } catch (ServletException e) {

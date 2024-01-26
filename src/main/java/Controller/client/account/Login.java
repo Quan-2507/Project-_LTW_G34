@@ -32,20 +32,20 @@ public class Login extends HttpServlet {
             cookie.setMaxAge(30 * 60); // Set the cookie's max age to 30 minutes
             response.addCookie(cookie);
             // Check if the username is the admin's email
-            if ("admin@gmail.com".equals(username)) {
+            if ("kieuthingocquy97@gmail.com".equals(username)) {
                 response.sendRedirect("trangchuAdmin.jsp");
             } else {
                 response.sendRedirect("home.jsp"); // Redirect to the welcome page
                 }
             }
             else {
-                response.sendRedirect("login-signUp-ForgotPass.jsp?error=1"); // Redirect to the login page with an error parameter
+                response.sendRedirect("login-signUp.jsp?error=1"); // Redirect to the login page with an error parameter
             }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Redirect to login page if someone tries to access LoginServlet directly using GET method
-        response.sendRedirect("login-signUp-ForgotPass.jsp");
+        response.sendRedirect("login-signUp.jsp");
     }
 }
