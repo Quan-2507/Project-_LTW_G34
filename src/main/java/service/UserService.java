@@ -4,11 +4,6 @@ import dao.UserDAO;
 import entity.Users;
 import entity.VerifyAccount;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -27,9 +22,7 @@ public class UserService {
     public static boolean checkLogin(String username, String password) {
         return userDao.checkLogin(username, password);
     }
-    public List<Users> getAdmin(int status) {
-        return userDao.getAdmin(status);
-    }
+
     public Users get(int id) {
         return userDao.get(id);
     }

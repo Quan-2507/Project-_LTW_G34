@@ -164,9 +164,9 @@ public class UserDAO {
                 int role = resultSet.getInt("role");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                String addressID = resultSet.getString("addressID");
+                String address = resultSet.getString("address");
                 int status = resultSet.getInt("status");
-                re = new Users(id, name,userName,email, phoneNumber, password, role, createAt, lastUpdate, addressID, status);
+                re = new Users(id, name,userName,email, phoneNumber, password, role, createAt, lastUpdate, address, status);
             }
             JDBCConnection.close(connection);
         } catch (Exception e) {
@@ -246,8 +246,8 @@ public class UserDAO {
                 String password = resultSet.getString("password");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                String addressID = resultSet.getString("addressID");
-                users = new Users(id, name,userName,email, phoneNumber, password, createAt, lastUpdate, addressID);
+                String address = resultSet.getString("address");
+                users = new Users(id, name,userName,email, phoneNumber, password, createAt, lastUpdate, address);
             }
             JDBCConnection.close(connection);
         } catch (SQLException e) {
@@ -273,8 +273,8 @@ public class UserDAO {
                 String password = resultSet.getString("password");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                String addressID = resultSet.getString("addressID");
-                users = new Users(id, name,userName,email, phoneNumber, password, createAt, lastUpdate, addressID);
+                String address = resultSet.getString("address");
+                users = new Users(id, name,userName,email, phoneNumber, password, createAt, lastUpdate, address);
             }
             JDBCConnection.close(connection);
         } catch (SQLException e) {
@@ -337,7 +337,7 @@ public class UserDAO {
             pr.setString(5, users.getPassword());
             pr.setString(6, users.getCreateAt());
             pr.setString(7, users.getLastUpdate());
-            pr.setString(8, users.getAddressID());
+            pr.setString(8, users.getaddress());
             pr.setInt(9, users.getId());
             re = pr.executeUpdate();
             JDBCConnection.close(connection);
@@ -383,9 +383,9 @@ public class UserDAO {
                 int role = resultSet.getInt("role");
                 String createAt = resultSet.getString("createAt");
                 String lastUpdate = resultSet.getString("lastUpdate");
-                String addressID = resultSet.getString("addressID");
+                String address = resultSet.getString("address");
                 int status = resultSet.getInt("status");
-                Users user = new Users(id, name,userName,email, phoneNumber, password, role, createAt, lastUpdate, addressID, status);
+                Users user = new Users(id, name,userName,email, phoneNumber, password, role, createAt, lastUpdate, address, status);
                 list.add(user);
             }
             JDBCConnection.close(connection);
@@ -447,7 +447,7 @@ public class UserDAO {
                     s.setString(5, users.getPassword());
                     s.setString(6, users.getCreateAt());
                     s.setString(7, users.getLastUpdate());
-                    s.setString(8, users.getAddressID());
+                    s.setString(8, users.getaddress());
                     s.setInt(9, users.getRole());
                 }else {
                     sql = "UPDATE users SET name=?, userName=?, email=?, phoneNumber=?, creatAt=?, lastUpdate=?, address=?, role =?  where id =?";
@@ -458,7 +458,7 @@ public class UserDAO {
                     s.setInt(4, users.getPhoneNumber());
                     s.setString(5, users.getCreateAt());
                     s.setString(6, users.getLastUpdate());
-                    s.setString(7, users.getAddressID());
+                    s.setString(7, users.getaddress());
                     s.setInt(8, users.getRole());
                 }
                 re = s.executeUpdate();
