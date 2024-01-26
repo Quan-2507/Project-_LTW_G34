@@ -30,7 +30,7 @@
                 <h1 id="formTitle">Xác thực tài khoản của bạn</h1>
                 <div id="ResetPasswordForm">
                     <form action="<%=url%>/verify?email=<%=email%>" method ="post" onsubmit="return verifyAccount()">
-                        <p class="text-group" style="margin-bottom: 0">Chúng tôi đã gửi mã xác thực đến <span class="text-primary" id="email"><%=email%></span></p>
+                        <p class="text-group" style="margin-bottom: 0 ">Chúng tôi đã gửi mã xác thực đến <span id="email"><%=email%></span></p>
                         <p class="">Vui lòng nhập mã để xác thực tài khoản của bạn</p>
                         <p class="mb-0">Mã xác thực chỉ có hiệu lực trong vòng 10 phút</p>
                         <div class="center">

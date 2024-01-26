@@ -72,7 +72,7 @@ public class FogotPassword extends HttpServlet {
             String newpassword = generateRandomString();
             String pwEncrypt = Encrypt.toSHA1(newpassword);
             if (UserService.updatePassword(pwEncrypt, account.getId()) > 0) {
-                Email.sendEmail(account.getEmail(), "Mật khẩu mới của bạn", "Thông tin đăng nhập HomeDecor:"+"<br>" + "- Email: " + email + "<br>" + "-Mật khẩu mới: " + newpassword);
+                Email.sendEmail(account.getEmail(), "Mật khẩu mới của bạn", "Thông tin đăng nhập BobaTea:"+"<br>" + "- Email: " + email + "<br>" + "-Mật khẩu mới: " + newpassword);
                 request.setAttribute("done","oke");
                 url = "/ForgetPW.jsp";
                 request.getRequestDispatcher(url).forward(request, response);

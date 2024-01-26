@@ -94,4 +94,16 @@ public class UserService {
     public int updateInforAccount(Users a) throws SQLException {
         return userDao.updateInforAccount(a);
     }
+    public void insert(Users user) {
+        userDao.insert(user);
+    }
+    public void edit(Users user) {
+        userDao.edit(user);
+    }
+    public void delete(int id) {
+        userDao.delete(id);
+    }
+    public List<Users> getAll() {
+        return userDao.getAll();
+    }
 }

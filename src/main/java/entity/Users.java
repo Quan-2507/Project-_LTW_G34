@@ -57,6 +57,14 @@ public class Users implements Serializable {
         this.position = position;
         this.dateOfBirth = dateOfBirth;
     }
+    public Users(int id, String name, String email, int phoneNumber, String address,Date dateOfBirth) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.dateOfBirth = dateOfBirth;
+    }
 
     public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String address, int status) {
         this.id = id;

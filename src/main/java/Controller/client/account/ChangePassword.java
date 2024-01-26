@@ -14,7 +14,6 @@ public class ChangePassword extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -26,7 +25,7 @@ public class ChangePassword extends HttpServlet {
         String repassEncrypt = Encrypt.toSHA1(repassword);
         String err = "";
         HttpSession session = req.getSession();
-        Users account = (Users) session.getAttribute("account");
+        Users account = (Users) session.getAttribute("username");
         if(password==null){
             err="Vui lòng nhập mật khẩu hiện tại!";
             req.setAttribute("errPass",err);
