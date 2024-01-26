@@ -25,12 +25,14 @@ function ValidateRegistrationForm(){
 
     var RegiName = document.getElementById('RegiName').value;
     var RegiEmailAddres = document.getElementById('RegiEmailAddres').value;
+    var RegiPhoneNum = document.getElementById('RegiPhoneNum').value;
     var RegiPassword = document.getElementById('RegiPassword').value;
     var RegiConfirmPassword = document.getElementById('RegiConfirmPassword').value;
 
     var PasswordValidationMessage;
     var ConfirmPasswordMessage;
     var	emailValidationMessage;
+    var	PhoneNumValidationMessage;
 
     if(RegiName == ""){
         ShowErrorMessage('RegiName',"Hãy điền họ và tên.");
@@ -60,10 +62,16 @@ function ValidateRegistrationForm(){
     }
 
     if(RegiPassword != RegiConfirmPassword){
-        ShowErrorMessage('RegiConfirmPassword',"Mật khẩu không khớp.");
+        ShowErrorMessage('RegiConfirmPassword',"Mật khẩu không khớp!");
         return false;
     }
 
+    PhoneNumValidationMessage =isValidPhoneNum(RegiPhoneNum);
+
+    if (isValidPhoneNum(RegiPhoneNum) !== true){
+        ShowErrorMessage('RegiPhoneNum', PhoneNumValidationMessage);
+        return false;
+    }
     return true;
 }
 
@@ -175,4 +183,19 @@ function isValidPassword(password) {
         return "Mật khẩu phải bao gồm chữ, số và ký tự.";
     }
     return "valid";
+}
+function isValidPhoneNum(phoneNum) {
+    const minLength = 10;
+    const maxLength = 11;
+    const numericPhoneNum = phoneNum.replace(/\D/g, ''); // Loại bỏ tất cả các ký tự không phải số từ chuỗi số điện thoại
+
+    if (phoneNum === "") {
+        return "Hãy nhập số điện thoại.";
+    }
+
+    if (numericPhoneNum.length < minLength || numericPhoneNum.length > maxLength) {
+        return "Số điện thoại phải có từ 10 đến 11 chữ số.";
+    }
+
+    return true; // Thay đổi ở đây, trả về giá trị boolean true khi hợp lệ
 }

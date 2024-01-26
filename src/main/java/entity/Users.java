@@ -18,9 +18,30 @@ public class Users implements Serializable {
     String position;
     Date dateOfBirth;
 
-    public Users() {
+    private VerifyAccount verifyAccount;
+
+    public String getPosition() {
+        return position;
     }
 
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public Users(Users u ){
+        this.id = u.id;
+        this.name = u.name;
+        this.userName = u.userName;
+        this.email = u.email;
+        this.phoneNumber = u.phoneNumber;
+        this.password = u.password;
+        this.role = u.role;
+        this.createAt = u.createAt;
+        this.lastUpdate = u.lastUpdate;
+        this.address = u.address;
+        this.status = u.status;
+        this.verifyAccount = u.verifyAccount;
+    }
     public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String address, int status, String position, Date dateOfBirth) {
         this.id = id;
         this.name = name;
@@ -37,6 +58,67 @@ public class Users implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String address, int status) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.role = role;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.address = address;
+        this.status = status;
+    }
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String address) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.role = role;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.address = address;
+    }
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password,  String createAt, String lastUpdate, String address) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.address = address;
+    }
+    public Users( String name, String userName, String email, int phoneNumber, String password,  String createAt, String lastUpdate, String address) {
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.address = address;
+    }
+    public Users(String userName, String password, String email) {
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+    }
+    public Users( String name, String userName, String email, int phoneNumber, String password) {
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+    }
+    public Users() {
+    }
+
     public int getId() {
         return id;
     }
@@ -51,6 +133,14 @@ public class Users implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getUserName() {
@@ -125,20 +215,12 @@ public class Users implements Serializable {
         this.status = status;
     }
 
-    public String getPosition() {
-        return position;
+    public VerifyAccount getVerifyAccount() {
+        return verifyAccount;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setVerifyAccount(VerifyAccount verifyAccount) {
+        this.verifyAccount = verifyAccount;
     }
 
     @Override
@@ -155,9 +237,9 @@ public class Users implements Serializable {
                 ", lastUpdate='" + lastUpdate + '\'' +
                 ", address='" + address + '\'' +
                 ", status=" + status +
+                ", verifyAccount=" + verifyAccount +
                 ", position='" + position + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
 }
-

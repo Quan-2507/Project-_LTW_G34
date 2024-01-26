@@ -29,6 +29,6 @@ import java.io.IOException;
             }
         }
 
-        response.sendRedirect("login-signUp-ForgotPass.jsp"); // Redirect to the login page
+        response.sendRedirect("login-signUp.jsp"); // Redirect to the login page
     }
 }
