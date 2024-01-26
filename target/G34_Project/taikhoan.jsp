@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: admin
@@ -6,25 +7,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CRUD Operations</title>
-    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <link rel="stylesheet" href="Admin/css/style.css">
-
-    <title>CRUD Operations</title>
-
+    <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
     <nav>
         <ul>
-            <li><a href="<%= request.getContextPath() %>/home" class="logo">
-                <img src="../images/snapedit_1699446793064.png">
+            <li><a href="<%= request.getContextPath() %>" class="logo">
+                <img src="img/snapedit_1699446793064.png">
                 <span class="nav-item">Trang chủ</span>
             </a></li>
             <li><a href="<%= request.getContextPath() %>/taikhoan">
@@ -51,7 +48,7 @@
     </nav>
     <section class="main">
         <div class="main-top">
-            <a href="<%= request.getContextPath() %>/admin"><h1 >Admin</h1></a>
+            <a href="<%= request.getContextPath() %>/admin"><h1>Admin</h1></a>
         </div>
         <section class="attendance">
             <div class="attendance-list">
@@ -67,72 +64,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>21130495</td>
-                        <td>Trần Minh Quân</td>
-                        <td>21130495@gmail.com</td>
-                        <td>Đồng Nai</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr class="active">
-                        <td>21130504</td>
-                        <td>Kiều Thị Ngọc Qúy </td>
-                        <td>21130495@gmail.com</td>
-                        <td>Ninh Thuận</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>21130461</td>
-                        <td>Trần Thị Thiện Nhân</td>
-                        <td>21130495@gmail.com</td>
-                        <td>Bình Thuận</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>21130122</td>
-                        <td>Đặng Thanh Nhân</td>
-                        <td>21130122@gmail.com</td>
-                        <td>Bình Định</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>21130567</td>
-                        <td>Trịnh Thanh Sang</td>
-                        <td>21130567@gmail.com</td>
-                        <td>Bình Dương</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>21130343</td>
-                        <td>Lê Thành Quý</td>
-                        <td>21130343@gmail.com</td>
-                        <td>An Giang</td>
-                        <td>
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </td>
-                    </tr>
+                    <c:forEach var="user" items="${usersList}">
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>${user.address}</td>
+                            <td>
+                                <i class="fa-solid fa-plus"></i>
+                                <i class="fa-solid fa-trash-can"></i>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

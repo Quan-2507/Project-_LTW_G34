@@ -22,6 +22,17 @@ public class Images {
     public Images() {
     }
 
+    public Images(String path1) {
+        this.path1 = path1;
+    }
+
+    public Images(String path1, String path2, String path3, String path4) {
+        this.path1 = path1;
+        this.path2 = path2;
+        this.path3 = path3;
+        this.path4 = path4;
+    }
+
     public int getId() {
         return id;
     }

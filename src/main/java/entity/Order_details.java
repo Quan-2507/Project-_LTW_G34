@@ -2,14 +2,22 @@ package entity;
 
 public class Order_details {
     int id;
-    Orders orderID;
-    Products productID;
+    int orderID;
+    int productID;
     int quantity;
     double price;
     String size;
 
-    public Order_details(int id, Orders orderID, Products productID, int quantity, double price, String size) {
+    public Order_details(int id, int orderID, int productID, int quantity, double price, String size) {
         this.id = id;
+        this.orderID = orderID;
+        this.productID = productID;
+        this.quantity = quantity;
+        this.price = price;
+        this.size = size;
+    }
+
+    public Order_details(int orderID, int productID, int quantity, double price, String size) {
         this.orderID = orderID;
         this.productID = productID;
         this.quantity = quantity;
@@ -28,19 +36,19 @@ public class Order_details {
         this.id = id;
     }
 
-    public Orders getOrderID() {
+    public int getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(Orders orderID) {
+    public void setOrderID(int orderID) {
         this.orderID = orderID;
     }
 
-    public Products getProductID() {
+    public int getProductID() {
         return productID;
     }
 
-    public void setProductID(Products productID) {
+    public void setProductID(int productID) {
         this.productID = productID;
     }
 

@@ -1,16 +1,22 @@
 package entity;
 
+import java.util.ArrayList;
+
 public class Orders {
     int id;
-    Users userID;
+    int userID;
     double totalPrice;
     String buyDate;
     String status;
     String address;
     double shippingFee;
     String payment;
+    private ArrayList<Order_details> details;
 
-    public Orders(int id, Users userID, double totalPrice, String buyDate, String status, String address, double shippingFee, String payment) {
+    public Orders() {
+    }
+
+    public Orders(int id, int userID, double totalPrice, String buyDate, String status, String address, double shippingFee, String payment) {
         this.id = id;
         this.userID = userID;
         this.totalPrice = totalPrice;
@@ -21,7 +27,19 @@ public class Orders {
         this.payment = payment;
     }
 
-    public Orders() {
+    public Orders(int id, int userID, double totalPrice, String buyDate, String status, String address, double shippingFee, String payment, ArrayList<Order_details> details) {
+        this.id = id;
+        this.userID = userID;
+        this.totalPrice = totalPrice;
+        this.buyDate = buyDate;
+        this.status = status;
+        this.address = address;
+        this.shippingFee = shippingFee;
+        this.payment = payment;
+        this.details = details;
+    }
+
+    public Orders(int i, int id, String address, int i1, String thanhToánKhiNhậnHàng, String s, String processing) {
     }
 
     public int getId() {
@@ -32,11 +50,11 @@ public class Orders {
         this.id = id;
     }
 
-    public Users getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(Users userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
@@ -87,6 +105,20 @@ public class Orders {
     public void setPayment(String payment) {
         this.payment = payment;
     }
+
+    public ArrayList<Order_details> getDetails() {
+        return details;
+    }
+
+    public void setDetails(ArrayList<Order_details> details) {
+        this.details = details;
+    }
+    public double totalPrice() {
+        double re =0;
+        for (Order_details ivd: details) re += ivd.getPrice() * ivd.getQuantity();
+        return re;
+    }
+
 
     @Override
     public String toString() {

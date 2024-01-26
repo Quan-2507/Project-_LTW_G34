@@ -1,5 +1,7 @@
 <%@ page import="entity.Products" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="entity.Cart" %><%--
   Created by IntelliJ IDEA.
   User: admin
   Date: 6/1/2024
@@ -29,8 +31,31 @@
     <title>BoBa Tea</title>
     <link rel="icon" href="img/logo/snapedit_1699446793064.png">
     <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+    <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+          integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Cart.css">
 </head>
+
 <body>
 <style>
     #product__size {
@@ -67,7 +92,16 @@
 
 </style>
 <jsp:include page="header.jsp"></jsp:include>
-
+<%
+    String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+            + request.getContextPath();
+%>
+<%
+    NumberFormat nF = NumberFormat.getCurrencyInstance();
+    Cart cart = (Cart) session.getAttribute("Cart");
+    Products product = (Products) request.getAttribute("product");
+    if (product != null) {
+%>
 <section id="prodetails" class="section-p1">
     <div class="single-pro-image">
         <div>
@@ -111,7 +145,8 @@
         <c:forEach items="${bestSeller}" var="bsler" begin="0" end="3">
             <c:url value="${bsler.image}" var="imgUrl"></c:url>
             <div class="pro">
-                <img src="<c:url value='${bsler.image}'/>" alt="" onclick="window.location.href='${pageContext.request.contextPath}/spproduct?id=${bsler.id}'">
+                <img src="<c:url value='${bsler.image}'/>" alt=""
+                     onclick="window.location.href='${pageContext.request.contextPath}/spproduct?id=${bsler.id}'">
                 <div class="des">
                     <span>${bsler.category.name}</span>
                     <h5>${bsler.name}</h5>
@@ -137,15 +172,25 @@
 
                     <h4>${bsler.price} VND</h4>
                 </div>
-                <a>
+                <%
+                    int quantity = 1;
+                    if (cart != null) {
+                        if (cart.get(product.getId()) != null) {
+                            quantity = cart.get(product.getId()).getQuantity() + 1;
+                        }
+                    } else {
+                        quantity = product.getQuantity();
+                    }
+                %>
+                <a href="<%=url%>/cartController?id=<%=product.getId()%>&quantity=<%=quantity%>">
                     <button onclick="themvaogiohang(this)" style="cursor: pointer"><i
                             class="fa-solid fa-cart-shopping cart"></i></button>
                 </a>
             </div>
         </c:forEach>
-
     </div>
 </section>
+<%}%>
 
 <section id="newsletter" class="section-p1 section-m1">
     <div class="newstext">
@@ -162,7 +207,7 @@
 <jsp:include page="footer.jsp"></jsp:include>
 
 <a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
-
+</body>
 <script>
     var MainImg = document.getElementById("MainImg");
     var smalling = document.getElementsByClassName("small-img");
@@ -204,5 +249,4 @@
     });
 }
 </script>
-</body>
 </html>

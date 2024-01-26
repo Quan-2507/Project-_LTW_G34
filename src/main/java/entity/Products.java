@@ -1,5 +1,6 @@
 package entity;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -7,7 +8,6 @@ public class Products {
     int id;
     String name;
     Categories category;
-    int status;
     String description;
     String size;
     int costPrice;
@@ -16,8 +16,36 @@ public class Products {
     Date createAt;
     Date lastUpdate;
     Rates rates;
+    private int quantity;
+    int status;
 
     public Products() {
+    }
+
+    public Products(int id, String name, Categories category, String description, String size, int costPrice, int price, Date createAt, Date lastUpdate) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.size = size;
+        this.costPrice = costPrice;
+        this.price = price;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+    }
+
+    public Products(int id, String name, Categories category, String description, String size, int costPrice, int price, Date createAt, Date lastUpdate, int quantity, int status) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.size = size;
+        this.costPrice = costPrice;
+        this.price = price;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.quantity = quantity;
+        this.status = status;
     }
 
     public Products(int id) {
@@ -37,6 +65,62 @@ public class Products {
         this.createAt = createAt;
         this.lastUpdate = lastUpdate;
         this.rates = rates;
+    }
+
+    public Products(int id, String name, Categories category, int status, String description, String size, int costPrice, int price, String images, Date createAt, Date lastUpdate, Rates rates, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.status = status;
+        this.description = description;
+        this.size = size;
+        this.costPrice = costPrice;
+        this.price = price;
+        this.images = images;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.rates = rates;
+        this.quantity = quantity;
+    }
+
+    public Products(int id, String name, Categories category, int status, String description, String size, int costPrice, int price, Date createAt, Date lastUpdate, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.status = status;
+        this.description = description;
+        this.size = size;
+        this.costPrice = costPrice;
+        this.price = price;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.quantity = quantity;
+    }
+
+    public Products(int id, String name, Categories category, String description, String size, int costPrice, int price, Date createAt, Date lastUpdate, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.size = size;
+        this.costPrice = costPrice;
+        this.price = price;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
+        this.quantity = quantity;
+    }
+
+    public Products(int id, String name, Categories category, int status, String description, String size, int costPrice, int price, Date createAt, Date lastUpdate) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.status = status;
+        this.description = description;
+        this.size = size;
+        this.costPrice = costPrice;
+        this.price = price;
+        this.createAt = createAt;
+        this.lastUpdate = lastUpdate;
     }
 
     @Override
@@ -163,6 +247,30 @@ public class Products {
 
     public void setRates(Rates rates) {
         this.rates = rates;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void quantityUp() {
+        this.quantity++;
+    }
+
+    public void quantityUp(int quantity) {
+        setQuantity(quantity);
+    }
+
+    public String formatSize(double size) {
+        // Tạo mẫu định dạng với hai chữ số sau dấu thập phân
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        // Làm tròn số và áp dụng định dạng
+        String formattedNumber = decimalFormat.format(size);
+        return formattedNumber;
     }
 
     @Override

@@ -1,4 +1,5 @@
-<%--
+<%@ page import="entity.Cart" %>
+<%@ page import="entity.Users" %><%--
   Created by IntelliJ IDEA.
   User: ADMIN
   Date: 11/27/2023
@@ -44,6 +45,9 @@
         background-color: #f0deb8; /* Thay đổi #your_color thành mã màu mong muốn */
     }
 
+
+
+
 </style>
 <%
     //    HttpSession session = request.getSession(false);
@@ -65,16 +69,25 @@
         }
     }
 %>
+<%
+    String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+    Cart cart = (Cart) session.getAttribute("Cart");
+    int qtt = (cart != null) ? cart.list().size() : 0;
+    String quantityItem = qtt + "";
+    if (qtt > 99) quantityItem = "99+";
+%>
+<% Object obj = session.getAttribute("account");
+    Users users = null;%>
 <section id="header">
     <a href="home.jsp" style="max-width: 100px"><img src="img/logo/snapedit_1699446793064.png" class="logo" alt=""></a>
     <div>
         <ul id="navbar">
-            <li><a href="<%= request.getContextPath() %>/home">TRANG CHỦ</a></li>
+            <li><a href="<%=url%>/home">TRANG CHỦ</a></li>
 
-            <li><a href="<%= request.getContextPath() %>/milktea">THỨC UỐNG</a></li>
-            <li><a href="<%= request.getContextPath() %>/blog">KHUYẾN MÃI</a></li>
-            <li><a href="<%= request.getContextPath() %>/about">VỀ CHÚNG TÔI</a></li>
-            <li><a href="<%= request.getContextPath() %>/contact">LIÊN HỆ</a></li>
+            <li><a href="<%=url%>/milktea">THỨC UỐNG</a></li>
+            <li><a href="<%=url%>/blog">KHUYẾN MÃI</a></li>
+            <li><a href="<%=url%>/about">VỀ CHÚNG TÔI</a></li>
+            <li><a href="<%=url%>/contact">LIÊN HỆ</a></li>
             <li class="lg-bag">
                 <form class="search1" action="loadProductByName">
                     <input type="text" placeholder="Search" class="search__input1" name="name">
@@ -83,11 +96,10 @@
                     </button>
                 </form>
             </li>
-            <%--            <li class="lg-bag"><a href="cart.html" onclick="showcart()"><i class="fa-solid fa-bag-shopping"></i></a></li>--%>
-            <a href="${pageContext.request.contextPath }/member/cart" class="header__nav-item-link">
-                <i class="fas fa-shopping-cart"><c:set var="count" value="${0}"/></i>
-
-
+            <li class="lg-bag"><a class="nav-link" href="<%=url%>/Cart.jsp"><i class="fa-solid fa-bag-shopping"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%=quantityItem%><span class="visually-hidden">unread messages</span></span></a></li>
+            <%--            <a href="${pageContext.request.contextPath }/member/cart" class="header__nav-item-link">--%>
+            <%--                <i class="fas fa-shopping-cart"><c:set var="count" value="${0}"/></i>--%>
 
 
             <% if (username != null) { %>
@@ -101,14 +113,14 @@
             <a href="#" id="close"><i class="fa fa-times" aria-hidden="true"></i></a>
         </ul>
     </div>
-    <div id="mobile">
-<%--        <form class="search">--%>
-<%--            <input type="text" placeholder="Search" class="search__input">--%>
-<%--            <button type="button" class="search__btn">--%>
-<%--                <a><i class="fa-solid fa-magnifying-glass"></i></a>--%>
-<%--            </button>--%>
-<%--        </form>--%>
-        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-        <i id="bar" class="fa fa-outdent"></i>
-    </div>
+    <%--    <div id="mobile">--%>
+    <%--        <form class="search">--%>
+    <%--            <input type="text" placeholder="Search" class="search__input">--%>
+    <%--            <button type="button" class="search__btn">--%>
+    <%--                <a><i class="fa-solid fa-magnifying-glass"></i></a>--%>
+    <%--            </button>--%>
+    <%--        </form>--%>
+    <%--        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>--%>
+    <%--        <i id="bar" class="fa fa-outdent"></i>--%>
+    <%--    </div>--%>
 </section>
