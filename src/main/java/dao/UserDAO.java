@@ -34,14 +34,14 @@ public class UserDAO {
         }
         return false;
     }
-    public List<Users> getAdmin(int status){
+    public List<Users> getAdmin(int role){
         List<Users> list = new ArrayList<Users>();
         String sql = "Select id, name, dateOfBirth, position " +
-                "From users WHERE status =?";
+                "From users WHERE role =?";
         Connection conn = JDBCConnection.getJDBCConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1,status);
+            ps.setInt(1,role);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 Users users = new Users();
@@ -58,21 +58,21 @@ public class UserDAO {
         }
         return list;
     }
-    public List<Users> getUser(int status){
+    public List<Users> getUser(int role){
         List<Users> list = new ArrayList<Users>();
         String sql = "Select id,name, email, address " +
                 "From users WHERE role =?";
         Connection conn = JDBCConnection.getJDBCConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1,status);
+            ps.setInt(1,role);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 Users users = new Users();
                 users.setId(rs.getInt("id"));
                 users.setName(rs.getString("name"));
-                users.setDateOfBirth(rs.getDate("dateOfBirth"));
-                users.setPosition(rs.getString("position"));
+                users.setEmail(rs.getString("email"));
+                users.setAddress(rs.getString("address"));
                 list.add(users);
             }
             conn.close();

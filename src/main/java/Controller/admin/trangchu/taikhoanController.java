@@ -1,8 +1,10 @@
 package Controller.admin.trangchu;
 
 import entity.Products;
+import entity.Users;
 import service.CategoryService;
 import service.ProductService;
+import service.UserService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,10 +19,10 @@ import java.util.List;
 public class taikhoanController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-
+        UserService userService = new UserService();
+        List<Users> usersList;
+        usersList = userService.getUser(0);
+        request.setAttribute("usersList",usersList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("taikhoan.jsp");
         dispatcher.forward(request, response);
     }
