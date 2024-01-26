@@ -11,8 +11,8 @@ public class Users implements Serializable {
     int phoneNumber;
     String password;
     int role;
-    String createAt;
-    String lastUpdate;
+    Date createAt;
+    Date lastUpdate;
     String address;
     int status;
     String position;
@@ -21,7 +21,7 @@ public class Users implements Serializable {
     public Users() {
     }
 
-    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, String createAt, String lastUpdate, String address, int status, String position, Date dateOfBirth) {
+    public Users(int id, String name, String userName, String email, int phoneNumber, String password, int role, Date createAt, Date lastUpdate, String address, int status, String position, Date dateOfBirth) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -93,19 +93,19 @@ public class Users implements Serializable {
         this.role = role;
     }
 
-    public String getCreateAt() {
+    public Date getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(String createAt) {
+    public void setCreateAt(Date createAt) {
         this.createAt = createAt;
     }
 
-    public String getLastUpdate() {
+    public Date getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Date lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
@@ -151,8 +151,8 @@ public class Users implements Serializable {
                 ", phoneNumber=" + phoneNumber +
                 ", password='" + password + '\'' +
                 ", role=" + role +
-                ", createAt='" + createAt + '\'' +
-                ", lastUpdate='" + lastUpdate + '\'' +
+                ", createAt=" + createAt +
+                ", lastUpdate=" + lastUpdate +
                 ", address='" + address + '\'' +
                 ", status=" + status +
                 ", position='" + position + '\'' +

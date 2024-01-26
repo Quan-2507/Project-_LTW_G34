@@ -88,9 +88,24 @@
                             <td>${admin.dateOfBirth}</td>
                             <td>${admin.position}</td>
                             <td>
-                                <i class="fa-solid fa-plus"></i>
-                                <i class="fa-solid fa-trash-can"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                    <%--                                <i class="fa-solid fa-plus"></i>--%>
+                                    <%--                                <i class="fa-solid fa-trash-can"></i>--%>
+                                    <%--                                <i class="fa-solid fa-pen-to-square"></i>--%>
+                                <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                        onclick="confirmDelete(${user.id})"><i class="fas fa-trash-alt"></i>
+                                </button>
+                                <a href="${pageContext.request.contextPath}/editUser?id=${user.id}">
+                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"
+                                            id="show-emp"
+                                            data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                                    </button>
+                                </a>
+                                <a href="${pageContext.request.contextPath}/addUser?id=${user.id}">
+                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"
+                                            id="show-emp"
+                                            data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                                    </button>
+                                </a>
                             </td>
                         </tr>
                     </c:forEach>

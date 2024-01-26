@@ -87,57 +87,8 @@
                 </form>
             </li>
             <%--            <li class="lg-bag"><a href="cart.html" onclick="showcart()"><i class="fa-solid fa-bag-shopping"></i></a></li>--%>
-            <a href="${pageContext.request.contextPath }/member/cart" class="header__nav-item-link">
-                <i class="fas fa-shopping-cart"><c:set var="count" value="${0}"/></i>
 
-                <c:forEach items="${sessionScope.cart}" var="map">
-                    <c:set var="count" value="${count + 1}"/>
-                </c:forEach>
-                <span>${count }</span> </a>
-            <c:choose>
-                <c:when test="${username==null}">
-                    <div class="header__no-cart">
-                            <%--                                            <img src="${url}/img/home/no-cart.png" class="img__no-cart">--%>
-                        <div class="no__cart-text">
-                            <span>Đăng nhập để xem giỏ hàng</span>
-                        </div>
 
-                    </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="header__has-cart" id="removeCart">
-                        <ul class="list-unstyled badge-open mCustomScrollbar header__cart-list"
-                            data-mcs-theme="minimal-dark" id="contentCart">
-                            <c:forEach items="${sessionScope.cart}" var="map">
-                                <li class="header__cart-item header__cart-view">
-                                    <c:url
-                                            value="${map.value.product.image}"
-                                            var="imgUrl"></c:url><a class="header__cart-link"
-                                                                    href="${pageContext.request.contextPath}/product/detail?id=${map.value.product.id}">
-                                    <img src="${imgUrl}" alt="" width="10"
-                                         height="20" class="header__cart-img">
-                                    <div class="overflow-h header__cart-name">
-                                        <p><b>${map.value.product.name }</b></p>
-                                        <p>${map.value.quantity} * ${map.value.product.price }đ </p>
-                                    </div>
-                                    <a
-                                            href="${pageContext.request.contextPath}/cart/remove?pId=${map.value.product.id} ">
-                                        <button
-                                                type="button" class="close">×
-                                        </button>
-                                    </a>
-
-                                </a>
-                                </li>
-                            </c:forEach>
-                        </ul>
-                        <footer class="header__cart-footer">
-                            <a href="${pageContext.request.contextPath }/member/cart"
-                               class="header__cart-footer-btn">Xem tất cả</a>
-                        </footer>
-                    </div>
-                </c:otherwise>
-            </c:choose>
             <% if (username != null) { %>
             <!-- If the user is logged in, display logout link -->
             <li><a href="logout">ĐĂNG XUẤT</a></li>

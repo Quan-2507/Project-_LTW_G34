@@ -43,4 +43,8 @@ public class ProductService {
     public int numOfProducts() {
         return productDao.getNoOfProducts();
     }
+
+    public void insert(Products product) {
+         productDao.insert(product);
+    }
 }

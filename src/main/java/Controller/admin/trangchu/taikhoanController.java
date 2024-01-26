@@ -21,7 +21,7 @@ public class taikhoanController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserService userService = new UserService();
         List<Users> usersList;
-        usersList = userService.getUser(0);
+        usersList = userService.getUser(2);
         request.setAttribute("usersList",usersList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("taikhoan.jsp");
         dispatcher.forward(request, response);

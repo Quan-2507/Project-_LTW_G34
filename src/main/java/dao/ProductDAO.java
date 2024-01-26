@@ -7,10 +7,7 @@ import jdbc.JDBCConnection;
 import service.CategoryService;
 import service.RateService;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -290,6 +287,31 @@ public class ProductDAO {
         }
     }
         return list;
+    }
+
+    public void insert(Products product) {
+        String sql = "INSERT INTO products (name, categoryID, status, description, size, costPrice, price, images, createAt, lastUpdate) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection connection = JDBCConnection.getJDBCConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, product.getName());
+            preparedStatement.setInt(2, product.getcategory().getId());
+            preparedStatement.setInt(3, product.getStatus());
+            preparedStatement.setString(4, product.getDescription());
+            preparedStatement.setString(5, product.getSize());
+            preparedStatement.setInt(6, product.getCostPrice());
+            preparedStatement.setInt(7, product.getPrice());
+            preparedStatement.setString(8, product.getImages());
+            preparedStatement.setDate(9,(Date) product.getCreateAt());
+            preparedStatement.setDate(10,(Date) product.getLastUpdate());
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

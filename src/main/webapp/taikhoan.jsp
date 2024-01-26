@@ -71,9 +71,25 @@
                             <td>${user.email}</td>
                             <td>${user.address}</td>
                             <td>
-                                <i class="fa-solid fa-plus"></i>
-                                <i class="fa-solid fa-trash-can"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                    <%--                                <i class="fa-solid fa-plus"></i>--%>
+                                    <%--                                <i class="fa-solid fa-trash-can"></i>--%>
+                                    <%--                                <i class="fa-solid fa-pen-to-square"></i>--%>
+                                <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                        onclick="confirmDelete(${user.id})"><i class="fas fa-trash-alt"></i>
+
+                                </button>
+                                <a href="${pageContext.request.contextPath}/editUser?id=${user.id}">
+                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"
+                                            id="show-emp"
+                                            data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                                    </button>
+                                </a>
+                                <a href="${pageContext.request.contextPath}/addUser?id=${user.id}">
+                                    <button class="btn btn-primary btn-sm edit" type="button" title="Thêm"
+                                            id="show-emp"
+                                            data-toggle="modal" data-target="#ModalUP"><i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </a>
                             </td>
                         </tr>
                     </c:forEach>
@@ -83,5 +99,31 @@
         </section>
     </section>
 </div>
+
+
+<script type="text/javascript">$('#sampleTable').DataTable();</script>
+<script>
+    function confirmDelete(userId) {
+        swal({
+            title: "Cảnh báo",
+            text: "Bạn có chắc chắn muốn xóa người dùng này?",
+            buttons: ["Hủy bỏ", "Đồng ý"],
+        }).then((willDelete) => {
+            if (willDelete) {
+                window.location.href = "${pageContext.request.contextPath}/deleteUser?id=" + userId;
+            }
+
+        });
+    }
+
+    oTable = $('#sampleTable').dataTable();
+    $('#all').click(function (e) {
+        $('#sampleTable tbody :checkbox').prop('checked', $(this).is(':checked'));
+        e.stopImmediatePropagation();
+    });
+
+
+
+</script>
 </body>
 </html>
