@@ -337,7 +337,7 @@ public class UserDAO {
             pr.setString(5, users.getPassword());
             pr.setString(6, users.getCreateAt());
             pr.setString(7, users.getLastUpdate());
-            pr.setString(8, users.getaddress());
+            pr.setString(8, users.getAddress());
             pr.setInt(9, users.getId());
             re = pr.executeUpdate();
             JDBCConnection.close(connection);
@@ -447,7 +447,7 @@ public class UserDAO {
                     s.setString(5, users.getPassword());
                     s.setString(6, users.getCreateAt());
                     s.setString(7, users.getLastUpdate());
-                    s.setString(8, users.getaddress());
+                    s.setString(8, users.getAddress());
                     s.setInt(9, users.getRole());
                 }else {
                     sql = "UPDATE users SET name=?, userName=?, email=?, phoneNumber=?, creatAt=?, lastUpdate=?, address=?, role =?  where id =?";
@@ -458,7 +458,7 @@ public class UserDAO {
                     s.setInt(4, users.getPhoneNumber());
                     s.setString(5, users.getCreateAt());
                     s.setString(6, users.getLastUpdate());
-                    s.setString(7, users.getaddress());
+                    s.setString(7, users.getAddress());
                     s.setInt(8, users.getRole());
                 }
                 re = s.executeUpdate();

@@ -199,11 +199,11 @@ public class Users implements Serializable {
         this.lastUpdate = lastUpdate;
     }
 
-    public String getaddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setaddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
