@@ -21,7 +21,7 @@
     <nav>
         <ul>
             <li><a href="<%= request.getContextPath() %>" class="logo">
-                <img src="img/snapedit_1699446793064.png">
+                <img src="img/logo/snapedit_1699446793064.png">
                 <span class="nav-item">Trang chủ</span>
             </a></li>
             <li><a href="<%= request.getContextPath() %>/taikhoan">
@@ -40,7 +40,7 @@
                 <i class="fa-solid fa-receipt"></i>
                 <span class="nav-item">Hóa đơn</span>
             </a></li>
-            <li><a href="../../html/signup-signin.html" class="logout">
+            <li><a href="logout" class="logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="nav-item">Đăng xuất</span>
             </a></li>
@@ -52,17 +52,17 @@
         </div>
         <div class="users">
             <div class="card">
-                <img src="../images/snapedit_1699446793064.png">
+                <img src="img/logo/snapedit_1699446793064.png">
                 <h4>Doanh thu</h4>
                 <p>122.234.000.000</p>
             </div>
             <div class="card">
-                <img src="../images/snapedit_1699446793064.png">
+                <img src="img/logo/snapedit_1699446793064.png">
                 <h4>Vốn</h4>
                 <p>78.120.000.000</p>
             </div>
             <div class="card">
-                <img src="../images/snapedit_1699446793064.png">
+                <img src="img/logo/snapedit_1699446793064.png">
                 <h4>Lợi nhuận</h4>
                 <p>44.114.000.000</p>
             </div>

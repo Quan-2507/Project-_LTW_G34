@@ -33,7 +33,7 @@
     <h2>Trà sữa nhà làm - Giá hạt dẻ</h2>
     <h1>Đến với BoBa Tea!</h1>
     <p>Tiết kiệm hơn với mã giảm giá & giảm đến 50%!</p>
-    <a href="products.html">
+    <a href="milktea">
         <button class="normal">Đặt hàng ngay</button>
     </a>
 </section>

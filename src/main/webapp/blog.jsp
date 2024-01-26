@@ -52,7 +52,7 @@
     </div>
     <div class="blog-box">
         <div class="blog-img">
-            <img src="../img/blog/z3702410503848_518c41703a207d7af4e6368f67d40149.jpg" alt="">
+            <img src="img/blog/z3702410503848_518c41703a207d7af4e6368f67d40149.jpg" alt="">
         </div>
         <div class="blog-details">
             <h4>KHAI TRƯƠNG:</h4>
@@ -63,7 +63,7 @@
     </div>
     <div class="blog-box">
         <div class="blog-img">
-            <img src="../img/blog/post%2030k%20momo_19.5.22-01_17857d6e-4937-48cf-93eb-3ce1eb21375f.png" alt="">
+            <img src="img/blog/post%2030k%20momo_19.5.22-01_17857d6e-4937-48cf-93eb-3ce1eb21375f.png" alt="">
         </div>
         <div class="blog-details">
             <h4>VOUCHER:</h4>
@@ -74,7 +74,7 @@
     </div>
     <div class="blog-box">
         <div class="blog-img">
-            <img src="../img/blog/11back-to-schoool-digital.jpg" alt="">
+            <img src="img/blog/11back-to-schoool-digital.jpg" alt="">
         </div>
         <div class="blog-details">
             <h4>SUPER SALE:</h4>
@@ -85,7 +85,7 @@
     </div>
     <div class="blog-box">
         <div class="blog-img">
-            <img src="../img/blog/z3739000649076_0c9ea50e3c7e7b7f458edf64ce527bce.jpg" alt="">
+            <img src="img/blog/z3739000649076_0c9ea50e3c7e7b7f458edf64ce527bce.jpg" alt="">
         </div>
         <div class="blog-details">
             <h4>KHAI TRƯƠNG:</h4>
@@ -96,7 +96,7 @@
     </div>
     <div class="blog-box">
         <div class="blog-img">
-            <img src="../img/blog/post_reopeining_le%20van%20tho,%20nguyen%20thiep,%20kdv_30.8.22-02_32b8887e-6f7e-408f-adb0-48cd42f323fe.png" alt="">
+            <img src="img/blog/post_reopeining_le%20van%20tho,%20nguyen%20thiep,%20kdv_30.8.22-02_32b8887e-6f7e-408f-adb0-48cd42f323fe.png" alt="">
         </div>
         <div class="blog-details">
             <h4>KHAI TRƯƠNG:</h4>
@@ -107,7 +107,7 @@
     </div>
     <div class="blog-box">
         <div class="blog-img">
-            <img src="../img/blog/Untitled-1.jpg" alt="">
+            <img src="img/blog/Untitled-1.jpg" alt="">
         </div>
         <div class="blog-details">
             <h4>MINI GAME:</h4>
@@ -140,6 +140,6 @@
 
 <a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
 
-<script src="../js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

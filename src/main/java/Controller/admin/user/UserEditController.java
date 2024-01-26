@@ -43,7 +43,7 @@ public class UserEditController extends HttpServlet {
         user.setUserName(request.getParameter("userName"));
         user.setPassword(request.getParameter("password"));
         user.setRole(Integer.parseInt((request.getParameter("role"))));
-        user.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
+//        user.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
         user.setAddress(request.getParameter("address"));
         user.setStatus(Integer.parseInt(request.getParameter("status")));
         user.setLastUpdate(String.valueOf((java.sql.Date.valueOf(LocalDate.now()))));

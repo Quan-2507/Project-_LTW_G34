@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoBa Tea</title>
-    <link rel="icon" href="../img/logo/snapedit_1699446793064.png">
+    <link rel="icon" href="img/logo/snapedit_1699446793064.png">
     <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -31,8 +31,8 @@
 <section id="page-header">
     <div class="container">
         <ul class="breadcrumb" aria-label="breadcrumbs">
-            <li><a href="home.html">Trang chủ</a></li>
-            <li class="active"><a href="#">Liên hệ</a></li>
+            <li><a href="home">Trang chủ</a></li>
+            <li class="active"><a href="contact">Liên hệ</a></li>
         </ul>
         <h1>Liên hệ</h1>
     </div>
@@ -69,7 +69,7 @@
 </section>
 
 <section id="form-details">
-    <form action="" onsubmit="return false">
+    <form action="contact" onsubmit="return false">
         <span>ĐỂ LẠI Ý KIẾN GÓP Ý</span>
         <h2>Chúng tôi luôn sẵn sàng lắng nghe</h2>
         <input type="text" placeholder="Tên" id="name">
@@ -85,15 +85,15 @@
 
     <div class="people">
         <div>
-            <img src="../img/member/a1.jpg" alt="">
+            <img src="img/member/a1.jpg" alt="">
             <p><span>Tran Minh Quan</span> Top bookies from Dong Lao <br> Phone: 0937170300 <br>Email: 21130495@st.hcmuaf.edu.vn</p>
         </div>
         <div>
-            <img src="../img/member/a2.jpg" alt="">
+            <img src="img/member/a2.jpg" alt="">
             <p><span>Kieu Thi Ngoc Quy</span> Haters Gon' hate, players Gon' play. <br> Phone: 0102002003 <br>Email: 21130504@st.hcmuaf.edu.vn</p>
         </div>
         <div>
-            <img src="../img/member/a4.webp" alt="">
+            <img src="img/member/a4.webp" alt="">
             <p><span>Tran Thi Thien Nhan</span> The strong one doesn’t win. The one that wins is strong. <br> Phone: 02995594849 <br>Email: 21130461@st.hcmuaf.edu.vn</p>
         </div>
     </div>
@@ -114,7 +114,7 @@
 
 <a href="#" class="scrollTop"><i class="fa-solid fa-arrow-up"></i></a>
 
-<script src="../js/script.js"></script>
+<script src="js/script.js"></script>
 <script>
     function message() {
         var Name = document.getElementById('name');
