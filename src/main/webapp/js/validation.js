@@ -169,7 +169,7 @@ function isValidEmail(email){
 function isValidPassword(password) {
 
     const minLength = 8;
-    const letterNumberRegexSpecialChar = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
+    const letterNumberRegexSpecialChar =/^(?=.*[A-Z])(?=.*[!@#$%^&*()-+])(?=.*[0-9]).{8,}$/;
 
     if(password == ""){
         return "Hãy nhập mật khẩu."
@@ -179,7 +179,7 @@ function isValidPassword(password) {
         return "Mật khẩu phải trên 8 ký tự.";
     }
 
-    if (!letterNumberRegexSpecialChar.test(password)) {
+    if (!password.match(letterNumberRegexSpecialChar)) {
         return "Mật khẩu phải bao gồm chữ, số và ký tự.";
     }
     return "valid";
