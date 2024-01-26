@@ -79,7 +79,7 @@
     <div class="container">
         <ul class="breadcrumb" aria-label="breadcrumbs">
             <li><a href="<%= request.getContextPath() %>/home">Trang chủ</a></li>
-            <li class="active"><a href="#">Thức uống</a></li>
+            <li class="active"><a href="milktea">Thức uống</a></li>
         </ul>
         <h1>Thức uống</h1>
         <div class="separator-icon gray"></div>

@@ -159,31 +159,31 @@ taikhoan.jsp<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
                     </div>
                     <form class="row" role="form" action="editUser?id=${user.id}" method="post">
-                        <input type="hidden" name="user"
-                               value="${user.userName}">
+<%--                        <input type="hidden" name="user"--%>
+<%--                               value="${user.userName}">--%>
                         <div class="form-group col-md-4">
                             <label class="control-label">Tên người dùng</label>
-                            <input class="form-control" type="text" name="userName"    value="${user.userName}" required>
+<%--                            <input class="form-control" type="text" name="userName"    value="${user.userName}" required>--%>
                         </div>
                         <div class="form-group  col-md-4">
                             <label class="control-label">Mật khẩu</label>
-                            <input class="form-control" type="text" name="password" value="${user.password}" required>
+<%--                            <input class="form-control" type="text" name="password" value="${user.password}" required>--%>
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Email</label>
-                            <input class="form-control" type="text" name="email" value="${user.email}" required>
+<%--                            <input class="form-control" type="text" name="email" value="${user.email}" required>--%>
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Họ và tên</label>
-                            <input class="form-control" type="text" name="name" value="${user.name}" required>
+<%--                            <input class="form-control" type="text" name="name" value="${user.name}" required>--%>
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Địa chỉ</label>
-                            <input class="form-control" type="text" name="address" value="${user.address}" required>
+<%--                            <input class="form-control" type="text" name="address" value="${user.address}" required>--%>
                         </div>
                         <div class="form-group  col-md-4">
                             <label class="control-label">Số điện thoại</label>
-                            <input class="form-control" type="number" name="phoneNumber" value="${user.phoneNumber}" required>
+<%--                            <input class="form-control" type="number" name="phoneNumber" value="${user.phoneNumber}" required>--%>
                         </div>
                         <div class="form-group  col-md-4">
                             <label class="control-label">Quyền</label>
