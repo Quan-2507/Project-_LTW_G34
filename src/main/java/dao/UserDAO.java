@@ -4,10 +4,7 @@ import entity.Users;
 import entity.VerifyAccount;
 import jdbc.JDBCConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -468,6 +465,111 @@ public class UserDAO {
         }
         JDBCConnection.close(connection);
         return re;
+    }
+    public void insert(Users user) {
+        System.out.println("Email: " + user.getEmail());
+        System.out.println("Username: " + user.getUserName());
+        System.out.println("Password: " + user.getPassword());
+        int roleId = 0;
+        int status = 0;
+        String sql = "INSERT INTO users(name, userName, email, phoneNumber, password, role ,createAt,lastUpdate,address,status, position, dateOfBirth) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        Connection con = JDBCConnection.getJDBCConnection();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getUserName());
+            ps.setString(3, user.getEmail());
+            ps.setInt(4, user.getPhoneNumber());
+            ps.setString(5, user.getPassword());
+
+            try {
+                if (user.getRole() == 1) {
+                    roleId = 1;
+                } else {
+                    roleId = 2;
+                }
+            } catch (Exception e) {
+                roleId = 2;
+            }
+
+            ps.setInt(6, roleId);
+            ps.setString(7,user.getCreateAt());
+            ps.setString(8, user.getLastUpdate());
+            ps.setString(9, user.getAddress());
+            ps.setInt(10, 1);
+            ps.setString(11, user.getPosition());
+            ps.setDate(12,(Date) user.getDateOfBirth());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void edit(Users user) {
+        String sql = "UPDATE users SET name=?, userName=?, email=?, phoneNumber=?, password=?, role=? ,lastUpdate=?,address=?,status=?, position=?, dateOfBirth=? WHERE id=?";
+        Connection con = JDBCConnection.getJDBCConnection();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getUserName());
+            ps.setString(3, user.getEmail());
+            ps.setInt(4, user.getPhoneNumber());
+            ps.setString(5, user.getPassword());
+            ps.setInt(6, user.getRole());
+            ps.setString(7, user.getLastUpdate());
+            ps.setString(8, user.getAddress());
+            ps.setInt(9, user.getStatus());
+            ps.setString(10, user.getPosition());
+            ps.setDate(11,(Date) user.getDateOfBirth());
+            ps.setInt(12, user.getId());
+            ps.executeUpdate();
+            System.out.println("role  : " + user.getRole());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public void delete(int id) {
+        String sql = "DELETE FROM users WHERE id = ?";
+        Connection con = JDBCConnection.getJDBCConnection();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    public List<Users> getAll() {
+        List<Users> users = new ArrayList<>();
+        String sql = "SELECT * FROM users ";
+        Connection conn = JDBCConnection.getJDBCConnection()    ;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Users user = new Users();
+
+                user.setId(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                users.add(user);
+
+
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
