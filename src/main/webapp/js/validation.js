@@ -169,7 +169,7 @@ function isValidEmail(email){
 function isValidPassword(password) {
 
     const minLength = 8;
-    const letterNumberRegexSpecialChar =/^(?=.*[A-Z])(?=.*[!@#$%^&*()-+])(?=.*[0-9]).{8,}$/;
+    const letterNumberRegexSpecialChar =/^(?=.*[a-z])(?=.*[!@#$%^&*()-+])(?=.*[0-9]).{8,}$/;
 
     if(password == ""){
         return "Hãy nhập mật khẩu."

@@ -64,7 +64,8 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 <section id="product1" class="section-p1">
-    <h2>CÁC SẢN PHẨM</h2>
+    <h2>Best Seller</h2>
+    <p>Những món bán chạy nhất <i class="fa-solid fa-fire" style="color: #f11404;"></i><i
             class="fa-solid fa-fire" style="color: #f11404;"></i></p>
     <div class="pro-container">
         <c:if test="${not empty products}">
