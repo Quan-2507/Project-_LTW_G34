@@ -32,7 +32,7 @@ public class Login extends HttpServlet {
             cookie.setMaxAge(30 * 60); // Set the cookie's max age to 30 minutes
             response.addCookie(cookie);
             // Check if the username is the admin's email
-            if ("kieuthingocquy94@gmail.com".equals(username)) {
+            if ("21130504@st.hcmuaf.edu.vn".equals(username) || "21130495@st.hcmuaf.edu.vn".equals(username) || "21130461@st.hcmuaf.edu.vn".equals(username) ) {
                 response.sendRedirect("trangchuAdmin.jsp");
             } else {
                 response.sendRedirect("home.jsp"); // Redirect to the welcome page
