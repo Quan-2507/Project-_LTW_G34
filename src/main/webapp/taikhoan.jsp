@@ -12,7 +12,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BoBa Tea</title>
+    <link rel="icon" href="img/logo/snapedit_1699446793064.png">
     <link rel="stylesheet" href="Admin/css/style.css">
     <script src="https://kit.fontawesome.com/263257cb2f.js" crossorigin="anonymous"></script>
 </head>
